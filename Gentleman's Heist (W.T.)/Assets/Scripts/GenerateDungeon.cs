@@ -66,7 +66,7 @@ public class GenerateDungeon : MonoBehaviour
         for (int i = 0; i < nRooms; i++)
         {
             int c = 0;
-            //Dont do this at home kids LOL
+        
             while (!GenerateNewRoom())
             {
                 c++;
