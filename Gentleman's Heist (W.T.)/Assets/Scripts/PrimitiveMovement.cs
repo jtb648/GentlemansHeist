@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Normal wasd/arrows but leftshift to sneak
+ */
 public class PrimitiveMovement : MonoBehaviour
 {
     public float speed = 3f;
@@ -10,12 +13,23 @@ public class PrimitiveMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     private Vector2 _movement;
-    
+
+    // somewhat evil implementation of sneak to avoid if/else block
+    private int _isSneak = 1;
+
     
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = _movement * speed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            _isSneak = 2;
+        }
+        else
+        {
+            _isSneak = 1;
+        }
+        rb.velocity = _movement * speed / _isSneak;
     }
 
     private void FixedUpdate()

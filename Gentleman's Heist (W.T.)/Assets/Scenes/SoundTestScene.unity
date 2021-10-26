@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 4445961646239364480, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
+      propertyPath: speedToRadiusRatio
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6866507023814050018, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: m_RootOrder
       value: 0

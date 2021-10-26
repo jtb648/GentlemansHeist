@@ -35,15 +35,16 @@ public class EntitySound : MonoBehaviour
         }
         else
         {
-            _currentRadius = (rb.velocity.normalized.magnitude) * speedToRadiusRatio;
+            _currentRadius = (rb.velocity.magnitude) * speedToRadiusRatio;
         }
-
-        //actually add implementation of radius
+        
+        gameObject.transform.localScale = new Vector3((float) _currentRadius / 2.0f, (float) _currentRadius / 2.0f, 1f);
     }
 
     /*
      * Given some in game event (ex: tripping) allows outside setting of a custom radius for limited time (frames)
      * Hint: The game should run at 60fps
+     * TODO: Untested
      */
     public void SetSoundEvent(double newRadius, int numFrames)
     {
