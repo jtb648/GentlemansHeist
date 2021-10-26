@@ -9,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EntitySound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PrimitiveMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="TaskManager">
     <servers />
