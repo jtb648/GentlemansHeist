@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    EntitySound sound;
-
     [SerializeField]
     Transform player;
 
@@ -25,11 +23,6 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-        //sound = GameObject.FindGameObjectWithTag("Player").GetComponent<EntitySound>();
-        //double realRange = sound.GetCurrentRadius()*0.5;
-
-        //agroRange = player.GetComponentInChildren<CircleCollider2D>().radius * player.GetChild(0).localScale.x / 2;
-        //print("distToPlayer:" + distToPlayer + "agro"+ agroRange);
         print(distToPlayer);
 
 
