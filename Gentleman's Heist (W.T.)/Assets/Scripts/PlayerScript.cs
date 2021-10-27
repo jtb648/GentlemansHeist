@@ -95,7 +95,9 @@ public class PlayerScript : MonoBehaviour
         Vector2 movement = new Vector2(xMove, yMove).normalized;
         myBody.velocity = movement * speed / _sneak;
 
-        if()
+        // if()
+            
+            
         // animation logic
         if(xMove != 0 || yMove != 0)
         {
