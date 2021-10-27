@@ -10,9 +10,14 @@ public class EntitySound : MonoBehaviour
 {
     // The ratio at which an objects velocity impacts it's sound. Could be dynamically changed
     public double speedToRadiusRatio;
+
+    // making it pretty stuff
+    private double _oldRadius;
+    private double _newRadius;
+    private double incremenet;
     
     // The current sound radius that will be displayed
-    private double _currentRadius;
+    private double _curRadius;
 
     // The amount of time currentRadius will not be updated with velocity (ie after SetSoundEvent)
     private int _eventFrames;
@@ -35,10 +40,38 @@ public class EntitySound : MonoBehaviour
         }
         else
         {
-            _currentRadius = (rb.velocity.magnitude) * speedToRadiusRatio;
+            // most of this is for making the transition between states look nice
+            _oldRadius = _curRadius;
+            _newRadius = (rb.velocity.magnitude) * speedToRadiusRatio;
+            if (_oldRadius > _newRadius)
+            {
+                incremenet = -((_oldRadius - _newRadius) / 60);
+            }
+            else
+            {
+                incremenet = ((_newRadius - _oldRadius) / 60);
+            }
         }
         
-        gameObject.transform.localScale = new Vector3((float) _currentRadius / 2.0f, (float) _currentRadius / 2.0f, 1f);
+        // all of this is to make the transitions look nice
+        if (_curRadius == 0)
+        {
+            _curRadius = 0.001;
+        }
+        else if (_newRadius == 0)
+        {
+            _newRadius = 0.001;
+        }
+        if (_curRadius / _newRadius < 0.99 || _curRadius / _newRadius > 1.01)
+        {
+            _curRadius += incremenet;
+        }
+        else
+        {
+            _curRadius = _newRadius;
+        }
+        
+        gameObject.transform.localScale = new Vector3((float) _curRadius / 2.0f, (float) _curRadius / 2.0f, 1f);
     }
 
     /*
@@ -48,12 +81,13 @@ public class EntitySound : MonoBehaviour
      */
     public void SetSoundEvent(double newRadius, int numFrames)
     {
-        _currentRadius = newRadius;
+        _curRadius = newRadius;
         _eventFrames = numFrames;
     }
 
+    // gets the radius goal, neglects the transition period
     public double GetCurrentRadius()
     {
-        return _currentRadius;
+        return _newRadius;
     }
 }

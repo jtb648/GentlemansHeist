@@ -46,7 +46,8 @@ public class PlayerScript : MonoBehaviour
     // Reference to the Player's rigid body
     public Rigidbody2D myBody;
 
-
+    // Interactable Object within the Player's collision radius
+    public GameObject currentInteractableObject = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +96,11 @@ public class PlayerScript : MonoBehaviour
         {
             animator.SetBool("walking", false);
         }
+
+        //Interacting with a pickup 
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractableObject){
+            currentInteractableObject.SendMessage("DoInteraction");
+        }
     }
 
     // Updates the animation BlendTree
@@ -102,5 +108,21 @@ public class PlayerScript : MonoBehaviour
     {
             animator.SetFloat("xChange", xMove);
             animator.SetFloat("yChange", yMove);
+    }
+    // Marks an interactable object as the current interactable object when entering their collision area
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("InteractableObject")){
+            Debug.Log(collision.name);
+            currentInteractableObject = collision.gameObject;
+          
+        }
+    }
+    // Unmarks an interactable object as the current interactable object when exiting their collision area
+   private void OnTriggerExit2D(Collider2D collision) {
+        if (collision.CompareTag("InteractableObject")){
+            Debug.Log(collision.name);
+            currentInteractableObject = null;
+           
+        }
     }
 }
