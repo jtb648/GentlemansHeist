@@ -33,7 +33,6 @@ public class GenerateDungeon : MonoBehaviour
     {
         Instance = this;
         objects = new List<GameObject>();
-        GenerateNewDungeon();
     }
 
     public void DeleteDungeon()
@@ -81,46 +80,6 @@ public class GenerateDungeon : MonoBehaviour
         //FindChests();
         ShowRooms();
     }
-
-/*
-    private void FindChests()
-    {
-        int total = Random.Range(3, 5);
-        print("total: " + total);
-
-        int normalChests = Random.Range(1, 4);
-        total -= normalChests;
-        int upgradeChests = total;
-        int eliteChests = 0;
-        if (Random.Range(0f, 1f) < 0.25f) eliteChests = 1;
-
-        for (int i = 0; i < normalChests; i++)
-        {
-            int r = Random.Range(0, availableRooms.Count);
-            Vector2 pos = availableRooms[r].Item1;
-            objects.Add(Instantiate(normalChest, pos * scale, Quaternion.identity));
-            availableRooms.RemoveAt(r);
-            rooms[(int)pos.x, (int)pos.y] = 3;
-        }
-
-        for (int i = 0; i < upgradeChests; i++)
-        {
-            int r = Random.Range(0, availableRooms.Count);
-            Vector2 pos = availableRooms[r].Item1;
-            objects.Add(Instantiate(upgradeChest, pos * scale, Quaternion.identity));
-            availableRooms.RemoveAt(r);
-            rooms[(int)pos.x, (int)pos.y] = 3;
-        }
-        for (int i = 0; i < eliteChests; i++)
-        {
-            int r = Random.Range(0, availableRooms.Count);
-            Vector2 pos = availableRooms[r].Item1;
-            objects.Add(Instantiate(eliteChest, pos * scale, Quaternion.identity));
-            availableRooms.RemoveAt(r);
-            rooms[(int)pos.x, (int)pos.y] = 3;
-        }
-    }
-    */
 
     private void ShowAvailable()
     {

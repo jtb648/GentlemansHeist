@@ -31,14 +31,16 @@ public class MainCameraScript : MonoBehaviour
     // The reference to the player
     public PlayerScript player;
 
+    public static MainCameraScript Instance {get; set;}
+
     // The motion delay for the camera, allows for a smoother follow
     public float delay = 4f;
 
     // The limits the Camera can go to the right, left, up, and down
-    private float xBoundRight = 20.15f;
-    private float xBoundLeft = -24.7f;
-    private float yBoundTop = 8.95f;
-    private float yBoundBottom = -8.3f;
+    private float xBoundRight = 300f;
+    private float xBoundLeft = -300f;
+    private float yBoundTop = 300f;
+    private float yBoundBottom = -300f;
 
 
     // Start is called before the first frame update

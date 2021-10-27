@@ -39,10 +39,10 @@ public class PlayerScript : MonoBehaviour
     private float _sneak = 1;
 
     // The limits the player can move up, down, left, and right
-    private float yBoundTop = 13.8f;
-    private float yBoundBottom = -13.1f;
-    private float xBoundLeft = -32.5f;
-    private float xBoundRight = 27.8f;
+    private float yBoundTop = 300f;
+    private float yBoundBottom = -300f;
+    private float xBoundLeft = -300f;
+    private float xBoundRight = 300f;
 
     // Reference to the Player's animator
     // --> Animator must include xChange, yChange, and walking as its parameters (i can set this up soon)
@@ -53,6 +53,7 @@ public class PlayerScript : MonoBehaviour
 
     // Interactable Object within the Player's collision radius
     public GameObject currentInteractableObject = null;
+
     // Start is called before the first frame update
     void Start()
     {
