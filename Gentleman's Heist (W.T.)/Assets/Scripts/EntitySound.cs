@@ -48,11 +48,11 @@ public class EntitySound : MonoBehaviour
             _newRadius = (rb.velocity.magnitude) * speedToRadiusRatio;
             if (_oldRadius > _newRadius)
             {
-                incremenet = -((_oldRadius - _newRadius) / 60);
+                incremenet = -((_oldRadius - _newRadius) / transitionDivs);
             }
             else
             {
-                incremenet = ((_newRadius - _oldRadius) / 60);
+                incremenet = ((_newRadius - _oldRadius) / transitionDivs);
             }
         }
         
