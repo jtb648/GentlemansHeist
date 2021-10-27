@@ -78,10 +78,11 @@ public class GenerateDungeon : MonoBehaviour
         Vector2 finalRoom = availableRooms[availableRooms.Count - 1].Item1;
         rooms[(int)finalRoom.x, (int)finalRoom.y] = 3;
         FindSpawns();
-        FindChests();
+        //FindChests();
         ShowRooms();
     }
 
+/*
     private void FindChests()
     {
         int total = Random.Range(3, 5);
@@ -119,6 +120,7 @@ public class GenerateDungeon : MonoBehaviour
             rooms[(int)pos.x, (int)pos.y] = 3;
         }
     }
+    */
 
     private void ShowAvailable()
     {
