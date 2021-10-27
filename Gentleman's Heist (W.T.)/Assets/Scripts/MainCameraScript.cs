@@ -48,8 +48,8 @@ public class MainCameraScript : MonoBehaviour
         // -- This solidifies the aspect ratio of the Main Camera
         // -- For now, I've set it to be a 16:10 ratio for our game -> We can change this later if need be :)
 
-        cameraMain.orthographicSize = 5.0f; // Orthographic Size is equal to half the vertical length
-        cameraMain.aspect = (float)  8 / cameraMain.orthographicSize; // The Aspect is a width/height ratio -> 16/10 ratio
+        // cameraMain.orthographicSize = 5.0f; // Orthographic Size is equal to half the vertical length
+        // cameraMain.aspect = (float)  8 / cameraMain.orthographicSize; // The Aspect is a width/height ratio -> 16/10 ratio
         
     }
 
