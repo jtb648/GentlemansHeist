@@ -10,6 +10,9 @@ public class EntitySound : MonoBehaviour
 {
     // The ratio at which an objects velocity impacts it's sound. Could be dynamically changed
     public double speedToRadiusRatio;
+    
+    // number frames transition is split over. More frames = 
+    public int transitionDivs = 60;
 
     // making it pretty stuff
     private double _oldRadius;
