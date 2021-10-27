@@ -53,6 +53,7 @@ public class PlayerScript : MonoBehaviour
 
     // Interactable Object within the Player's collision radius
     public GameObject currentInteractableObject = null;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -110,12 +111,14 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("walking", false);
         }
 
+       
+    }
+    void Update(){
         //Interacting with a pickup
         if (Input.GetKeyDown(KeyCode.E) && currentInteractableObject){
-            currentInteractableObject.SendMessage("DoInteraction");
+            currentInteractableObject.SendMessage("DoInteraction",currentInteractableObject.name);
         }
     }
-
     // Updates the animation BlendTree
     void changeAnimation()
     {
