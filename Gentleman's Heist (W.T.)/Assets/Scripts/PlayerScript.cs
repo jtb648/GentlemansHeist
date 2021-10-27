@@ -22,16 +22,21 @@ What does this script do?
 
 public class PlayerScript : MonoBehaviour
 {
-    
+
     // The x and y values for the player to move to
     private float xMove;
     private float yMove;
 
+    // Player health bar
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     // The speed the player moves
     public float speed = 10.0f;
 
-    // Reduce value used for diagonal movement
-    public float reduce = 1.2f;
+    // evil sneak variable
+    private float _sneak = 1;
 
     // The limits the player can move up, down, left, and right
     private float yBoundTop = 13.8f;
@@ -42,7 +47,7 @@ public class PlayerScript : MonoBehaviour
     // Reference to the Player's animator
     // --> Animator must include xChange, yChange, and walking as its parameters (i can set this up soon)
     public Animator animator;
-    
+
     // Reference to the Player's rigid body
     public Rigidbody2D myBody;
 
@@ -51,7 +56,8 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+      currentHealth = maxHealth;
+      healthBar.setHealth(maxHealth);
     }
 
  // Update is called once per frame
@@ -61,6 +67,14 @@ public class PlayerScript : MonoBehaviour
         // --> The x and y values for the player to move to
         xMove = Input.GetAxisRaw("Horizontal");;
         yMove = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            _sneak = 2;
+        }
+        else
+        {
+            _sneak = 1;
+        }
 
         // Keeping Player within the Boundaries
         // --> if player is about to move past the boundaries, set the move value to 0
@@ -73,21 +87,20 @@ public class PlayerScript : MonoBehaviour
             yMove = 0;
         }
 
-        // Diagonal Movement
-        // --> If x and y are both moving, then player will move diagonal
-        if(xMove != 0 && yMove != 0)
-        {
-            // (I wholeheartly believe there is a better way to do this, but it works)
-            // reduced speed on the diagonal, since it moves too fast with regular speed
-            transform.position += new Vector3(xMove * speed/reduce * Time.deltaTime, yMove * speed/reduce * Time.deltaTime, 0);
-            changeAnimation();
-            animator.SetBool("walking", true); // set walking to true
+        // Player damage FOR TESTING PURPOSE
+        if(Input.GetKeyDown(KeyCode.Space)){
+          takeDamage(20);
         }
-        // Right/Left or Up/Down movement
-        // --> If only x or y is moving, then speed can be regular
-        else if(xMove != 0 || yMove != 0)
+        // setting movement regardless of input
+        Vector2 movement = new Vector2(xMove, yMove).normalized;
+        myBody.velocity = movement * speed / _sneak;
+
+        // if()
+            
+            
+        // animation logic
+        if(xMove != 0 || yMove != 0)
         {
-            transform.position += new Vector3(xMove, yMove, 0) * speed * Time.deltaTime;
             changeAnimation();
             animator.SetBool("walking", true); // set walking to true
         }
@@ -97,7 +110,7 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("walking", false);
         }
 
-        //Interacting with a pickup 
+        //Interacting with a pickup
         if (Input.GetKeyDown(KeyCode.E) && currentInteractableObject){
             currentInteractableObject.SendMessage("DoInteraction");
         }
@@ -109,12 +122,19 @@ public class PlayerScript : MonoBehaviour
             animator.SetFloat("xChange", xMove);
             animator.SetFloat("yChange", yMove);
     }
+
+    // Player damage
+    void takeDamage(int damage){
+      currentHealth -= damage;
+      healthBar.setHealth(currentHealth);
+    }
+
     // Marks an interactable object as the current interactable object when entering their collision area
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
             Debug.Log(collision.name);
             currentInteractableObject = collision.gameObject;
-          
+
         }
     }
     // Unmarks an interactable object as the current interactable object when exiting their collision area
@@ -122,7 +142,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.CompareTag("InteractableObject")){
             Debug.Log(collision.name);
             currentInteractableObject = null;
-           
+
         }
     }
 }

@@ -10,6 +10,9 @@ public class EntitySound : MonoBehaviour
 {
     // The ratio at which an objects velocity impacts it's sound. Could be dynamically changed
     public double speedToRadiusRatio;
+    
+    // number frames transition is split over. More frames = 
+    public int transitionDivs = 60;
 
     // making it pretty stuff
     private double _oldRadius;
@@ -45,11 +48,11 @@ public class EntitySound : MonoBehaviour
             _newRadius = (rb.velocity.magnitude) * speedToRadiusRatio;
             if (_oldRadius > _newRadius)
             {
-                incremenet = -((_oldRadius - _newRadius) / 60);
+                incremenet = -((_oldRadius - _newRadius) / transitionDivs);
             }
             else
             {
-                incremenet = ((_newRadius - _oldRadius) / 60);
+                incremenet = ((_newRadius - _oldRadius) / transitionDivs);
             }
         }
         
