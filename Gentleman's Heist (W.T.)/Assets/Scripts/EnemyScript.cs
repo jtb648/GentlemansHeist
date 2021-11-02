@@ -22,8 +22,8 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
-        print(distToPlayer);
+        //float distToPlayer = Vector2.Distance(transform.position, player.position);
+        //print(distToPlayer);
 
 
         if(player.GetComponentInChildren<CircleCollider2D>().IsTouching(this.gameObject.GetComponent<CircleCollider2D>()))
