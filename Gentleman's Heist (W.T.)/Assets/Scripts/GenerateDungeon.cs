@@ -15,7 +15,9 @@ public class GenerateDungeon : MonoBehaviour
     [SerializeField]
     private float scale = 30f;
 
-    public GameObject room, enemyRoom, corridor, empty, mark, floorNr, emptyRoom;
+    public GameObject room, corridor, empty, mark, floorNr, emptyRoom;
+
+    public List<GameObject> enemyRoom;
 
     private Vector2 spawnPos;
 
@@ -25,6 +27,7 @@ public class GenerateDungeon : MonoBehaviour
 
     private List<Vector2> directionsList;
     private List<Vector2> currentDirections;
+    private float[] rotationList;
 
     public List<GameObject> objects;
 
@@ -187,6 +190,7 @@ public class GenerateDungeon : MonoBehaviour
 
     private void ShowRooms()
     {
+        rotationList = new float[] {0f, 90f, 180f, 270f};
         for (int x = 0; x < n; x++)
         {
             for (int y = 0; y < n; y++)
@@ -200,8 +204,10 @@ public class GenerateDungeon : MonoBehaviour
 
                 if (rooms[x, y] == 1)
                 { //room
-                    GameObject r = Instantiate(enemyRoom, new Vector2(x * scale, y * scale), Quaternion.identity);
+                    GameObject r = Instantiate(enemyRoom[Random.Range(0, enemyRoom.Count)], new Vector2(x * scale, y * scale), Quaternion.identity);
                     r.transform.localScale = Vector2.one * scale;
+                    //Randomly rotates the room to make a more random dungeon
+                    //r.transform.rotation = Quaternion.Euler(Vector3.forward * rotationList[Random.Range(0, rotationList.Length)]);
                     objects.Add(r);
                 }
                 else if (rooms[x, y] == 2)

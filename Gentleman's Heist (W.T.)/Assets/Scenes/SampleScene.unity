@@ -255,16 +255,19 @@ MonoBehaviour:
   normalChest: {fileID: 0}
   upgradeChest: {fileID: 0}
   eliteChest: {fileID: 0}
-  nRooms: 10
+  nRooms: 4
   n: 50
   scale: 10
   room: {fileID: 4611349283708993423, guid: 352492e54341fdd40a32341e487d4fe7, type: 3}
-  enemyRoom: {fileID: 3883707210269664333, guid: 77bcc0d8b274ac646a723d61b3fbb2d4, type: 3}
   corridor: {fileID: 5843760460774476623, guid: 0306106275a913043a2a4a5267b14b47, type: 3}
   empty: {fileID: 3688394378148694987, guid: 285694e5c9780b0419114765d982550e, type: 3}
   mark: {fileID: 4611349283708993423, guid: 352492e54341fdd40a32341e487d4fe7, type: 3}
   floorNr: {fileID: 4815173133056578263, guid: 7dfd7c0b907e75241ab891620a5b714e, type: 3}
   emptyRoom: {fileID: 4815173133056578263, guid: 7dfd7c0b907e75241ab891620a5b714e, type: 3}
+  enemyRoom:
+  - {fileID: 2528773567404953492, guid: 60c7e22ea25143641a88589e15b07f01, type: 3}
+  - {fileID: 4840779030610489802, guid: 97a15884dfce9a64798abb3d4979e001, type: 3}
+  - {fileID: 6654732650636913710, guid: 077d19516b0f6994b98ee79dd73d1c9a, type: 3}
   objects: []
 --- !u!4 &681761178
 Transform:
