@@ -37,10 +37,11 @@ public class MainCameraScript : MonoBehaviour
     public float delay = 4f;
 
     // The limits the Camera can go to the right, left, up, and down
-    private float xBoundRight = 500f;
-    private float xBoundLeft = 0f;
-    private float yBoundTop = 500f;
-    private float yBoundBottom = 0f;
+    // Changed from 500, 0, 500, 0 respectively 
+    private float xBoundRight = 999f;
+    private float xBoundLeft = -999f;
+    private float yBoundTop = 999f;
+    private float yBoundBottom = -999f;
 
 
     // Start is called before the first frame update

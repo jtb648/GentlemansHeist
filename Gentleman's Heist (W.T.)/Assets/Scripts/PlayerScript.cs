@@ -39,10 +39,11 @@ public class PlayerScript : MonoBehaviour
     private float _sneak = 1;
 
     // The limits the player can move up, down, left, and right
-    private float yBoundTop = 500f;
-    private float yBoundBottom = 0f;
-    private float xBoundLeft = 0f;
-    private float xBoundRight = 500f;
+    //Changed from 500,0,0,500 respectively
+    private float yBoundTop = 999f;
+    private float yBoundBottom = -999f;
+    private float xBoundLeft = -999f;
+    private float xBoundRight = 999f;
 
     // Reference to the Player's animator
     // --> Animator must include xChange, yChange, and walking as its parameters (i can set this up soon)

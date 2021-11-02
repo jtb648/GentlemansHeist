@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="81dba6ff-ab0f-4920-b3e4-4516d7e4675d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gentleman's Heist (W.T.)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gentleman's Heist (W.T.)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Milestone2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Milestone2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainCameraScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCameraScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +72,8 @@
       <option name="presentableId" value="Default" />
       <updated>1635349976136</updated>
       <workItem from="1635349987759" duration="68000" />
+      <workItem from="1635814032997" duration="42000" />
+      <workItem from="1635814146551" duration="83000" />
     </task>
     <servers />
   </component>
