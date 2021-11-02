@@ -12,6 +12,9 @@ public class InteractablePickup : MonoBehaviour
         else if(name.StartsWith("Diamond")){
             UIUpdater.diamonds++;
         }
+        else if(name.StartsWith("Coin")){
+            UIUpdater.score++;
+        }
         Destroy(gameObject);
     }
 }
