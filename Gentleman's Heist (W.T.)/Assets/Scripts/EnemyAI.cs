@@ -12,6 +12,9 @@ public class EnemyAI : MonoBehaviour
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
+    [SerializeField]
+    public Transform castPoint;
+
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -43,6 +46,35 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    void CanSeePlayer(float distance)
+    {
+        float castDist = distance;
+
+        Vector2 endPos = castPoint.position + Vector3.right * distance;
+
+        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action"));
+
+        if(hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                detected = true;
+                print("I FoUNd YoU");
+            }
+        }
+
+        Debug.DrawLine(castPoint.position, endPos, Color.red);
+    }
+
+    void facePlayer()
+    {
+        var offset = 90f;
+        Vector2 direction = target.position - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -50,6 +82,7 @@ public class EnemyAI : MonoBehaviour
         {
             detected = true;
         }
+        CanSeePlayer(10);
         if (detected == true)
         {
             if (path == null)
@@ -64,7 +97,7 @@ public class EnemyAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-
+            facePlayer();
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
 

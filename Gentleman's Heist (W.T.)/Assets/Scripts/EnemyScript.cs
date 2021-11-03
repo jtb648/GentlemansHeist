@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-        print(distToPlayer);
+        //print(distToPlayer);
 
 
         if(player.GetComponentInChildren<CircleCollider2D>().IsTouching(this.gameObject.GetComponent<CircleCollider2D>()))
