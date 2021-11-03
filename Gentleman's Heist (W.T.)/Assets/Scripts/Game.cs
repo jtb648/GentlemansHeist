@@ -19,9 +19,7 @@ public class Game : MonoBehaviour
         Instance = this;
         GenerateDungeon.Instance.GenerateNewDungeon();
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
-        //PlayerScript p = Instantiate(player, spawnPos, Quaternion.identity);
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
-        //MainCameraScript.Instance.SetPlayer(p);
     }
 }
