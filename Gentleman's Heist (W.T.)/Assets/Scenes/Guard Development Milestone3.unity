@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardAI
       objectReference: {fileID: 0}
+    - target: {fileID: 3477559011041414236, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
+      propertyPath: startEndModifier.addPoints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414237, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: sound
       value: 
@@ -387,11 +391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.85
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.97
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.z

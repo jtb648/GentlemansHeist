@@ -50,7 +50,7 @@ public class EnemyAI : MonoBehaviour
     {
         float castDist = distance;
 
-        Vector2 endPos = castPoint.position + Vector3.right * distance;
+        Vector2 endPos = castPoint.position + -this.gameObject.transform.up * distance;
 
         RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action"));
 
