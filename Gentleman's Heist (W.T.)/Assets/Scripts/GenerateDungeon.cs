@@ -205,6 +205,7 @@ public class GenerateDungeon : MonoBehaviour
                 if (rooms[x, y] == 1)
                 { //room
                     GameObject r = Instantiate(enemyRoom[Random.Range(0, enemyRoom.Count)], new Vector2(x * scale, y * scale), Quaternion.identity);
+                    //To pick the room before adding it and then Remove enemyRoom[X]
                     r.transform.localScale = Vector2.one * scale;
                     //Randomly rotates the room to make a more random dungeon
                     //r.transform.rotation = Quaternion.Euler(Vector3.forward * rotationList[Random.Range(0, rotationList.Length)]);
