@@ -36,8 +36,4 @@ public class Game : MonoBehaviour
         player.transform.position = spawnPos3;
         floor++;
     }
-
-    public void testPrint() {
-        Debug.Log("Test");
-    }
 }
