@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
     bool detected = false;
     public Transform sound;
+    public Transform Waypoint1;
+    public Transform Waypoint2;
 
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
@@ -82,7 +84,7 @@ public class EnemyAI : MonoBehaviour
         {
             detected = true;
         }
-        CanSeePlayer(10);
+        CanSeePlayer(5);
         if (detected == true)
         {
             if (path == null)
