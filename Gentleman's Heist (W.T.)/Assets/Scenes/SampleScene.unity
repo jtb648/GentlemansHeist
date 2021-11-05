@@ -611,5 +611,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7718155633102066346, guid: 42a0c66b9741d2e4b969f32b5f3e9ab3, type: 3}
+      propertyPath: speedToRadiusRatio
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a0c66b9741d2e4b969f32b5f3e9ab3, type: 3}

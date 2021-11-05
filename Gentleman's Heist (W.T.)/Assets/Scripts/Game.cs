@@ -17,9 +17,27 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        StartDungeon();
+    }
+
+    public void StartDungeon() {
+        playing = true;
         GenerateDungeon.Instance.GenerateNewDungeon();
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
+    }
+
+    public void NextFloor() {
+        GenerateDungeon.Instance.DeleteDungeon();
+        GenerateDungeon.Instance.GenerateNewDungeon();
+        Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
+        Vector3 spawnPos3 = spawnPos;
+        player.transform.position = spawnPos3;
+        floor++;
+    }
+
+    public void testPrint() {
+        Debug.Log("Test");
     }
 }
