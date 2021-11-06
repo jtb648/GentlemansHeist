@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3477559010650776273}
   - component: {fileID: 3477559010650776302}
   m_Layer: 0
-  m_Name: Guard
+  m_Name: GuardGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0167a2d235421ca4f8095daaa1defd4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -187,9 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfb5d37938a3994ab901a18b08c3885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 3980801476876871802, guid: dc9fc014c65110e43bad832279c15d4b, type: 3}
+  target: {fileID: 5038862654049538978, guid: d8010fa0ab4d7254bb37dffca9ef774b, type: 3}
   sound: {fileID: 6866507023814050018, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
-  speed: 400
+  Waypoint1: {fileID: 0}
+  Waypoint2: {fileID: 0}
+  speed: 200
   nextWaypointDistance: 3
 --- !u!50 &3477559011041414234
 Rigidbody2D:

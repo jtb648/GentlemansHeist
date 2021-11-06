@@ -5,17 +5,19 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform target;
+    //[SerializeField]
+    
     bool detected = false;
-    public Transform sound;
+    //[SerializeField]
+    
+    [SerializeField]
     public Transform Waypoint1;
+    [SerializeField]
     public Transform Waypoint2;
 
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
-    [SerializeField]
-    public Transform castPoint;
 
     Path path;
     int currentWaypoint = 0;
@@ -24,9 +26,14 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    GameObject target;
+    GameObject sound;
+
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindGameObjectsWithTag("Player")[0];
+        sound = GameObject.FindGameObjectsWithTag("Sound")[0];
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -36,7 +43,7 @@ public class EnemyAI : MonoBehaviour
     private void UpdatePath()
     {
         if (seeker.IsDone())
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
     }
 
     void OnPathComplete(Path p)
@@ -48,13 +55,13 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void CanSeePlayer(float distance)
+    bool CanSeePlayer(float distance)
     {
         float castDist = distance;
 
-        Vector2 endPos = castPoint.position + -this.gameObject.transform.up * distance;
+        Vector2 endPos = transform.position + -this.gameObject.transform.up * distance;
 
-        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action"));
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, endPos, 1 << LayerMask.NameToLayer("Action"));
 
         if(hit.collider != null)
         {
@@ -62,16 +69,25 @@ public class EnemyAI : MonoBehaviour
             {
                 detected = true;
                 print("I FoUNd YoU");
+                return true;
             }
         }
+        Debug.DrawLine(transform.position, endPos, Color.red);
+        return false;
+    }
 
-        Debug.DrawLine(castPoint.position, endPos, Color.red);
+    void CanHearPlayer()
+    {
+        if (sound.GetComponentInChildren<CircleCollider2D>().IsTouching(this.gameObject.GetComponentInChildren<CircleCollider2D>()))
+        {
+            detected = true;
+        }
     }
 
     void facePlayer()
     {
         var offset = 90f;
-        Vector2 direction = target.position - transform.position;
+        Vector2 direction = target.transform.position - transform.position;
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
@@ -80,13 +96,16 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (sound.GetComponentInChildren<CircleCollider2D>().IsTouching(this.gameObject.GetComponentInChildren<CircleCollider2D>()))
-        {
-            detected = true;
-        }
+        float distToPlayer = Vector2.Distance(transform.position, target.transform.position);
+        print(distToPlayer);
+        CanHearPlayer();
         CanSeePlayer(5);
         if (detected == true)
         {
+            if (CanSeePlayer(5)==true && distToPlayer <= 5)
+            {
+                return;
+            }
             if (path == null)
                 return;
 
