@@ -9,12 +9,15 @@ public class InteractablePickup : MonoBehaviour
     //Diamond pickup sound
     public AudioSource diamondSound;
     public AudioSource keySound;
-    
+    public AudioSource foodSound;    
+    public AudioSource drinkSound;
     //Instantiating the sound sources
     void Start() {
         coinSound = gameObject.GetComponent<AudioSource>();
         diamondSound = gameObject.GetComponent<AudioSource>();
         keySound = gameObject.GetComponent<AudioSource>();
+        foodSound = gameObject.GetComponent<AudioSource>();
+        drinkSound = gameObject.GetComponent<AudioSource>();
     }
     /**Does an interaction with a game object that depends on which game object is being interacted with. 
     Key updates number of keys the player has and plays key audio clip, 
@@ -37,6 +40,12 @@ public class InteractablePickup : MonoBehaviour
         else if(name.StartsWith("Coin")){
             AudioSource.PlayClipAtPoint(coinSound.clip,position, 1.0f);
             UIUpdater.score++;
+        }
+        else if(name.StartsWith("Donut")){
+            AudioSource.PlayClipAtPoint(foodSound.clip,position, 1.0f);
+        }
+        else if(name.StartsWith("Coffee")){
+        AudioSource.PlayClipAtPoint(drinkSound.clip,position, 1.0f);
         }
         Destroy(gameObject);
     }
