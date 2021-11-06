@@ -20,6 +20,12 @@ public class Game : MonoBehaviour
         StartDungeon();
     }
 
+    void Update() {
+        if (player.currentHealth < 1) {
+            ResetDungeon();
+        }
+    }
+
     public void StartDungeon() {
         playing = true;
         GenerateDungeon.Instance.GenerateNewDungeon();
@@ -35,5 +41,15 @@ public class Game : MonoBehaviour
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
         floor++;
+    }
+
+        public void ResetDungeon() {
+        GenerateDungeon.Instance.DeleteDungeon();
+        GenerateDungeon.Instance.GenerateNewDungeon();
+        Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
+        Vector3 spawnPos3 = spawnPos;
+        player.transform.position = spawnPos3;
+        floor = 1;
+        player.currentHealth = player.maxHealth;
     }
 }

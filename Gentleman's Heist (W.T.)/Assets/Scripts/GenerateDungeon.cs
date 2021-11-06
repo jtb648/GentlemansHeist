@@ -17,7 +17,9 @@ public class GenerateDungeon : MonoBehaviour
 
     public GameObject room, corridor, empty, mark, floorNr, emptyRoom;
 
-    public List<GameObject> enemyRoom;
+    public List<GameObject> enemyRoom = new List<GameObject>();
+    List<GameObject> tempEnemyRoom = new List<GameObject>();
+
 
     private Vector2 spawnPos;
 
@@ -190,6 +192,8 @@ public class GenerateDungeon : MonoBehaviour
 
     private void ShowRooms()
     {
+        //Adds rooms to a temporary list to add to the map so each room will be added at least once before adding it again
+        tempEnemyRoom.AddRange(enemyRoom);
         rotationList = new float[] {0f, 90f, 180f, 270f};
         for (int x = 0; x < n; x++)
         {
@@ -204,8 +208,14 @@ public class GenerateDungeon : MonoBehaviour
 
                 if (rooms[x, y] == 1)
                 { //room
-                    GameObject r = Instantiate(enemyRoom[Random.Range(0, enemyRoom.Count)], new Vector2(x * scale, y * scale), Quaternion.identity);
-                    //To pick the room before adding it and then Remove enemyRoom[X]
+                    //Adds the list of rooms back to the temp list to add again
+                    if(tempEnemyRoom.Count == 0) {
+                        tempEnemyRoom.AddRange(enemyRoom);
+                    }
+                    //Gets an integer to get a room to add to the map and then deletes the room from the list
+                    int roomToAdd = Random.Range(0, tempEnemyRoom.Count);
+                    GameObject r = Instantiate(tempEnemyRoom[roomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
+                    tempEnemyRoom.RemoveAt(roomToAdd);
                     r.transform.localScale = Vector2.one * scale;
                     //Randomly rotates the room to make a more random dungeon
                     //r.transform.rotation = Quaternion.Euler(Vector3.forward * rotationList[Random.Range(0, rotationList.Length)]);
