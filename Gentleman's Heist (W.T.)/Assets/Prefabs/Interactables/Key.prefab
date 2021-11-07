@@ -116,6 +116,9 @@ MonoBehaviour:
   coinSound: {fileID: 0}
   diamondSound: {fileID: 0}
   keySound: {fileID: 0}
+  foodSound: {fileID: 0}
+  drinkSound: {fileID: 0}
+  player: {fileID: 0}
 --- !u!82 &216715870262968164
 AudioSource:
   m_ObjectHideFlags: 0
