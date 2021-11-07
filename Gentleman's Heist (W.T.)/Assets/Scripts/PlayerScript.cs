@@ -54,12 +54,15 @@ public class PlayerScript : MonoBehaviour
 
     // Interactable Object within the Player's collision radius
     public GameObject currentInteractableObject = null;
+
+    public AudioSource walkingSound;
     
     // Start is called before the first frame update
     void Start()
     {
       currentHealth = maxHealth;
       healthBar.setHealth(maxHealth);
+      walkingSound = gameObject.GetComponent<AudioSource>();
     }
 
  // Update is called once per frame
@@ -105,6 +108,7 @@ public class PlayerScript : MonoBehaviour
         {
             changeAnimation();
             animator.SetBool("walking", true); // set walking to true
+            
         }
         // If no movement, no walking animation is needed
         else
@@ -132,6 +136,10 @@ public class PlayerScript : MonoBehaviour
       currentHealth -= damage;
       healthBar.setHealth(currentHealth);
     }
+    public void addHealth(int health){
+        currentHealth += health;
+        healthBar.setHealth(currentHealth);
+    }
 
     // Marks an interactable object as the current interactable object when entering their collision area
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -149,4 +157,5 @@ public class PlayerScript : MonoBehaviour
 
         }
     }
+    
 }

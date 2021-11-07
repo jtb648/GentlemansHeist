@@ -24,8 +24,15 @@ public class Laser : MonoBehaviour
     private void Update()
     {
         RaycastHit2D set = Physics2D.Raycast(this.gameObject.transform.position, gameObject.transform.up);
+        
         if (set.collider != null)
         {
+
+            if (set.collider.gameObject.CompareTag("Player"))
+            {
+                Alarm.On();
+            }
+            
             Vector3[] points = new Vector3[2];
             points[0] = __diodeTransform.position;
             points[1] = set.point;
