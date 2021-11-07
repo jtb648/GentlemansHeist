@@ -115,6 +115,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinSound: {fileID: 0}
   diamondSound: {fileID: 0}
+  keySound: {fileID: 0}
+  foodSound: {fileID: 0}
+  drinkSound: {fileID: 0}
+  player: {fileID: 0}
 --- !u!82 &-3326266660533111617
 AudioSource:
   m_ObjectHideFlags: 0

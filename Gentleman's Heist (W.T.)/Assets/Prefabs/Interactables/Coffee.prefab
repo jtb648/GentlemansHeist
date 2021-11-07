@@ -102,6 +102,7 @@ MonoBehaviour:
   keySound: {fileID: 0}
   foodSound: {fileID: 0}
   drinkSound: {fileID: 0}
+  player: {fileID: 0}
 --- !u!58 &3810755227551625615
 CircleCollider2D:
   m_ObjectHideFlags: 0

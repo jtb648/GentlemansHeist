@@ -118,6 +118,7 @@ MonoBehaviour:
   keySound: {fileID: 0}
   foodSound: {fileID: 0}
   drinkSound: {fileID: 0}
+  player: {fileID: 0}
 --- !u!82 &1050539168562130473
 AudioSource:
   m_ObjectHideFlags: 0
