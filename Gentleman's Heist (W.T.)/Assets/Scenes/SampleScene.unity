@@ -261,7 +261,7 @@ MonoBehaviour:
   room: {fileID: 4611349283708993423, guid: 352492e54341fdd40a32341e487d4fe7, type: 3}
   corridor: {fileID: 5843760460774476623, guid: 0306106275a913043a2a4a5267b14b47, type: 3}
   empty: {fileID: 3688394378148694987, guid: 285694e5c9780b0419114765d982550e, type: 3}
-  mark: {fileID: 3883707210269664333, guid: 77bcc0d8b274ac646a723d61b3fbb2d4, type: 3}
+  mark: {fileID: 4611349283708993423, guid: 352492e54341fdd40a32341e487d4fe7, type: 3}
   floorNr: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
   emptyRoom: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
   enemyRoom:
