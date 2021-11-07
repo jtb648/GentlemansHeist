@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4895438447605717409}
   m_Layer: 0
   m_Name: Player_v1.1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   animator: {fileID: 6535330086231753271}
   myBody: {fileID: 6535330086231753270}
   currentInteractableObject: {fileID: 0}
+  walkingSound: {fileID: 0}
 --- !u!95 &6535330086231753271
 Animator:
   serializedVersion: 3
