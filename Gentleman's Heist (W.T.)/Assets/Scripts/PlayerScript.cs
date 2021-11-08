@@ -179,6 +179,12 @@ public class PlayerScript : MonoBehaviour
 
         }
     }
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.CompareTag("InteractableObject")){
+            Debug.Log(collision.name);
+            currentInteractableObject = collision.gameObject;
+        }
+    }
 
     // Shooting
     public void Shooting(){
@@ -192,9 +198,8 @@ public class PlayerScript : MonoBehaviour
     // Unmarks an interactable object as the current interactable object when exiting their collision area
    private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
-            Debug.Log(collision.name);
             currentInteractableObject = null;
-
+            Debug.Log(collision.name);
         }
     }
 
