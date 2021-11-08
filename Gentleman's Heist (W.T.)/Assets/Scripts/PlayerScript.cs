@@ -32,6 +32,20 @@ public class PlayerScript : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    // Shooting & Crosshair/Cursor
+
+    public GameObject crossHair;
+    public Camera cam;
+
+    public GameObject bulletPrefab;
+
+    Vector2 mousePos;
+    public float bulletForce = 20f;
+
+    public Transform firePoint;
+
+
+
     // The speed the player moves
     public float speed = 10.0f;
 
@@ -44,6 +58,7 @@ public class PlayerScript : MonoBehaviour
     private float yBoundBottom = -999f;
     private float xBoundLeft = -999f;
     private float xBoundRight = 999f;
+
 
     // Reference to the Player's animator
     // --> Animator must include xChange, yChange, and walking as its parameters (i can set this up soon)
@@ -81,6 +96,12 @@ public class PlayerScript : MonoBehaviour
             _sneak = 1;
         }
 
+        // Crosshair/cursor movement
+        Vector2 mosPos = Input.mousePosition.normalized;
+        mosPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        crossHair.transform.position = new Vector2(mosPos.x, mosPos.y);
+    
+
         // Keeping Player within the Boundaries
         // --> if player is about to move past the boundaries, set the move value to 0
         if(transform.position.x + xMove <= xBoundLeft || transform.position.x + xMove >= xBoundRight)
@@ -91,12 +112,6 @@ public class PlayerScript : MonoBehaviour
         {
             yMove = 0;
         }
-
-        // Sorry! Commenting this out so I can borrow Spacebar for shooting -Greta
-        // // Player damage FOR TESTING PURPOSE
-        // if(Input.GetKeyDown(KeyCode.Space)){
-        //   takeDamage(20);
-        // }
 
         // setting movement regardless of input
         Vector2 movement = new Vector2(xMove, yMove).normalized;
@@ -118,7 +133,8 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("walking", false);
         }
 
-       
+        
+        
     }
     void Update(){
         //Interacting with a pickup
@@ -133,6 +149,7 @@ public class PlayerScript : MonoBehaviour
         else{
              animator.SetBool("shooting", false); // set shooting to false
         }
+        Shooting();
 
     }
     // Updates the animation BlendTree
@@ -160,6 +177,16 @@ public class PlayerScript : MonoBehaviour
 
         }
     }
+
+    // Shooting
+    public void Shooting(){
+        if(Input.GetKeyDown(KeyCode.Mouse0)){
+            animator.SetBool("shooting", true);
+            Shoot();
+
+        }
+
+    }
     // Unmarks an interactable object as the current interactable object when exiting their collision area
    private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
@@ -167,6 +194,12 @@ public class PlayerScript : MonoBehaviour
             currentInteractableObject = null;
 
         }
+    }
+
+    void Shoot(){
+       GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+       Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
+       bullBody.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
     
 }
