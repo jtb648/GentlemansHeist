@@ -125,12 +125,14 @@ public class PlayerScript : MonoBehaviour
         {
             changeAnimation();
             animator.SetBool("walking", true); // set walking to true
+            walkingSound.UnPause();
             
         }
         // If no movement, no walking animation is needed
         else
         {
             animator.SetBool("walking", false);
+            walkingSound.Pause();
         }
 
         
