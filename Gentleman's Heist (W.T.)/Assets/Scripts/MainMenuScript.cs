@@ -8,11 +8,9 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame(){
         Debug.Log("PLAY");
         // Switches to the first Scene here
+        SceneManager.LoadScene("Milestone2");
     }
-    //Taken from lab tutorial to ease scene transition
-    public void LoadScene(string sceneName){
-        SceneManager.LoadScene(sceneName);
-    }
+
     public void QuitGame(){
         // Stops the Game -> only works once it's built
         Debug.Log("QUIT");
