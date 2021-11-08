@@ -361,6 +361,25 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!1 &338884243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7486712371411629388, guid: a7005159c497ac646990dfdd74852aca, type: 3}
+  m_PrefabInstance: {fileID: 618435383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &338884246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338884243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07fa0e44840315468f700f62bc80eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeedGolf: 0.5
+  endDelayFrames: 9999
 --- !u!1001 &618435383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,24 +593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &912287291 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3131383572704083658, guid: 56640238bcfb6e74899eee6971136194, type: 3}
-  m_PrefabInstance: {fileID: 7937110877822170199}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &912287296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912287291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8532b2691edaf954ab30c6be3f88e7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spinSpeedGolf: 0.5
 --- !u!1001 &936851777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -621,11 +622,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8272015762315859640, guid: f827cc7f2b2e7f048a7c2d4dd7d5eeb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.192
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 8272015762315859640, guid: f827cc7f2b2e7f048a7c2d4dd7d5eeb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.581
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8272015762315859640, guid: f827cc7f2b2e7f048a7c2d4dd7d5eeb3, type: 3}
       propertyPath: m_LocalPosition.z
