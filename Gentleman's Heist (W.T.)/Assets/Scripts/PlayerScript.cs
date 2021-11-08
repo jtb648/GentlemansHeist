@@ -92,10 +92,12 @@ public class PlayerScript : MonoBehaviour
             yMove = 0;
         }
 
-        // Player damage FOR TESTING PURPOSE
-        if(Input.GetKeyDown(KeyCode.Space)){
-          takeDamage(20);
-        }
+        // Sorry! Commenting this out so I can borrow Spacebar for shooting -Greta
+        // // Player damage FOR TESTING PURPOSE
+        // if(Input.GetKeyDown(KeyCode.Space)){
+        //   takeDamage(20);
+        // }
+
         // setting movement regardless of input
         Vector2 movement = new Vector2(xMove, yMove).normalized;
         myBody.velocity = movement * speed / _sneak;
@@ -123,6 +125,15 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && currentInteractableObject){
             currentInteractableObject.SendMessage("DoInteraction",currentInteractableObject.name);
         }
+
+        // Shooting animation logic
+        if(Input.GetKeyDown(KeyCode.Space)){
+            animator.SetBool("shooting", true); // set shooting to true
+        }
+        else{
+             animator.SetBool("shooting", false); // set shooting to false
+        }
+
     }
     // Updates the animation BlendTree
     void changeAnimation()
