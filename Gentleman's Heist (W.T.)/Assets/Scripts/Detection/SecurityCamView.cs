@@ -38,7 +38,6 @@ public class SecurityCamView : MonoBehaviour
 
         tracer.startColor = new Color(0.5f, 0, 0, _intensity / (float)framesUntilCaught);
         tracer.endColor = new Color(0.5f, 0, 0, _intensity / (float)framesUntilCaught);
-        Debug.Log(_intensity/(float)framesUntilCaught);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -63,7 +62,6 @@ public class SecurityCamView : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("I see you!");
         if (other.gameObject.CompareTag("Player"))
         {
             tracer.SetPosition(0, tracer.gameObject.transform.position);
