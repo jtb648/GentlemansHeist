@@ -125,7 +125,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && currentInteractableObject){
             currentInteractableObject.SendMessage("DoInteraction",currentInteractableObject.name);
         }
-
+        
         // Shooting animation logic
         if(Input.GetKeyDown(KeyCode.Space)){
             animator.SetBool("shooting", true); // set shooting to true
