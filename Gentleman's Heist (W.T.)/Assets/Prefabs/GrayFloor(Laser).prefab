@@ -90,9 +90,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 41960398092616791}
     m_Modifications:
+    - target: {fileID: 2008151328, guid: 56640238bcfb6e74899eee6971136194, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3131383572704083658, guid: 56640238bcfb6e74899eee6971136194, type: 3}
       propertyPath: m_Name
       value: Laser_v1.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6841682113115273224, guid: 56640238bcfb6e74899eee6971136194, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7163378623597119803, guid: 56640238bcfb6e74899eee6971136194, type: 3}
       propertyPath: m_RootOrder
@@ -145,6 +153,10 @@ PrefabInstance:
     - target: {fileID: 7163378623597119803, guid: 56640238bcfb6e74899eee6971136194, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292144168267057340, guid: 56640238bcfb6e74899eee6971136194, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56640238bcfb6e74899eee6971136194, type: 3}
