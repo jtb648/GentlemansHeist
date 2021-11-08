@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Pathfinding;
 
 public class Game : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class Game : MonoBehaviour
     public bool playing;
     public static Game Instance { get; set; }
 
+    private void FindPaths()
+    {
+        AstarPath.active.Scan();//GET THIS WORKING
+    }
+
     private void Awake()
     {
         Instance = this;
@@ -21,7 +27,8 @@ public class Game : MonoBehaviour
     }
 
     void Update() {
-        if (player.currentHealth < 1) {
+        if (player.currentHealth < 1)
+        {
             ResetDungeon();
         }
     }
@@ -32,6 +39,7 @@ public class Game : MonoBehaviour
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
+        Invoke("FindPaths", .1f);
     }
 
     public void NextFloor() {
@@ -41,6 +49,7 @@ public class Game : MonoBehaviour
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
         floor++;
+        Invoke("FindPaths", .1f);
     }
 
         public void ResetDungeon() {
@@ -51,5 +60,6 @@ public class Game : MonoBehaviour
         player.transform.position = spawnPos3;
         floor = 1;
         player.currentHealth = player.maxHealth;
+        Invoke("FindPaths", .1f);
     }
 }

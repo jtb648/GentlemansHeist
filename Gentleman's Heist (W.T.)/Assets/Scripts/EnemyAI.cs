@@ -36,6 +36,7 @@ public class EnemyAI : MonoBehaviour
         sound = GameObject.FindGameObjectsWithTag("Sound")[0];
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        AstarPath.active.Scan();//GET THIS WORKING
 
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
@@ -97,7 +98,7 @@ public class EnemyAI : MonoBehaviour
     void FixedUpdate()
     {
         float distToPlayer = Vector2.Distance(transform.position, target.transform.position);
-        print(distToPlayer);
+        //print(distToPlayer);
         CanHearPlayer();
         CanSeePlayer(5);
         if (detected == true)

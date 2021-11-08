@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 68572345}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FIrePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACQn+u51SG/TgIAAPgEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzqVj0qbg3lpDSA8EJqSTiy/CWmMNsuTRR/ga/ntX8mfocGC97+3qvdXaV8KlqSCzSi81ZyvFgPwcER+TL6MefIYT3Su55RdoOe+c2cKTaOC8UssV5ie+zKgSrObZL7kXnhxh0kmeK10u2B4SZazBdE6FAYS0sr5aYuo6Iif8G8e+5IzRw9RHF4ziaHTDMANpQffUx6il1pGn1kwnM0HLCpiX3RdMoq7Ch4Eq0VTD8gYyJQQ3jSJiz1VwnNDKOPSDBMYpOgwyPL8Avi+sVzssXue5AdvY1/Q85xoHVXclv1U9vZKaQ63tgwoHnfi65eo/dDwJcK5V+dyeOgmGbMGzwys9Z9TYwXCH6fln2U4eqTjQnYD3AuSLWmrlJEPQaudLnYGHef/YGUsKyA59vpZ6l3RVP/F23O31eA+34P2UCF7uPPT1e53YChWmHRYANN7LHxQc1sM0LTDrVfw18Eb3wz1qgCeujUWocSm9vJ1y2lPJIszMu3E2UVpCSDeiK5BU2PMG29j7C7zDBsfeIU/UvzHN4Q3Wvgh3JSHd86PoDtqoY3dZplDHFZhi7azgEnrRHnjBOSVKynq/hjNpy7ZO5zQblO0dZ59Xi8TTPHqM6Qx/jM2mP8YsmkH2Lc53EzaNIWIk7B6X6JOKTS20GQ/emuybS9yz9kMyWmpahV1nmh6X/FKqwci5zNU20wByXXfohIPGQ/CdZAvGcUBbsJbLcN/kmhKhsgOwtGuUBqeLk9U07bukpOIfyvpMSpLw5UjJjdz+AVBLAwQUAAAICAAAkJ/rsWGftGwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0kqV5moGpZaIFEKakWJib6aYYWKQmG1umJRmmmFumGqQoxQLVl1QWpPol5qZC9AQklmSkZealZOal67kXZaa4g4xWiq0FAFBLAQItABQAAAgIAACQn+u51SG/TgIAAPgEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+uxYZ+0bAAAAHgAAAAJACQAAAAAAAAAAAAAAJsCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAUgMAAAAA
+    dataString: UEsDBBQAAAgIAACQn+t7OliNUQIAAPsEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE2P2jAQ/SvI51IFWgr01gaW7YEFLa32kouJJ4mFY0f+WL7Ef+/YSUiWquLAZN6b8XvjSa6ES1NBapVeac7WigH5PiA+Jp8GHfgMJ5orueMXaDlvnNnCk2jgvFLLFeZHvsyoEqzm6Q+ZC0+OMOkkz5QulyyHWBlrMJ1RYQAhrayvlpi6DsgJ/4ZzX3LGaDz10QWjeTS4YZiCtKA76iRqqXXkqTXTyVTQsgLmZXcFo+he4cNAlWiqYXkDqRKCm0YRsecqOI5pZRz6QQLjFB0GGZ5fAM8L69X2izdZZsA29jU9L7jGQdVdyU9VT6+k5lBre6fC+XMmo3HQVDdd/4MPRwHOtCqf23NHwZIteHp4peeUGtsbbz+9+CjcySMVB7oX8FaAfFErrZxkCFrtfKkzMF50j3drcQHpocvXUh+Srupm3g68vSDv4Rbcn2LBy72HPn+tEzuhwrzDCoDGm/mFgsOCmKYFZr2KPwZ+07y/SQ3wxLWxCDUupZe3V057KlmGmXk3zsZKS9D9DhVIKux5i33s4x0+YP+veqL+pWlOb7D2XXgoCemOH0UP0FYd77dlCnVcgyk2zgouoRu1B15wULGSsl6xvqW2bOd0RtNeWe44+7hbZD7NosmczvDH2Gz6bciiGaRf5tl+xKZziBgJy8cl+qRiWwttxoPXJrvmEhet/ZYMVppWYd2ZpscVv5TKdEwuM7VLNYDc1B3uwkHjIfhasiXjOKAdWMtluHByTYhQ6QFYcm+UBKfLk9U06bokpOLvyvpMQuLw8UjIjdz+AlBLAwQUAAAICAAAkJ/rsWGftGwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0kqV5moGpZaIFEKakWJib6aYYWKQmG1umJRmmmFumGqQoxQLVl1QWpPol5qZC9AQklmSkZealZOal67kXZaa4g4xWiq0FAFBLAQItABQAAAgIAACQn+t7OliNUQIAAPsEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+uxYZ+0bAAAAHgAAAAJACQAAAAAAAAAAAAAAJ4CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAVQMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 343945271}
   - component: {fileID: 343945273}
   - component: {fileID: 343945272}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,6 +429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 1316145362475887525, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4445961646239364480, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: speedToRadiusRatio
       value: 15
@@ -570,7 +574,7 @@ GameObject:
   - component: {fileID: 1119670823}
   - component: {fileID: 1119670825}
   - component: {fileID: 1119670824}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +715,7 @@ GameObject:
   - component: {fileID: 1363978762}
   - component: {fileID: 1363978761}
   - component: {fileID: 1363978760}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400999915}
   - component: {fileID: 1400999914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: crossHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,7 +896,7 @@ GameObject:
   - component: {fileID: 1568182158}
   - component: {fileID: 1568182160}
   - component: {fileID: 1568182159}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +971,7 @@ GameObject:
   - component: {fileID: 1687861397}
   - component: {fileID: 1687861396}
   - component: {fileID: 1687861395}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Health bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1226,7 @@ GameObject:
   - component: {fileID: 1963741976}
   - component: {fileID: 1963741975}
   - component: {fileID: 1963741974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1493,6 +1497,10 @@ PrefabInstance:
     - target: {fileID: 6246315834891011508, guid: 42a0c66b9741d2e4b969f32b5f3e9ab3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6246315834891011508, guid: 42a0c66b9741d2e4b969f32b5f3e9ab3, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6246315834891011510, guid: 42a0c66b9741d2e4b969f32b5f3e9ab3, type: 3}
       propertyPath: m_RootOrder
