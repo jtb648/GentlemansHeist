@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("PLAY");
         // Switches to the first Scene here
     }
+    //Taken from lab tutorial to ease scene transition
     public void LoadScene(string sceneName){
         SceneManager.LoadScene(sceneName);
     }
