@@ -23,9 +23,13 @@ public class Laser : MonoBehaviour
 
     private void Update()
     {
+        if (!__laserLR.gameObject.activeSelf && _active)
+        {
+            __laserLR.gameObject.SetActive(true);
+        }
         RaycastHit2D set = Physics2D.Raycast(this.gameObject.transform.position, gameObject.transform.up);
         
-        if (set.collider != null)
+        if (set.collider != null && _active)
         {
 
             if (set.collider.gameObject.CompareTag("Player"))
@@ -40,7 +44,10 @@ public class Laser : MonoBehaviour
         }
         else
         {
-            Debug.Log(gameObject.GetComponentInChildren<Grabber2>().transform.forward);
+            if (__laserLR.gameObject.activeSelf)
+            {
+                __laserLR.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -63,11 +70,6 @@ public class Laser : MonoBehaviour
     public bool IsActive()
     {
         return _active;
-    }
-
-    private Vector2 MidPoint2D(Vector2 a, Vector2 b)
-    {
-        return new Vector2((a.x + b.x) / 2, (a.y + b.y) / 2);
     }
     
 }

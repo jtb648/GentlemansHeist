@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spin : MonoBehaviour
 {
-    public int spinSpeed;
+    public float spinSpeedGolf;
     private int _spinSpeedTrue;
 
     private int _delayCounter;
@@ -13,7 +13,7 @@ public class Spin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _spinSpeedTrue = spinSpeed * 60;
+        _spinSpeedTrue = (int)(spinSpeedGolf * 60.0);
         _delayCounter = 0;
     }
 
