@@ -745,6 +745,7 @@ MonoBehaviour:
   - {fileID: 2031697596214751906, guid: 32525ae57780b8b42a4765e5d5203643, type: 3}
   - {fileID: 8574842548275435456, guid: 83c5291a98ebc984b8bda5ae95068375, type: 3}
   - {fileID: 8838951868746398390, guid: f3fd0b070e4780249a532cc27217f448, type: 3}
+  - {fileID: 6272703087508030214, guid: 0423fe270b061b7489e7176eff6451f2, type: 3}
   objects: []
 --- !u!4 &681761178
 Transform:
@@ -2322,6 +2323,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2131081582833999925, guid: 3320688bbdb4544818c1a4fb9b79a21c, type: 3}
   bulletForce: 20
   firePoint: {fileID: 68572345}
+  lookAngle: 0
+  lookDirection: {x: 0, y: 0}
   speed: 8
   animator: {fileID: 1963741977}
   myBody: {fileID: 1963741976}
