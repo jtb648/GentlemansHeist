@@ -69,7 +69,6 @@ public class EnemyAI : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 detected = true;
-                print("I FoUNd YoU");
                 return true;
             }
         }
