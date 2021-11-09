@@ -53,7 +53,7 @@ public class SecCamMovement : MonoBehaviour
                 _inverted = false;
                 _endDelayCounter = endDelayFrames;
             }
-            gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * _rotateCounter);
+            gameObject.transform.localRotation = Quaternion.Euler(Vector3.forward * _rotateCounter);
         }
         else
         {
