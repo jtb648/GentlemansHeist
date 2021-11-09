@@ -29,6 +29,12 @@ public class EnemyAI : MonoBehaviour
     GameObject target;
     GameObject sound;
 
+
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float bulletForce = 20f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,15 +42,17 @@ public class EnemyAI : MonoBehaviour
         sound = GameObject.FindGameObjectsWithTag("Sound")[0];
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-        AstarPath.active.Scan();//GET THIS WORKING
 
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
 
     private void UpdatePath()
     {
-        if (seeker.IsDone())
-            seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
+        if (detected == true)
+        {
+            if (seeker.IsDone())
+                seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
+        }
     }
 
     void OnPathComplete(Path p)
@@ -68,6 +76,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Player"))
             {
+                Shoot();
                 detected = true;
                 return true;
             }
@@ -93,6 +102,13 @@ public class EnemyAI : MonoBehaviour
         transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
     }
 
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
+        bullBody.AddForce(-firePoint.up * bulletForce, ForceMode2D.Impulse);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -102,7 +118,7 @@ public class EnemyAI : MonoBehaviour
         CanSeePlayer(5);
         if (detected == true)
         {
-            if (CanSeePlayer(5)==true && distToPlayer <= 5)
+            if (CanSeePlayer(10)==true && distToPlayer <= 10)
             {
                 return;
             }
