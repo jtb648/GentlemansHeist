@@ -43,6 +43,8 @@ public class PlayerScript : MonoBehaviour
     public float bulletForce = 20f;
 
     public Transform firePoint;
+    public float lookAngle;
+    public Vector2 lookDirection;
 
 
 
@@ -151,6 +153,7 @@ public class PlayerScript : MonoBehaviour
         else{
              animator.SetBool("shooting", false); // set shooting to false
         }
+        
         Shooting();
 
     }
@@ -190,7 +193,11 @@ public class PlayerScript : MonoBehaviour
     public void Shooting(){
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             animator.SetBool("shooting", true);
+            lookDirection = cam.ScreenToWorldPoint(Input.mousePosition);
+            lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+            firePoint.transform.rotation = Quaternion.Euler(0f, 0f, lookAngle -90f);
             Shoot();
+
 
         }
 

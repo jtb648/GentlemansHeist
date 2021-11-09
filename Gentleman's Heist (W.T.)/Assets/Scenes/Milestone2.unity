@@ -713,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6866507023814050018, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6866507023814050018, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1537,10 +1537,10 @@ Transform:
   m_LocalPosition: {x: 0.03, y: -0.01, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
+  - {fileID: 1299069047}
   - {fileID: 2116756578}
   - {fileID: 467137542}
   - {fileID: 1267379460}
-  - {fileID: 1299069047}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.131}
@@ -1564,6 +1564,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2131081582833999925, guid: 3320688bbdb4544818c1a4fb9b79a21c, type: 3}
   bulletForce: 20
   firePoint: {fileID: 1299069047}
+  lookAngle: 0
+  lookDirection: {x: 0, y: 0}
   speed: 4
   animator: {fileID: 1239142872}
   myBody: {fileID: 1239142873}
@@ -1814,7 +1816,7 @@ RectTransform:
   m_Children:
   - {fileID: 749002046}
   m_Father: {fileID: 1239142870}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1919,12 +1921,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299069046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: -1.05, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.76, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1239142870}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1355854648
 GameObject:
@@ -2949,7 +2951,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1239142870}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2116756579
 SpriteRenderer:
