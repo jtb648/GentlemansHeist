@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3810755227551625614}
   - component: {fileID: 3810755227551625615}
   - component: {fileID: -8187407155823322864}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coffee
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1159823153812175089}
   - component: {fileID: 1159823153812175088}
   - component: {fileID: 1050539168562130473}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Donut
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}
