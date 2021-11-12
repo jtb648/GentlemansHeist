@@ -43,6 +43,7 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
+        InvokeRepeating("Shoot", 0f, 2f);
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
 
@@ -76,7 +77,6 @@ public class EnemyAI : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Player"))
             {
-                Shoot();
                 detected = true;
                 return true;
             }
@@ -104,9 +104,12 @@ public class EnemyAI : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
-        bullBody.AddForce(-firePoint.up * bulletForce, ForceMode2D.Impulse);
+        if (CanSeePlayer(20) == true)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
+            bullBody.AddForce(-firePoint.up * bulletForce, ForceMode2D.Impulse);
+        }
     }
 
     // Update is called once per frame
@@ -115,7 +118,7 @@ public class EnemyAI : MonoBehaviour
         float distToPlayer = Vector2.Distance(transform.position, target.transform.position);
         //print(distToPlayer);
         CanHearPlayer();
-        CanSeePlayer(5);
+        CanSeePlayer(9);
         if (detected == true)
         {
             if (CanSeePlayer(10)==true && distToPlayer <= 10)
