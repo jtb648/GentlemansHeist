@@ -5,9 +5,6 @@ using Random = UnityEngine.Random;
 
 public class GenerateDungeon : MonoBehaviour
 {
-
-    public GameObject normalChest, upgradeChest, eliteChest;
-
     [SerializeField]
     private int nRooms = 10;
     [SerializeField]
@@ -17,8 +14,13 @@ public class GenerateDungeon : MonoBehaviour
 
     public GameObject room, corridor, empty, mark, floorNr, emptyRoom;
 
+    public Game game;
+
     public List<GameObject> enemyRoom = new List<GameObject>();
     List<GameObject> tempEnemyRoom = new List<GameObject>();
+
+    public List<GameObject> bigRoom = new List<GameObject>();
+    List<GameObject> tempBigRoom = new List<GameObject>();
 
 
     private Vector2 spawnPos;
@@ -60,7 +62,7 @@ public class GenerateDungeon : MonoBehaviour
         directionsList.Add(new Vector2(1, 0));
         directionsList.Add(new Vector2(-1, 0));
 
-        Vector2 pos = new Vector2(25, 25);
+        Vector2 pos = new Vector2(7, 7);
         Vector2 size = new Vector2(Random.Range(1, 2), Random.Range(1, 2));
         Tuple<Vector2, Vector2> firstRoom = new Tuple<Vector2, Vector2>(pos, size);
         roomPositions.Add(firstRoom);
@@ -194,6 +196,7 @@ public class GenerateDungeon : MonoBehaviour
     {
         //Adds rooms to a temporary list to add to the map so each room will be added at least once before adding it again
         tempEnemyRoom.AddRange(enemyRoom);
+        tempBigRoom.AddRange(bigRoom);
         rotationList = new float[] {0f, 90f, 180f, 270f};
         for (int x = 0; x < n; x++)
         {
@@ -212,14 +215,26 @@ public class GenerateDungeon : MonoBehaviour
                     if(tempEnemyRoom.Count == 0) {
                         tempEnemyRoom.AddRange(enemyRoom);
                     }
+                    if(tempBigRoom.Count == 0) {
+                        tempBigRoom.AddRange(bigRoom);
+                    }
                     //Gets an integer to get a room to add to the map and then deletes the room from the list
                     int roomToAdd = Random.Range(0, tempEnemyRoom.Count);
-                    GameObject r = Instantiate(tempEnemyRoom[roomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
-                    tempEnemyRoom.RemoveAt(roomToAdd);
-                    r.transform.localScale = Vector2.one * scale;
+                    int bigRoomToAdd = Random.Range(0, tempBigRoom.Count);
+                    if (game.floor != 2) {
+                        GameObject r = Instantiate(tempEnemyRoom[roomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
+                        tempEnemyRoom.RemoveAt(roomToAdd);
+                        r.transform.localScale = Vector2.one * scale;
+                        objects.Add(r);
+                    }
+                    else {
+                        GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
+                        tempBigRoom.RemoveAt(bigRoomToAdd);
+                        r.transform.localScale = Vector2.one * scale;
+                        objects.Add(r);
+                    }
                     //Randomly rotates the room to make a more random dungeon
                     //r.transform.rotation = Quaternion.Euler(Vector3.forward * rotationList[Random.Range(0, rotationList.Length)]);
-                    objects.Add(r);
                 }
                 else if (rooms[x, y] == 2)
                 { //corridor
