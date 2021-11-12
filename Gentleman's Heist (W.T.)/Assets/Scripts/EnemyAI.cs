@@ -121,8 +121,7 @@ public class EnemyAI : MonoBehaviour
         if(hit.collider != null)
         {
             if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                detected = true;
+            { 
                 return true;
             }
         }
@@ -166,7 +165,10 @@ public class EnemyAI : MonoBehaviour
         float distToPlayer = Vector2.Distance(transform.position, target.transform.position);
         //print(distToPlayer);
         CanHearPlayer();
-        CanSeePlayer(9);
+        if (CanSeePlayer(9) == true)
+        {
+            detected = true;
+        }
         if (true)
         {
             if (CanSeePlayer(10)==true && distToPlayer <= 10)
