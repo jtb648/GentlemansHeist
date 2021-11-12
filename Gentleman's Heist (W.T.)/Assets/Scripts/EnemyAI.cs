@@ -10,18 +10,21 @@ public class EnemyAI : MonoBehaviour
     bool detected = false;
     //[SerializeField]
     
+
+
     [SerializeField]
     public Transform Waypoint1;
     [SerializeField]
     public Transform Waypoint2;
 
+
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
+    bool reachedEndOfPath = false;
 
 
     Path path;
     int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -44,9 +47,51 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("Shoot", 0f, 2f);
-        InvokeRepeating("UpdatePath", 0f, .5f);
+        InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
     }
 
+
+
+    private void UpdatePathWaypoint1()
+    {
+        float distToW1 = Vector2.Distance(transform.position, Waypoint1.transform.position);
+        if (detected==false)
+        {
+            if (distToW1 < 1)
+            {
+                InvokeRepeating("UpdatePathWaypoint2", 0f, .5f);
+                CancelInvoke("UpdatePathWaypoint1");
+            }
+            if (seeker.IsDone())
+                seeker.StartPath(rb.position, Waypoint1.transform.position, OnPathComplete);
+            
+        }
+        else
+        {
+            InvokeRepeating("UpdatePath", 0f, .5f);
+        }
+    }
+
+
+    private void UpdatePathWaypoint2()
+    {
+        float distToW2 = Vector2.Distance(transform.position, Waypoint2.transform.position);
+        if (detected == false)
+        {
+            if (distToW2 < 1)
+            {
+                InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
+                CancelInvoke("UpdatePathWaypoint2");
+            }
+            if (seeker.IsDone())
+                seeker.StartPath(rb.position, Waypoint2.transform.position, OnPathComplete);
+            
+        }
+        else
+        {
+            InvokeRepeating("UpdatePath", 0f, .5f);
+        }
+    }
     private void UpdatePath()
     {
         if (detected == true)
@@ -95,11 +140,14 @@ public class EnemyAI : MonoBehaviour
 
     void facePlayer()
     {
-        var offset = 90f;
-        Vector2 direction = target.transform.position - transform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
+        if (detected == true)
+        {
+            var offset = 90f;
+            Vector2 direction = target.transform.position - transform.position;
+            direction.Normalize();
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
+        }
     }
 
     void Shoot()
@@ -119,7 +167,7 @@ public class EnemyAI : MonoBehaviour
         //print(distToPlayer);
         CanHearPlayer();
         CanSeePlayer(9);
-        if (detected == true)
+        if (true)
         {
             if (CanSeePlayer(10)==true && distToPlayer <= 10)
             {

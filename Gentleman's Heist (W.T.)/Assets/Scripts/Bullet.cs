@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
             // Behavior on that specific tag
             // ex: collision.gameObject.GetComponent<HealthBar>().setHealth(0);
         }
-        Destroy(gameObject,.5f);
+        Destroy(gameObject,2f);
     }
         
 }
