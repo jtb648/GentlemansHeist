@@ -62,7 +62,7 @@ public class GenerateDungeon : MonoBehaviour
         directionsList.Add(new Vector2(1, 0));
         directionsList.Add(new Vector2(-1, 0));
 
-        Vector2 pos = new Vector2(7, 7);
+        Vector2 pos = new Vector2(8, 7);
         Vector2 size = new Vector2(Random.Range(1, 2), Random.Range(1, 2));
         Tuple<Vector2, Vector2> firstRoom = new Tuple<Vector2, Vector2>(pos, size);
         roomPositions.Add(firstRoom);
@@ -221,15 +221,23 @@ public class GenerateDungeon : MonoBehaviour
                     //Gets an integer to get a room to add to the map and then deletes the room from the list
                     int roomToAdd = Random.Range(0, tempEnemyRoom.Count);
                     int bigRoomToAdd = Random.Range(0, tempBigRoom.Count);
-                    if (game.floor != 2) {
-                        GameObject r = Instantiate(tempEnemyRoom[roomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
-                        tempEnemyRoom.RemoveAt(roomToAdd);
+                    if (game.floor == 2) {
+                        GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
+                        tempBigRoom.RemoveAt(bigRoomToAdd);
                         r.transform.localScale = Vector2.one * scale;
                         objects.Add(r);
                     }
-                    else {
+
+                    else if ((game.floor-2) % 3 == 0) {
                         GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
                         tempBigRoom.RemoveAt(bigRoomToAdd);
+                        r.transform.localScale = Vector2.one * scale;
+                        objects.Add(r);
+                    }
+
+                    else {
+                        GameObject r = Instantiate(tempEnemyRoom[roomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
+                        tempEnemyRoom.RemoveAt(roomToAdd);
                         r.transform.localScale = Vector2.one * scale;
                         objects.Add(r);
                     }
@@ -238,13 +246,42 @@ public class GenerateDungeon : MonoBehaviour
                 }
                 else if (rooms[x, y] == 2)
                 { //corridor
-                    float a = 0;
-                    if (rooms[x + 1, y] == 1 || rooms[x - 1, y] == 1) a = 90;
-                    if (rooms[x + 1, y] == 3 || rooms[x - 1, y] == 3) a = 90;
-                    Vector2 s = corridor.transform.localScale * scale;
-                    GameObject r = Instantiate(corridor, new Vector2(x * scale, y * scale), Quaternion.Euler(new Vector3(0, 0, a)));
-                    r.transform.localScale = s;
-                    objects.Add(r);
+
+                    if(tempEnemyRoom.Count == 0) {
+                        tempEnemyRoom.AddRange(enemyRoom);
+                    }
+                    if(tempBigRoom.Count == 0) {
+                        tempBigRoom.AddRange(bigRoom);
+                    }
+
+                    
+                    int roomToAdd = Random.Range(0, tempEnemyRoom.Count);
+                    int bigRoomToAdd = Random.Range(0, tempBigRoom.Count);
+                    if (game.floor == 2) {
+                        GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
+                        tempBigRoom.RemoveAt(bigRoomToAdd);
+                        r.transform.localScale = Vector2.one * scale;
+                        objects.Add(r);
+                    }
+
+                    else if ((game.floor-2) % 3 == 0) {
+                        GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
+                        tempBigRoom.RemoveAt(bigRoomToAdd);
+                        r.transform.localScale = Vector2.one * scale;
+                        objects.Add(r);
+                    }
+
+
+                    //Normal Corridor spawner
+                    else {
+                        float a = 0;
+                        if (rooms[x + 1, y] == 1 || rooms[x - 1, y] == 1) a = 90;
+                        if (rooms[x + 1, y] == 3 || rooms[x - 1, y] == 3) a = 90;
+                        Vector2 s = corridor.transform.localScale * scale;
+                        GameObject r = Instantiate(corridor, new Vector2(x * scale, y * scale), Quaternion.Euler(new Vector3(0, 0, a)));
+                        r.transform.localScale = s;
+                        objects.Add(r);
+                    }
                 }
                 else if (rooms[x, y] == 3)
                 {

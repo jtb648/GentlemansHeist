@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nRooms: 4
-  n: 15
+  n: 18
   scale: 25
   room: {fileID: 4611349283708993423, guid: 352492e54341fdd40a32341e487d4fe7, type: 3}
   corridor: {fileID: 5843760460774476623, guid: 0306106275a913043a2a4a5267b14b47, type: 3}
