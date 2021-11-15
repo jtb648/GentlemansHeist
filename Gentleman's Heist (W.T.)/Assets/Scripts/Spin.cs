@@ -16,7 +16,7 @@ public class Spin : MonoBehaviour
         _spinSpeedTrue = (int)(spinSpeedGolf * 60.0);
         _delayCounter = 0;
     }
-
+    
     // Update is called once per frame
     void Update()
     {

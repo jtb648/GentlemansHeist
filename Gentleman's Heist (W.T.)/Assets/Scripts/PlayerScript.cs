@@ -29,8 +29,8 @@ public class PlayerScript : MonoBehaviour
     private float yMove;
 
     // Player health bar
-    public int maxHealth = 100;
-    public int currentHealth;
+    // public int maxHealth = 100;
+    // public int currentHealth;
     public HealthBar healthBar;
 
     // Shooting & Crosshair/Cursor
@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject bulletPrefab;
 
     Vector2 mousePos;
-    public float bulletForce = 20f;
+    // public float bulletForce = 20f;
 
     public Transform firePoint;
     public float lookAngle;
@@ -77,11 +77,28 @@ public class PlayerScript : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
-      currentHealth = maxHealth;
-      healthBar.setHealth(maxHealth);
-      walkingSound = gameObject.GetComponent<AudioSource>();
+    { 
+        SyncPlayerData();
+        walkingSound = gameObject.GetComponent<AudioSource>();
     }
+    
+    // Adds data on startup to PlayerData
+    void SyncPlayerData()
+    {
+        PlayerData.SetBody(myBody);
+        PlayerData.SetHealthBar(healthBar);
+        PlayerData.SetAnimator(animator);
+        PlayerData.SetCamera(cam);
+        
+        PlayerData.SetMaxHealth(100);
+        PlayerData.SetCurrentHealth(100);
+        PlayerData.SetDefaultSpeed(speed);
+        PlayerData.SetToDefaultSpeed();
+        PlayerData.SetBulletForce(20.0f);
+        PlayerData.SetPlayer(gameObject);
+        PlayerData.SetPlayerScript(this);
+    }
+
 
  // Update is called once per frame
     void FixedUpdate()
@@ -118,7 +135,7 @@ public class PlayerScript : MonoBehaviour
 
         // setting movement regardless of input
         Vector2 movement = new Vector2(xMove, yMove).normalized;
-        myBody.velocity = movement * speed / _sneak;
+        myBody.velocity = movement * PlayerData.GetSpeed() / _sneak;
 
         // if()
             
@@ -158,6 +175,8 @@ public class PlayerScript : MonoBehaviour
         Shooting();
 
     }
+    
+
     // Updates the animation BlendTree
     void changeAnimation()
     {
@@ -167,12 +186,10 @@ public class PlayerScript : MonoBehaviour
 
     // Player damage
     void takeDamage(int damage){
-      currentHealth -= damage;
-      healthBar.setHealth(currentHealth);
+      PlayerData.TakeDamage(damage);
     }
     public void addHealth(int health){
-        currentHealth += health;
-        healthBar.setHealth(currentHealth);
+        PlayerData.HealAmount(health);
     }
 
     // Marks an interactable object as the current interactable object when entering their collision area
@@ -214,7 +231,7 @@ public class PlayerScript : MonoBehaviour
     void Shoot(){
        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
        Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
-       bullBody.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+       bullBody.AddForce(firePoint.up * PlayerData.GetBulletForce(), ForceMode2D.Impulse);
     }
     
 }

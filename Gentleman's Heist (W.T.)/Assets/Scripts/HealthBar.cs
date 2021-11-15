@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
 
     public Slider slider;
     public Gradient gradient;
-
+    
     // Sets maxHealth on UI Slider component and sets current/slider value to max
     public void setMaxHealth(int healthMax)
     {
