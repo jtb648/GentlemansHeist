@@ -147,16 +147,34 @@ public class EnemyAI : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
         }
+        else
+        {
+            Vector2 moveDirection = rb.velocity;
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle+90, Vector3.forward);
+            //RotateToDirection(, 500, 90f);
+        }
     }
 
     void Shoot()
     {
-        if (CanSeePlayer(20) == true)
+        if (detected == true)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
-            bullBody.AddForce(-firePoint.up * bulletForce, ForceMode2D.Impulse);
+            if (CanSeePlayer(20) == true)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
+                bullBody.AddForce(-firePoint.up * bulletForce, ForceMode2D.Impulse);
+            }
         }
+    }
+
+    private void RotateToDirection(Vector3 target, float RotationSpeed, float offset)
+    {
+        Vector3 dir = target - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle + offset));
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, RotationSpeed * Time.deltaTime);
     }
 
     // Update is called once per frame
