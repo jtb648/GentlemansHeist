@@ -23,33 +23,42 @@ public class GuardGraphics : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, zed);
     }
 
-    void animationChangerDirectionColorTest()
+    void animationChangerDirection()
     {
         target = GameObject.FindGameObjectsWithTag("Player")[0];
         float distToPlayer = Vector2.Distance(this.transform.parent.position, target.transform.position);
+        animator.SetBool("walking", true);
         if (distToPlayer >= 10)
         {
-            if (transform.localRotation.eulerAngles.z >= 0 && transform.localRotation.eulerAngles.z <= 90)//down left area
+            if (transform.localRotation.eulerAngles.z >= 45 && transform.localRotation.eulerAngles.z <= 135) // left
             {
-                this.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+                // this.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+                xMove = -1;
+                yMove = 0;
             }
-            if (transform.localRotation.eulerAngles.z > 90 && transform.localRotation.eulerAngles.z <= 180)//up left area
+            else if (transform.localRotation.eulerAngles.z > 135 && transform.localRotation.eulerAngles.z <= 225)// up
             {
-                this.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+            // this.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+                xMove = 0;
+                yMove = 1;
             }
-            if (transform.localRotation.eulerAngles.z > 180 && transform.localRotation.eulerAngles.z <= 270)//up right area
+            else if (transform.localRotation.eulerAngles.z > 225 && transform.localRotation.eulerAngles.z <= 315)// right
             {
-                this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                // this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                xMove = 1;
+                yMove = 0;
             }
-            if (transform.localRotation.eulerAngles.z > 270 && transform.localRotation.eulerAngles.z <= 359)//down right area
+            else if (transform.localRotation.eulerAngles.z > 315) // down
             {
-                this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+                // this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+                xMove = 0;
+                yMove = -1;
             }
         }
-        else
-        {
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+        else{
+            // animator.SetBool("walking", false); nevermind this whoops
         }
+        changeAnimation();
     }
 
 
@@ -67,28 +76,29 @@ public class GuardGraphics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        xMove = Input.GetAxisRaw("Horizontal");
-        yMove = Input.GetAxisRaw("Vertical");
-        if (xMove != 0 || yMove != 0)
-        {
-            //this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);//debug
-            changeAnimation();
-            animator.SetBool("walking", true); // set walking to true
-            //walkingSound.UnPause();
+        // Sorry Ben I commented all this out, Input.GetAxisRaw only works with WASD controls :( which sucks
+        // xMove = Input.GetAxisRaw("Horizontal");
+        // yMove = Input.GetAxisRaw("Vertical");
+        // if (xMove != 0 || yMove != 0)
+        // {
+        //     //this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);//debug
+        //     changeAnimation();
+        //     animator.SetBool("walking", true); // set walking to true
+        //     //walkingSound.UnPause();
 
-        }
-        // If no movement, no walking animation is needed
-        else
-        {
-            //this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);//debug
-            animator.SetBool("walking", false);
-            //walkingSound.Pause();
-        }
+        // }
+        // // If no movement, no walking animation is needed
+        // else
+        // {
+        //     //this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);//debug
+        //     animator.SetBool("walking", false);
+        //     //walkingSound.Pause();
+        // }
     }
     // Update is called once per frame
     void Update()
     {
         rotationStablizer();
-        animationChangerDirectionColorTest();
+        animationChangerDirection();
     }
 }
