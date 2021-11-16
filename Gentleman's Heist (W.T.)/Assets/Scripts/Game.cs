@@ -8,7 +8,7 @@ using Pathfinding;
 
 public class Game : MonoBehaviour
 {
-    // public PlayerScript player;
+    public PlayerScript player;
 
     public int floor = 1;
 
@@ -27,7 +27,7 @@ public class Game : MonoBehaviour
     }
 
     void Update() {
-        if (PlayerData.GetCurrentHealth() < 1)
+        if (player.currentHealth < 1)
         {
             ResetDungeon();
         }
@@ -38,7 +38,7 @@ public class Game : MonoBehaviour
         GenerateDungeon.Instance.GenerateNewDungeon();
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
-        PlayerData.GetPlayer().transform.position = spawnPos3;
+        player.transform.position = spawnPos3;
         Invoke("FindPaths", .1f);
     }
 
@@ -47,7 +47,7 @@ public class Game : MonoBehaviour
         GenerateDungeon.Instance.GenerateNewDungeon();
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
-        PlayerData.GetPlayer().transform.position = spawnPos3;
+        player.transform.position = spawnPos3;
         floor++;
         Invoke("FindPaths", .1f);
     }
@@ -57,9 +57,9 @@ public class Game : MonoBehaviour
         GenerateDungeon.Instance.GenerateNewDungeon();
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
-        PlayerData.GetPlayer().transform.position = spawnPos3;
+        player.transform.position = spawnPos3;
         floor = 1;
-        PlayerData.FullHeal();
+        player.currentHealth = player.maxHealth;
         Invoke("FindPaths", .1f);
     }
 }
