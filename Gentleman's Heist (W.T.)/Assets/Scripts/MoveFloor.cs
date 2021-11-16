@@ -12,7 +12,12 @@ public class MoveFloor : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        SceneManager.LoadScene("UpgradeMenu");
-        game.NextFloor();
+        if (UIUpdater.keys >= 1) {
+            SceneManager.LoadScene("UpgradeMenu");
+            game.NextFloor();
+        }
+        else {
+            Debug.Log("No keys collected");
+        }
     }
 }
