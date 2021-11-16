@@ -9,6 +9,7 @@ public class GuardGraphics : MonoBehaviour
     public Animator animator;
     private float xMove;
     private float yMove;
+    GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -24,21 +25,30 @@ public class GuardGraphics : MonoBehaviour
 
     void animationChangerDirectionColorTest()
     {
-        if (transform.localRotation.eulerAngles.z >= 0 && transform.localRotation.eulerAngles.z <= 90)//down left area
+        target = GameObject.FindGameObjectsWithTag("Player")[0];
+        float distToPlayer = Vector2.Distance(this.transform.parent.position, target.transform.position);
+        if (distToPlayer >= 10)
         {
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+            if (transform.localRotation.eulerAngles.z >= 0 && transform.localRotation.eulerAngles.z <= 90)//down left area
+            {
+                this.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+            }
+            if (transform.localRotation.eulerAngles.z > 90 && transform.localRotation.eulerAngles.z <= 180)//up left area
+            {
+                this.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+            }
+            if (transform.localRotation.eulerAngles.z > 180 && transform.localRotation.eulerAngles.z <= 270)//up right area
+            {
+                this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+            }
+            if (transform.localRotation.eulerAngles.z > 270 && transform.localRotation.eulerAngles.z <= 359)//down right area
+            {
+                this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+            }
         }
-        if (transform.localRotation.eulerAngles.z > 90 && transform.localRotation.eulerAngles.z <= 180)//up left area
+        else
         {
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
-        }
-        if (transform.localRotation.eulerAngles.z > 180 && transform.localRotation.eulerAngles.z <= 270)//up right area
-        {
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
-        }
-        if (transform.localRotation.eulerAngles.z > 270 && transform.localRotation.eulerAngles.z <= 359)//down right area
-        {
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+            this.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
         }
     }
 
