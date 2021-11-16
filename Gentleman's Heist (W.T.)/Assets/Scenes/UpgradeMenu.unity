@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 3243358}
   - component: {fileID: 3243357}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 624545543}
   - component: {fileID: 624545542}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1636,7 +1636,7 @@ GameObject:
   - component: {fileID: 1252487788}
   - component: {fileID: 1252487787}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2009,6 +2009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b34ab35b919f9c489f347a2eeb02d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScore: {fileID: 926106894}
+  earnings: {fileID: 1179207236}
 --- !u!1 &1599104453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,7 +2023,7 @@ GameObject:
   - component: {fileID: 1599104456}
   - component: {fileID: 1599104455}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2155,7 +2157,7 @@ GameObject:
   - component: {fileID: 1753664853}
   - component: {fileID: 1753664852}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2411,7 +2413,7 @@ GameObject:
   - component: {fileID: 1801066238}
   - component: {fileID: 1801066237}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2863,6 +2865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b34ab35b919f9c489f347a2eeb02d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScore: {fileID: 926106894}
+  earnings: {fileID: 1179207236}
 --- !u!1 &2093888722
 GameObject:
   m_ObjectHideFlags: 0
