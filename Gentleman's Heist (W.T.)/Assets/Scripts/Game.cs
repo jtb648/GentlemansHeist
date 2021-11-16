@@ -27,7 +27,7 @@ public class Game : MonoBehaviour
     }
 
     void Update() {
-        if (player.currentHealth < 1)
+        if (PlayerData.GetCurrentHealth() < 1)
         {
             ResetDungeon();
         }
@@ -59,7 +59,7 @@ public class Game : MonoBehaviour
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
         floor = 1;
-        player.currentHealth = player.maxHealth;
+        PlayerData.FullHeal();
         Invoke("FindPaths", .1f);
     }
 }
