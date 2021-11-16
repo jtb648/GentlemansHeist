@@ -221,14 +221,14 @@ public class GenerateDungeon : MonoBehaviour
                     //Gets an integer to get a room to add to the map and then deletes the room from the list
                     int roomToAdd = Random.Range(0, tempEnemyRoom.Count);
                     int bigRoomToAdd = Random.Range(0, tempBigRoom.Count);
-                    if (game.floor == 2) {
+                    if (PlayerData.GetLevel() == 2) {
                         GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
                         tempBigRoom.RemoveAt(bigRoomToAdd);
                         r.transform.localScale = Vector2.one * scale;
                         objects.Add(r);
                     }
 
-                    else if ((game.floor-2) % 3 == 0) {
+                    else if ((PlayerData.GetLevel()-2) % 3 == 0) {
                         GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
                         tempBigRoom.RemoveAt(bigRoomToAdd);
                         r.transform.localScale = Vector2.one * scale;
@@ -257,14 +257,14 @@ public class GenerateDungeon : MonoBehaviour
                     
                     int roomToAdd = Random.Range(0, tempEnemyRoom.Count);
                     int bigRoomToAdd = Random.Range(0, tempBigRoom.Count);
-                    if (game.floor == 2) {
+                    if (PlayerData.GetLevel() == 2) {
                         GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
                         tempBigRoom.RemoveAt(bigRoomToAdd);
                         r.transform.localScale = Vector2.one * scale;
                         objects.Add(r);
                     }
 
-                    else if ((game.floor-2) % 3 == 0) {
+                    else if ((PlayerData.GetLevel()-2) % 3 == 0) {
                         GameObject r = Instantiate(tempBigRoom[bigRoomToAdd], new Vector2(x * scale, y * scale), Quaternion.identity);
                         tempBigRoom.RemoveAt(bigRoomToAdd);
                         r.transform.localScale = Vector2.one * scale;

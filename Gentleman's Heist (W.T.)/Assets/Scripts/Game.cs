@@ -10,8 +10,6 @@ public class Game : MonoBehaviour
 {
     public PlayerScript player;
 
-    public int floor = 1;
-
     public bool playing;
     public static Game Instance { get; set; }
 
@@ -48,7 +46,7 @@ public class Game : MonoBehaviour
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
-        floor++;
+        PlayerData.NextLevel();
         Invoke("FindPaths", .1f);
     }
 
@@ -58,7 +56,7 @@ public class Game : MonoBehaviour
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
-        floor = 1;
+        PlayerData.SetLevel(1);
         PlayerData.FullHeal();
         Invoke("FindPaths", .1f);
     }
