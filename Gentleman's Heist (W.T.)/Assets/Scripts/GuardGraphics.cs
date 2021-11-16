@@ -61,7 +61,7 @@ public class GuardGraphics : MonoBehaviour
         yMove = Input.GetAxisRaw("Vertical");
         if (xMove != 0 || yMove != 0)
         {
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);//debug
+            //this.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);//debug
             changeAnimation();
             animator.SetBool("walking", true); // set walking to true
             //walkingSound.UnPause();
@@ -70,7 +70,7 @@ public class GuardGraphics : MonoBehaviour
         // If no movement, no walking animation is needed
         else
         {
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);//debug
+            //this.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);//debug
             animator.SetBool("walking", false);
             //walkingSound.Pause();
         }
@@ -79,6 +79,6 @@ public class GuardGraphics : MonoBehaviour
     void Update()
     {
         rotationStablizer();
-        //animationChangerDirectionColorTest();
+        animationChangerDirectionColorTest();
     }
 }
