@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3477559010650776272}
   - component: {fileID: 3477559010650776273}
   - component: {fileID: 3477559010650776302}
+  - component: {fileID: 5566923595758089020}
   m_Layer: 0
   m_Name: GuardGraphics
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5283f64869fe1044aedd016daa972a3, type: 3}
+  m_Sprite: {fileID: 5522835046695756125, guid: 589c942500163af4a8bd81d64b67aa11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,6 +113,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &5566923595758089020
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3477559010650776300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab74f1bc371146e40abb6d5a1e14fe66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3477559011041414235
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +210,9 @@ MonoBehaviour:
   Waypoint2: {fileID: 0}
   speed: 200
   nextWaypointDistance: 3
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletForce: 20
 --- !u!50 &3477559011041414234
 Rigidbody2D:
   serializedVersion: 4
