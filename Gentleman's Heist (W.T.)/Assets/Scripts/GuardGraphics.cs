@@ -14,7 +14,7 @@ public class GuardGraphics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void rotationStablizer()
@@ -27,7 +27,11 @@ public class GuardGraphics : MonoBehaviour
     {
         target = GameObject.FindGameObjectsWithTag("Player")[0];
         float distToPlayer = Vector2.Distance(this.transform.parent.position, target.transform.position);
+        
+        // Is he walking?
         animator.SetBool("walking", true);
+
+        // Figuring out Direction:
         if (distToPlayer >= 10)
         {
             if (transform.localRotation.eulerAngles.z >= 45 && transform.localRotation.eulerAngles.z <= 135) // left
