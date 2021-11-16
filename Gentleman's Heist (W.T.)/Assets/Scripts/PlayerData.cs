@@ -15,6 +15,8 @@ public static class PlayerData
     private static int _playerMaxHealth;
     private static int _playerCurrentHealth;
 
+    private static int _level = 0;
+
     private static Animator _playerAnimator;
     private static Rigidbody2D _playerBody;
     private static Camera _playerCamera;
@@ -222,6 +224,20 @@ public static class PlayerData
     {
         _playerHealthBar.setHealth(GetCurrentHealth());
         _playerHealthBar.setMaxHealth(GetMaxHealth());
+    }
+
+    public static int GetLevel()
+    {
+        return _level;
+    }
+    public static void SetLevel(int toSet)
+    {
+        _level = toSet;
+    }
+
+    public static void NextLevel()
+    {
+        _level += 1;
     }
     
     
