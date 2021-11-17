@@ -39,10 +39,15 @@ public class EnemyAI : MonoBehaviour
 
 
 
+    public HealthBar healthBar;
+    public int health;
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
+        healthBar.setHealth(health);
         target = GameObject.FindGameObjectsWithTag("Player")[0];
         sound = GameObject.FindGameObjectsWithTag("Sound")[0];
         seeker = GetComponent<Seeker>();
@@ -171,9 +176,20 @@ public class EnemyAI : MonoBehaviour
     }
 
 
+    public void gotShot()
+    {
+        health -= 20;
+        healthBar.setHealth(health);
+    }
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (health == 0)
+        {
+            Destroy(this.gameObject);
+        }
         float distToPlayer = Vector2.Distance(transform.position, target.transform.position);
         //print(distToPlayer);
         CanHearPlayer();

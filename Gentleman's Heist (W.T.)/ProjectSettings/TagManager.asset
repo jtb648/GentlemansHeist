@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractableObject
   - Sound
+  - Guard
   layers:
   - Default
   - TransparentFX

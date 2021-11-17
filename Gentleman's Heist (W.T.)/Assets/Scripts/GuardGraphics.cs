@@ -32,7 +32,7 @@ public class GuardGraphics : MonoBehaviour
         animator.SetBool("walking", true);
 
         // Figuring out Direction:
-        if (distToPlayer >= 10)
+        if (distToPlayer >= 2)
         {
             if (transform.localRotation.eulerAngles.z >= 45 && transform.localRotation.eulerAngles.z <= 135) // left
             {

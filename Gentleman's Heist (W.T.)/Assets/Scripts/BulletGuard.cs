@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletGuard : MonoBehaviour
 {
     public int rangeFrames = 360;
 
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
             // Behavior on that specific tag
             // ex: collision.gameObject.GetComponent<HealthBar>().setHealth(0);
         }
-        if (collision.gameObject.CompareTag("Guard")) //When guard gets shot
+        if (collision.gameObject.CompareTag("Player")) //When player gets shot
         {
             collision.gameObject.GetComponent<EnemyAI>().gotShot();
         }
