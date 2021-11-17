@@ -37,6 +37,9 @@ public class UpgradeMenuScript : MonoBehaviour
     private int coffeePrice;
     private int alarmDisablerPrice;
     private int foodPrice;
+
+    [SerializeField] 
+    private GameObject noMoneyPanel;
     
     void Start(){
         currentScore.text = "Current Score: " + PlayerData.GetScore();
@@ -62,44 +65,47 @@ public class UpgradeMenuScript : MonoBehaviour
 
     public void buySilentShoes(){
         // [Add SilentShoes to inventory here(?)]
-        int money = PlayerData.GetMoney() - silentShoesPrice;
-        PlayerData.SetMoney(money);
-        earnings.text = "Earnings: " + money;
+        purchaseItem(silentShoesPrice);
     }
 
     public void buyLockpick(){
         // [Add Lockpick to inventory here(?)]
-        int money = PlayerData.GetMoney() - lockPickPrice;
-        PlayerData.SetMoney(money);
-        earnings.text = "Earnings: " + money;
+        purchaseItem(lockPickPrice);
     }
 
     public void buySilentWeapon(){
         // [Add SilentWeapon to inventory here(?)]
-        int money = PlayerData.GetMoney() - silentWeaponPrice;
-        PlayerData.SetMoney(money);
-        earnings.text = "Earnings: " + money;
+        purchaseItem(silentWeaponPrice);
     }
 
     public void buyCoffee(){
         // [Add Coffee to inventory here(?)]
-        int money = PlayerData.GetMoney() - coffeePrice;
-        PlayerData.SetMoney(money);
-        earnings.text = "Earnings: " + money;
+        purchaseItem(coffeePrice);
     }
 
     public void buyAlarmDisabler(){
         // [Add AlarmDisabler to inventory here(?)]
-        int money = PlayerData.GetMoney() - alarmDisablerPrice;
-        PlayerData.SetMoney(money);
-        earnings.text = "Earnings: " + money;
+        purchaseItem(alarmDisablerPrice);
     }
 
     public void buyFood(){
         // [Add Food to inventory here(?)]
-        int money = PlayerData.GetMoney() - foodPrice;
+        purchaseItem(foodPrice);
+    }
+
+    private void purchaseItem(int Price){
+        int money = PlayerData.GetMoney() - Price;
+        if(money < 0){
+            youHaveNoMoney();
+        }
+        else {
         PlayerData.SetMoney(money);
         earnings.text = "Earnings: " + money;
+        }
+    }
+
+    public void youHaveNoMoney(){
+        noMoneyPanel.SetActive(true);
     }
 
 }
