@@ -14,7 +14,6 @@ public class UpgradeMenuScript : MonoBehaviour
     [SerializeField]    
     private TMP_Text currentScore;
 
-
     //----Upgrade Menu-----
     [SerializeField]    
     private TMP_Text earnings;
