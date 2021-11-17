@@ -178,7 +178,7 @@ public class EnemyAI : MonoBehaviour
 
     public void gotShot()
     {
-        health -= 20;
+        health -= 5;
         healthBar.setHealth(health);
     }
 

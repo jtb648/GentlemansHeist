@@ -6,7 +6,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int rangeFrames = 360;
+    GameObject player;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>() );
+    }
     void FixedUpdate()
     {
         if (rangeFrames > 0)
@@ -20,7 +26,7 @@ public class Bullet : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
             Debug.LogWarning("Bullet hit player, which isn't good!");
         }
@@ -38,9 +44,9 @@ public class Bullet : MonoBehaviour
         }
         if (collision.collider)
         {
-            //Destroy(gameObject, 0f);
+            Destroy(gameObject, 0f);
         }
-        Destroy(gameObject,2f);
+        Destroy(gameObject,5f);
     }
         
 }

@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507bf6a7942474d36be9b3411685cdef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeFrames: 360

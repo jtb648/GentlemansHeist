@@ -6,6 +6,13 @@ using UnityEngine;
 public class BulletGuard : MonoBehaviour
 {
     public int rangeFrames = 360;
+    GameObject guard;
+
+    private void Start()
+    {
+        guard = GameObject.FindGameObjectsWithTag("Guard")[0];
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), guard.GetComponentInChildren<Collider2D>());
+    }
 
     void Update()
     {
@@ -20,20 +27,25 @@ public class BulletGuard : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("ENTER TAG HERE"))
-        {
-            // Behavior on that specific tag
-            // ex: collision.gameObject.GetComponent<HealthBar>().setHealth(0);
-        }
+        /*        if (collision.gameObject.CompareTag("ENTER TAG HERE"))
+                {
+                    // Behavior on that specific tag
+                    // ex: collision.gameObject.GetComponent<HealthBar>().setHealth(0);
+                }*/
         if (collision.gameObject.CompareTag("Player")) //When player gets shot
         {
-            collision.gameObject.GetComponent<EnemyAI>().gotShot();
+            //add player health reduction or whatever should go here
+            Destroy(gameObject);
         }
-        if (collision.collider)
+        else if (collision.gameObject.CompareTag("Guard"))
         {
-            //Destroy(gameObject, 0f);
+            Debug.LogWarning("Guard is suicidal, stop that");
         }
-        Destroy(gameObject,2f);
+        else if (collision.collider)
+        {
+            Destroy(gameObject);
+        }
+        Destroy(gameObject, 5f);
     }
         
 }
