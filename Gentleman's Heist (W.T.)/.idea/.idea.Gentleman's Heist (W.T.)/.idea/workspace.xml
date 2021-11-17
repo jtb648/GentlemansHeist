@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81dba6ff-ab0f-4920-b3e4-4516d7e4675d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gentleman's Heist (W.T.)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gentleman's Heist (W.T.)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Detection/Camera_v1.0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Detection/Camera_v1.0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GrayFloor(Detection).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GrayFloor(Detection).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GrayFloor(Laser).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GrayFloor(Laser).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detection/AlarmEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/AlarmEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detection/InvertedLaserOnAndOff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/InvertedLaserOnAndOff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detection/LaserOnAndOff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/LaserOnAndOff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detection/SecCamMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/SecCamMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detection/SecurityCamView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/SecurityCamView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenerateDungeon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenerateDungeon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +41,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34620175" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34615386" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -67,10 +60,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="35692">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="35692" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />

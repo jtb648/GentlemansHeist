@@ -24,6 +24,9 @@ public class GenerateDungeon : MonoBehaviour
 
 
     private Vector2 spawnPos;
+    
+    // Gabe's saving stuff
+    private int seed;
 
     public int[,] rooms;
     public List<Tuple<Vector2, Vector2>> roomPositions;
@@ -36,8 +39,16 @@ public class GenerateDungeon : MonoBehaviour
     public List<GameObject> objects;
 
     public static GenerateDungeon Instance { get; set; }
+    
     private void Awake()
     {
+        // ugly time seeding
+        Unity.Mathematics.Random rando = new Unity.Mathematics.Random();
+        // Debug.Log((DateTime.Now.Ticks / DateTime.Now.Millisecond / DateTime.Now.Second*5 / DateTime.Now.Minute)/10000000);
+        long timeSeed = (DateTime.Now.Ticks / DateTime.Now.Millisecond / DateTime.Now.Second*5 / DateTime.Now.Minute)/10000000;
+        rando.InitState(Convert.ToUInt32(timeSeed));
+        seed = rando.NextInt(1, 999999);
+        Random.InitState(seed);
         Instance = this;
         objects = new List<GameObject>();
     }
