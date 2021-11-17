@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78499fd6ce53c314c88d981d95343b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  framesToSwap: 720
+  framesToSwap: 250
   laser: {fileID: 481511015505791426}
 --- !u!114 &377846437117309691
 MonoBehaviour:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012faf018b027c34fa54250c9ebe6e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  framesToSwap: 720
+  framesToSwap: 250
   laser: {fileID: 481511015747365325}
 --- !u!1 &6272703087508030214
 GameObject:

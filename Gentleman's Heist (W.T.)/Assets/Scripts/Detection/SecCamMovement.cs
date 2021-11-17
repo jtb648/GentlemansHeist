@@ -23,7 +23,7 @@ public class SecCamMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (_endDelayCounter > 0)
         {

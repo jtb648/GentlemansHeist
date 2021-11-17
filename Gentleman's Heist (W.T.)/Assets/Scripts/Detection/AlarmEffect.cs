@@ -6,7 +6,7 @@ public class AlarmEffect : MonoBehaviour
 {
     private SpriteRenderer _sprRend;
     private bool _isRed;
-    private int _colorSwitchTimer = 360;
+    private int _colorSwitchTimer = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class AlarmEffect : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Alarm.IsOn())
         {

@@ -17,7 +17,7 @@ public class SecurityCamView : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (_counting)
         {

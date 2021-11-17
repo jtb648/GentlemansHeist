@@ -15,7 +15,7 @@ public class LaserOnAndOff : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (_swapCounter > 0)
         {

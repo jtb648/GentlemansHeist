@@ -16,7 +16,7 @@ public class InvertedLaserOnAndOff : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (_swapCounter > 0)
         {

@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracer: {fileID: 169566941}
-  framesUntilCaught: 420
+  framesUntilCaught: 100
 --- !u!1 &1832739025
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +621,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4805676843333950114}
   - component: {fileID: 3612618641394710931}
-  - component: {fileID: 7600286566163189270}
   - component: {fileID: 338884246}
   m_Layer: 0
   m_Name: Camera_v1.0
@@ -702,19 +701,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7600286566163189270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7486712371411629388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d29466fdcf4c4844588cbebc61cba8c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 0
 --- !u!114 &338884246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,8 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07fa0e44840315468f700f62bc80eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeedGolf: 0.5
-  endDelayFrames: 500
+  spinSpeedGolf: 0.05
+  endDelayFrames: 100
 --- !u!1 &8970910258432727075
 GameObject:
   m_ObjectHideFlags: 0
