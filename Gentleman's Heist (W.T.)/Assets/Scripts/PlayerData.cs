@@ -17,6 +17,10 @@ public static class PlayerData
 
     private static int _level = 0;
 
+    private static int _diamonds;
+
+    private static int _keys;
+
     private static Animator _playerAnimator;
     private static Rigidbody2D _playerBody;
     private static Camera _playerCamera;
@@ -238,6 +242,21 @@ public static class PlayerData
     public static void NextLevel()
     {
         _level += 1;
+    }
+    public static int GetDiamonds(){
+        return _diamonds;
+    }
+
+    public static void SetDiamonds(){
+        _diamonds++;
+    }
+
+     public static int GetKeys(){
+        return _keys;
+    }
+
+    public static void SetKeys(){
+        _keys++;
     }
     
     

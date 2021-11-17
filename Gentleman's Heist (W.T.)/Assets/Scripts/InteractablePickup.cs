@@ -28,28 +28,28 @@ public class InteractablePickup : MonoBehaviour
     After game object is interacted with, it will be deleted from the scene.
     **/
     public void DoInteraction(string name){
-        //This fixes sound being quiet but distorts the clip if player moves while picking up item
         Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y,Camera.main.transform.position.z);
         
         if (name.StartsWith("Key")){
             AudioSource.PlayClipAtPoint(keySound.clip,position, .5f);
-            UIUpdater.keys++;
+            PlayerData.SetKeys();
         }
         else if(name.StartsWith("Diamond")){
             AudioSource.PlayClipAtPoint(diamondSound.clip,position, .5f);
-            UIUpdater.diamonds++; 
+            PlayerData.AddScore(500);
+            PlayerData.SetDiamonds();
         }
         else if(name.StartsWith("Coin")){
             AudioSource.PlayClipAtPoint(coinSound.clip,position, .5f);
-            UIUpdater.score++;
+            PlayerData.AddScore(1);
         }
         else if(name.StartsWith("Donut")){
             AudioSource.PlayClipAtPoint(foodSound.clip,position, .2f);
-            player.addHealth(10);
+            PlayerData.HealAmount(10);
         }
         else if(name.StartsWith("Coffee")){
             AudioSource.PlayClipAtPoint(drinkSound.clip,position, .2f);
-            player.addHealth(10);
+            PlayerData.AddSpeed(10.0f); // Temp since who knows if this is speedy
         }
         Destroy(gameObject);
     }
