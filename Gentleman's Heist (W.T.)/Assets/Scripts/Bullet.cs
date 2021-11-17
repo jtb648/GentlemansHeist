@@ -24,16 +24,17 @@ public class Bullet : MonoBehaviour
         {
             Debug.LogWarning("Bullet hit player, which isn't good!");
         }
-        else if (collision.gameObject.CompareTag("Enemy"))
+/*        else if (collision.gameObject.CompareTag("Enemy"))
         {
             // Behavior on that specific tag
             // ex: collision.gameObject.SetActive(false);
             // ex: collision.gameObject.GetComponent<HealthBar>().setHealth(0);
             Destroy(gameObject, 0.25f);
-        }
-        if (collision.gameObject.CompareTag("Guard")) //When guard gets shot
+        }*/
+        else if (collision.gameObject.CompareTag("Guard")) //When guard gets shot
         {
             collision.gameObject.GetComponent<EnemyAI>().gotShot();
+            Destroy(gameObject);
         }
         if (collision.collider)
         {
