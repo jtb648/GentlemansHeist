@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81dba6ff-ab0f-4920-b3e4-4516d7e4675d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gentleman's Heist (W.T.)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gentleman's Heist (W.T.)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GuardAI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GuardAI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenerateDungeon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenerateDungeon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
