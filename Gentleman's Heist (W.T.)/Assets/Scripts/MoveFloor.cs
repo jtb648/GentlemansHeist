@@ -12,13 +12,15 @@ public class MoveFloor : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (PlayerData.GetKeys() >= 0) { //Left at zero for debugging purposes, change zero to one before building
-            PlayerData.NextLevel();
-            game.NextFloor();
-            SceneManager.LoadScene("UpgradeMenu");
-        }
-        else {
-            Debug.Log("No keys collected");
+        if (collision.gameObject.tag == "Player") {
+            if (PlayerData.GetKeys() >= 0) { //Left at zero for debugging purposes, change zero to one before building
+                PlayerData.NextLevel();
+                game.NextFloor();
+                SceneManager.LoadScene("UpgradeMenu");
+            }
+            else {
+                Debug.Log("No keys collected");
+            }
         }
     }
 }
