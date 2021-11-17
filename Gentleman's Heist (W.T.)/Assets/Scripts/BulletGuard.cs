@@ -8,6 +8,11 @@ public class BulletGuard : MonoBehaviour
     public int rangeFrames = 360;
     GameObject guard;
 
+    // Reference to hit effect game object
+    public GameObject hitEffect;
+    // Reference to Guard damage value
+    public int damageVal = 20;
+
     private void Start()
     {
         guard = GameObject.FindGameObjectsWithTag("Guard")[0];
@@ -35,7 +40,10 @@ public class BulletGuard : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) //When player gets shot
         {
             //add player health reduction or whatever should go here
+            PlayerData.TakeDamage(damageVal);
             Destroy(gameObject);
+            GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(hit, 1f);
         }
         else if (collision.gameObject.CompareTag("Guard"))
         {
@@ -44,6 +52,8 @@ public class BulletGuard : MonoBehaviour
         else if (collision.collider)
         {
             Destroy(gameObject);
+            GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(hit, 1f);
         }
         Destroy(gameObject, 5f);
     }

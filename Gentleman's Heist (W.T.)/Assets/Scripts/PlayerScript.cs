@@ -207,7 +207,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    // Shooting
+    // Firepoint aiming(direction relative to cursor/crosshair)
     public void Shooting(){
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             animator.SetBool("shooting", true);
@@ -228,6 +228,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    // Bullet init and shooting
     void Shoot(){
        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
        Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();

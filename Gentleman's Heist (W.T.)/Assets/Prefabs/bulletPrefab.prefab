@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeFrames: 360
+  hitEffect: {fileID: 3030119609122220569, guid: 9993299082eaa43a9bdb77aacfc7bee5, type: 3}

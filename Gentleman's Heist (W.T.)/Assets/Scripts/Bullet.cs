@@ -6,6 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int rangeFrames = 360;
+    public GameObject hitEffect;
     GameObject player;
 
     private void Start()
@@ -40,13 +41,17 @@ public class Bullet : MonoBehaviour
         else if (collision.gameObject.CompareTag("Guard")) //When guard gets shot
         {
             collision.gameObject.GetComponent<EnemyAI>().gotShot();
+            GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity );
             Destroy(gameObject);
+            Destroy(hit, 1f);
         }
         if (collision.collider)
         {
             Destroy(gameObject, 0f);
+            GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(hit, 1f);
         }
-        Destroy(gameObject,5f);
+        Destroy(gameObject,2f);
     }
         
 }
