@@ -55,6 +55,7 @@ public class EnemyAI : MonoBehaviour
 
         InvokeRepeating("Shoot", 0f, 2f);
         InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
+        
     }
 
 

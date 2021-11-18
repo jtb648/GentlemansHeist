@@ -5,8 +5,9 @@ using Pathfinding;
 
 public class Prim_Civil_AI : MonoBehaviour
 {
-    public Vector2 startPos;
-    public Vector2 roamPos;
+    // Pathfinding references
+    Seeker seeker;
+    Rigidbody2D rb;
     bool detected = false;
 
     [SerializeField]
@@ -17,10 +18,12 @@ public class Prim_Civil_AI : MonoBehaviour
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     bool reachedEndOfPath = false;
-    Rigidbody2D rb;
+
+    // Player trigger references
+    
     GameObject sound;
-    Seeker seeker;
-    GameObject target;
+    
+    GameObject player;
 
 
     Path path;
@@ -30,7 +33,7 @@ public class Prim_Civil_AI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         sound = GameObject.FindGameObjectsWithTag("Sound")[0];
-        target = GameObject.FindGameObjectsWithTag("Player")[0];
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
         InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
 
     }
@@ -80,7 +83,7 @@ public class Prim_Civil_AI : MonoBehaviour
         if (detected == true)
         {
             if (seeker.IsDone())
-                seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
+                seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
         }
     }
 
@@ -104,7 +107,7 @@ public class Prim_Civil_AI : MonoBehaviour
     void FixedUpdate()
     {
 
-        float distToPlayer = Vector2.Distance(transform.position, target.transform.position);
+        float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         CanHearPlayer();
         if (CanSeePlayer(9) == true)
