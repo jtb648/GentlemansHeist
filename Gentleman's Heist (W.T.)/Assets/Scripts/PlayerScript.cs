@@ -211,7 +211,7 @@ public class PlayerScript : MonoBehaviour
     public void Shooting(){
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             animator.SetBool("shooting", true);
-            lookDirection = cam.ScreenToWorldPoint(Input.mousePosition);
+            lookDirection = (cam.ScreenToWorldPoint(Input.mousePosition) - gameObject.transform.position).normalized;
             lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
             firePoint.transform.rotation = Quaternion.Euler(0f, 0f, lookAngle - 90f);
             Shoot();

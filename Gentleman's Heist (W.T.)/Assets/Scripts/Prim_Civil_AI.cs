@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
+
 public class Prim_Civil_AI : MonoBehaviour
 {
     // Pathfinding references
@@ -10,10 +11,13 @@ public class Prim_Civil_AI : MonoBehaviour
     Rigidbody2D rb;
     bool detected = false;
 
-    [SerializeField]
     public Transform Waypoint1;
-    [SerializeField]
+    
     public Transform Waypoint2;
+    public Transform Waypoint3;
+    public Transform Waypoint4;
+    public Transform Waypoint5;
+
 
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
