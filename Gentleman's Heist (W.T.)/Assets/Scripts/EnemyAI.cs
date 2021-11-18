@@ -166,7 +166,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (detected == true)
         {
-            if (CanSeePlayer(20) == true)
+            if (CanSeePlayer(30) == true)
             {
                 GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
                 Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();

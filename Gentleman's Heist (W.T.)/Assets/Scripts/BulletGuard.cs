@@ -55,7 +55,7 @@ public class BulletGuard : MonoBehaviour
             GameObject hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(hit, 1f);
         }
-        Destroy(gameObject, 5f);
+        //Destroy(gameObject,5f);
     }
         
 }
