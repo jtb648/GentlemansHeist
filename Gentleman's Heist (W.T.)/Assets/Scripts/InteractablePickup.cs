@@ -44,15 +44,15 @@ public class InteractablePickup : MonoBehaviour
             PlayerData.AddScore(1);
         }
         else if(name.StartsWith("Donut")){
-            AudioSource.PlayClipAtPoint(foodSound.clip,position, .2f);
+            AudioSource.PlayClipAtPoint(foodSound.clip,position, .4f);
             PlayerData.HealAmount(50);
         }
         else if(name.StartsWith("Apple")){
-            AudioSource.PlayClipAtPoint(foodSound.clip,position, .2f);
+            AudioSource.PlayClipAtPoint(foodSound.clip,position, .4f);
             PlayerData.HealAmount(10);
         }
         else if(name.StartsWith("Coffee")){
-            AudioSource.PlayClipAtPoint(drinkSound.clip,position, .2f);
+            AudioSource.PlayClipAtPoint(drinkSound.clip,position, .4f);
             PlayerData.AddSpeed(10.0f); // Temp since who knows if this is speedy
         }
         Destroy(gameObject);
