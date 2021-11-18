@@ -73,7 +73,7 @@ public class GenerateDungeon : MonoBehaviour
         directionsList.Add(new Vector2(1, 0));
         directionsList.Add(new Vector2(-1, 0));
 
-        Vector2 pos = new Vector2(8, 7);
+        Vector2 pos = new Vector2(9, 9);
         Vector2 size = new Vector2(Random.Range(1, 2), Random.Range(1, 2));
         Tuple<Vector2, Vector2> firstRoom = new Tuple<Vector2, Vector2>(pos, size);
         roomPositions.Add(firstRoom);
