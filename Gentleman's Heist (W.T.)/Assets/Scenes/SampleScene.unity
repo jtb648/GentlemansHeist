@@ -903,6 +903,8 @@ MonoBehaviour:
   - {fileID: 6267869352217856532, guid: 6d8e9f71e0dc7004fb22937c73c531d6, type: 3}
   bigRoom:
   - {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
+  - {fileID: 7084887457678235884, guid: ad6608dd4d16d674397791fca8941402, type: 3}
+  - {fileID: 4723895559590690036, guid: 61703078ebd350c4c8f358b7ab09429b, type: 3}
   objects: []
 --- !u!4 &681761178
 Transform:

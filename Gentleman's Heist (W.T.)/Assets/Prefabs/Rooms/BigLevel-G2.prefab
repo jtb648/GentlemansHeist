@@ -454,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
       propertyPath: m_Name
-      value: GrayFloor
+      value: BigLevel-G2
       objectReference: {fileID: 0}
     - target: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
       propertyPath: m_Layer
@@ -601,11 +601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.36324978
+      value: 0.339
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.28570247
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -990,11 +990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.37275028
+      value: -0.352
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27829742
+      value: 0.013
       objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_LocalPosition.z
