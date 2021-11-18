@@ -45,6 +45,10 @@ public class InteractablePickup : MonoBehaviour
         }
         else if(name.StartsWith("Donut")){
             AudioSource.PlayClipAtPoint(foodSound.clip,position, .2f);
+            PlayerData.HealAmount(50);
+        }
+        else if(name.StartsWith("Apple")){
+            AudioSource.PlayClipAtPoint(foodSound.clip,position, .2f);
             PlayerData.HealAmount(10);
         }
         else if(name.StartsWith("Coffee")){
