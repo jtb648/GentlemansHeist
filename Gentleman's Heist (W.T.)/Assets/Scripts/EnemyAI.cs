@@ -54,10 +54,6 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("Shoot", 0f, 2f);
-        if (Waypoint1 == null)
-        {
-            InvokeRepeating("UpdatePath",0f,0.5f);
-        }
         InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
         
     }
