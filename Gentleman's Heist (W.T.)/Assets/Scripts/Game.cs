@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Pathfinding;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -51,13 +52,14 @@ public class Game : MonoBehaviour
     }
 
         public void ResetDungeon() {
-        GenerateDungeon.Instance.DeleteDungeon();
-        GenerateDungeon.Instance.GenerateNewDungeon();
-        Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
-        Vector3 spawnPos3 = spawnPos;
-        player.transform.position = spawnPos3;
+        // GenerateDungeon.Instance.DeleteDungeon();
+        // GenerateDungeon.Instance.GenerateNewDungeon();
+        // Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
+        // Vector3 spawnPos3 = spawnPos;
+        // player.transform.position = spawnPos3;
         PlayerData.SetLevel(1);
         PlayerData.FullHeal();
         Invoke("FindPaths", .1f);
+        SceneManager.LoadScene("PrisonMenu");
     }
 }

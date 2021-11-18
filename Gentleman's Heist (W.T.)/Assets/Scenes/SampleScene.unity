@@ -888,12 +888,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nRooms: 4
-  n: 18
+  n: 20
   scale: 25
   room: {fileID: 4611349283708993423, guid: 352492e54341fdd40a32341e487d4fe7, type: 3}
   corridor: {fileID: 5843760460774476623, guid: 0306106275a913043a2a4a5267b14b47, type: 3}
   empty: {fileID: 3688394378148694987, guid: 285694e5c9780b0419114765d982550e, type: 3}
-  mark: {fileID: 4611349283708993423, guid: 352492e54341fdd40a32341e487d4fe7, type: 3}
+  mark: {fileID: 1791879502705909938, guid: f24314ac2f17d1e46946aa6b49b65296, type: 3}
   floorNr: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
   emptyRoom: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
   game: {fileID: 681761180}
@@ -902,6 +902,7 @@ MonoBehaviour:
   - {fileID: 8574842548275435456, guid: 83c5291a98ebc984b8bda5ae95068375, type: 3}
   - {fileID: 8838951868746398390, guid: f3fd0b070e4780249a532cc27217f448, type: 3}
   - {fileID: 6272703087508030214, guid: 0423fe270b061b7489e7176eff6451f2, type: 3}
+  - {fileID: 7224061860832412315, guid: 3b28b737f6951d042a9e03390687d920, type: 3}
   bigRoom:
   - {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
   objects: []
