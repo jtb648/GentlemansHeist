@@ -657,7 +657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You don''t have enough money to purcahse this item
+  m_text: 'You don''t have enough money to purchase this item
 
 
     Better go steal
