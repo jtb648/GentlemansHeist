@@ -255,11 +255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 894210853170484188, guid: bd0e2c553a86ddc43a77aff7b229b9d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.26742792
+      value: 0.2476
       objectReference: {fileID: 0}
     - target: {fileID: 894210853170484188, guid: bd0e2c553a86ddc43a77aff7b229b9d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04507213
+      value: -0.0522
       objectReference: {fileID: 0}
     - target: {fileID: 894210853170484188, guid: bd0e2c553a86ddc43a77aff7b229b9d4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -296,6 +296,10 @@ PrefabInstance:
     - target: {fileID: 2678773353234402681, guid: bd0e2c553a86ddc43a77aff7b229b9d4, type: 3}
       propertyPath: m_Name
       value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880059533583848193, guid: bd0e2c553a86ddc43a77aff7b229b9d4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd0e2c553a86ddc43a77aff7b229b9d4, type: 3}
