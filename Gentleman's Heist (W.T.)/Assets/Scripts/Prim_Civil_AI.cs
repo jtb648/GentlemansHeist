@@ -14,16 +14,10 @@ public class Prim_Civil_AI : MonoBehaviour
     public Transform Waypoint1;
     
     public Transform Waypoint2;
-    public Transform Waypoint3;
-    public Transform Waypoint4;
-    public Transform Waypoint5;
-
 
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     bool reachedEndOfPath = false;
-
-    // Player trigger references
     
     GameObject sound;
     
@@ -82,12 +76,13 @@ public class Prim_Civil_AI : MonoBehaviour
         }
     }
 
+
     private void UpdatePath()
     {
         if (detected == true)
         {
             if (seeker.IsDone())
-                seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
+                seeker.StartPath(rb.position, Waypoint1.transform.position, OnPathComplete);
         }
     }
 
