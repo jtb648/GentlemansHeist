@@ -14,7 +14,7 @@ public class PrisonMenuScript : MonoBehaviour
     }
     public void QuitGame(){
         // Stops the Game -> only works once it's built
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
