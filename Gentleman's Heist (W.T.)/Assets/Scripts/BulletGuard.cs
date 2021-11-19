@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletGuard : MonoBehaviour
 {
     public int rangeFrames = 360;
-    GameObject guard;
+    GameObject[] guard;
 
     // Reference to hit effect game object
     public GameObject hitEffect;
@@ -15,8 +15,11 @@ public class BulletGuard : MonoBehaviour
 
     private void Start()
     {
-        guard = GameObject.FindGameObjectsWithTag("Guard")[0];
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), guard.GetComponentInChildren<Collider2D>());
+        guard = GameObject.FindGameObjectsWithTag("Guard");
+        foreach (GameObject x in guard)
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), x.GetComponentInChildren<Collider2D>());
+        }
     }
 
     void Update()
@@ -27,7 +30,7 @@ public class BulletGuard : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
