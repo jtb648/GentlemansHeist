@@ -11,7 +11,7 @@ public class BulletGuard : MonoBehaviour
     // Reference to hit effect game object
     public GameObject hitEffect;
     // Reference to Guard damage value
-    public int damageVal = 20;
+    public int damageVal = 30;
 
     private void Start()
     {
