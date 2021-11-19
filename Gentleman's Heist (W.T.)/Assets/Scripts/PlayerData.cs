@@ -14,6 +14,7 @@ public static class PlayerData
     private static float _playerDefaultSpeed;
     private static int _playerMaxHealth;
     private static int _playerCurrentHealth;
+    private static int _playerSoundCircle;
 
     private static int _level = 0;
 
@@ -262,9 +263,15 @@ public static class PlayerData
         _keys++;
     }
 
-    public static void SetSilentShoes(double newRadius, int numFrames){
-        _entitySound.SetSoundEvent(newRadius, numFrames);
+    public static void SetSilentShoes(int newRatio)
+    {
+        _entitySound.transitionDivs = newRatio;
     }
+
+    public static void SetEntitySound(EntitySound toSet)
+    {
+        _entitySound = toSet;
+    } 
 
     public static void SetUpgradeCoffee(){
         if(_upgradeCoffee){
@@ -278,6 +285,6 @@ public static class PlayerData
     public static bool GetUpgradeCoffee(){
         return _upgradeCoffee;
     }
-
+    
 
 }

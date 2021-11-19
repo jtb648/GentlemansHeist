@@ -65,7 +65,7 @@ public class UpgradeMenuScript : MonoBehaviour
     public void buySilentShoes(){
         if(purchaseItem(silentShoesPrice))
         {
-            PlayerData.SetSilentShoes(0.2, 600);
+            PlayerData.SetSilentShoes(7);
         }
     }
 

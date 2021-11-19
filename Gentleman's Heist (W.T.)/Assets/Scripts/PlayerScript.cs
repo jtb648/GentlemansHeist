@@ -89,6 +89,7 @@ public class PlayerScript : MonoBehaviour
         PlayerData.SetHealthBar(healthBar);
         PlayerData.SetAnimator(animator);
         PlayerData.SetCamera(cam);
+        PlayerData.SetEntitySound(gameObject.GetComponentInChildren<EntitySound>());
         
         PlayerData.SetMaxHealth(100);
         PlayerData.SetCurrentHealth(100);
