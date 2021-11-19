@@ -45,7 +45,7 @@ public class GenerateDungeon : MonoBehaviour
         // ugly time seeding
         Unity.Mathematics.Random rando = new Unity.Mathematics.Random();
         // Debug.Log((DateTime.Now.Ticks / DateTime.Now.Millisecond / DateTime.Now.Second*5 / DateTime.Now.Minute)/10000000);
-        long timeSeed = (DateTime.Now.Ticks / DateTime.Now.Millisecond / DateTime.Now.Second*5 / DateTime.Now.Minute)/10000000;
+        long timeSeed = ((DateTime.Now.Ticks + 1 ) / (DateTime.Now.Millisecond + 1) / (DateTime.Now.Second*5 + 1) / (DateTime.Now.Minute + 1))/10000000;
         rando.InitState(Convert.ToUInt32(timeSeed));
         seed = rando.NextInt(1, 999999);
         Random.InitState(seed);
