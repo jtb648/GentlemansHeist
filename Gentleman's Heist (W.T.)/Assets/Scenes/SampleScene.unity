@@ -727,7 +727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4445961646239364480, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: speedToRadiusRatio
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6866507023814050018, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: m_RootOrder
@@ -772,6 +772,18 @@ PrefabInstance:
     - target: {fileID: 6866507023814050018, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453821408962490185, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453821408962490185, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453821408962490185, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 7453821408962490185, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: m_SortingOrder
@@ -894,7 +906,7 @@ MonoBehaviour:
   corridor: {fileID: 5843760460774476623, guid: 0306106275a913043a2a4a5267b14b47, type: 3}
   empty: {fileID: 3688394378148694987, guid: 285694e5c9780b0419114765d982550e, type: 3}
   mark: {fileID: 1791879502705909938, guid: f24314ac2f17d1e46946aa6b49b65296, type: 3}
-  floorNr: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
+  floorNr: {fileID: 6077173141171127047, guid: 0b7cf16eaf6c0b34e96b39c00c12bede, type: 3}
   emptyRoom: {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
   game: {fileID: 681761180}
   enemyRoom:

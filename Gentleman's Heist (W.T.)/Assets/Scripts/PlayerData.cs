@@ -263,6 +263,10 @@ public static class PlayerData
         _keys++;
     }
 
+    public static void ChangeKeys(int toSet) {
+        _keys = toSet;
+    }
+
     public static void SetSilentShoes(int newRatio)
     {
         _entitySound.transitionDivs = newRatio;
