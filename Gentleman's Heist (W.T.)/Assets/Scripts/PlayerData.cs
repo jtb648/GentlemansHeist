@@ -231,7 +231,7 @@ public static class PlayerData
     public static void UpdateHealthBar()
     {
         _playerHealthBar.setHealth(GetCurrentHealth());
-        _playerHealthBar.setMaxHealth(GetMaxHealth());
+        // _playerHealthBar.setMaxHealth(GetMaxHealth());
     }
 
     public static int GetLevel()
