@@ -13,7 +13,7 @@ public class MoveFloor : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
-            if (PlayerData.GetKeys() >= 0) { //Left at zero for debugging purposes, change zero to one before building
+            if (PlayerData.GetKeys() >= 1) { //Left at zero for debugging purposes, change zero to one before building
                 PlayerData.ChangeKeys(PlayerData.GetKeys()-1);
                 PlayerData.NextLevel();
                 game.NextFloor();
