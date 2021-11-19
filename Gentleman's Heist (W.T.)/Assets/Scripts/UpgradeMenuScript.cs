@@ -63,14 +63,18 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buySilentShoes(){
-        purchaseItem(silentShoesPrice);
-        PlayerData.SetSilentShoes(0.2, 600);
+        if(purchaseItem(silentShoesPrice))
+        {
+            PlayerData.SetSilentShoes(0.2, 600);
+        }
     }
 
     public void buyLockpick(){
         // For now, buying a lockpick just adds another key to PlayerData
-        PlayerData.SetKeys();
-        purchaseItem(lockPickPrice);
+        if(purchaseItem(lockPickPrice))
+        {
+            PlayerData.SetKeys();
+        }
     }
 
     public void buySilentWeapon(){
@@ -80,8 +84,10 @@ public class UpgradeMenuScript : MonoBehaviour
 
     public void buyCoffee(){
         // [Add Coffee to inventory here(?)]
-        PlayerData.AddSpeed(10.0f);
-        purchaseItem(coffeePrice);
+        if(purchaseItem(coffeePrice))
+        {
+            PlayerData.SetUpgradeCoffee();
+        }
     }
 
     public void buyAlarmDisabler(){
@@ -91,18 +97,22 @@ public class UpgradeMenuScript : MonoBehaviour
 
     public void buyFood(){
         // Probably have to change this -- since health resets each level
-        purchaseItem(foodPrice);
-        PlayerData.HealAmount(50);
+        if(purchaseItem(foodPrice))
+        {
+            PlayerData.HealAmount(50);
+        }
     }
 
-    private void purchaseItem(int Price){
+    private bool purchaseItem(int Price){
         int money = PlayerData.GetMoney() - Price;
         if(money < 0){
             youHaveNoMoney();
+            return false;
         }
         else {
-        PlayerData.SetMoney(money);
-        earnings.text = "Earnings: " + money;
+            PlayerData.SetMoney(money);
+            earnings.text = "Earnings: " + money;
+            return true;
         }
     }
 

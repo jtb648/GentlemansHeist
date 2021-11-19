@@ -74,7 +74,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject currentInteractableObject = null;
 
     public AudioSource walkingSound;
-    
+
     // Start is called before the first frame update
     void Start()
     { 
@@ -94,6 +94,10 @@ public class PlayerScript : MonoBehaviour
         PlayerData.SetCurrentHealth(100);
         PlayerData.SetDefaultSpeed(speed);
         PlayerData.SetToDefaultSpeed();
+        if(PlayerData.GetUpgradeCoffee()){
+            PlayerData.AddSpeed(5.0f);
+            PlayerData.SetUpgradeCoffee();
+        }
         PlayerData.SetBulletForce(20.0f);
         PlayerData.SetPlayer(gameObject);
         PlayerData.SetPlayerScript(this);

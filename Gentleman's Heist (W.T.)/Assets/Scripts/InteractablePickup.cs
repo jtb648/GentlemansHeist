@@ -55,7 +55,7 @@ public class InteractablePickup : MonoBehaviour
         }
         else if(name.StartsWith("Coffee")){
             AudioSource.PlayClipAtPoint(drinkSound.clip,position, .4f);
-            PlayerData.AddSpeed(10.0f); // Temp since who knows if this is speedy
+            PlayerData.AddSpeed(5.0f); // Temp since who knows if this is speedy
         }
         Destroy(gameObject);
     }

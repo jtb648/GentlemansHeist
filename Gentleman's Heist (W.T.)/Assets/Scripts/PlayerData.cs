@@ -31,6 +31,8 @@ public static class PlayerData
     
     private static float _bulletForce;
 
+    private static bool _upgradeCoffee;
+
     public static int GetMoney()
     {
         return _playerMoney;
@@ -263,8 +265,19 @@ public static class PlayerData
     public static void SetSilentShoes(double newRadius, int numFrames){
         _entitySound.SetSoundEvent(newRadius, numFrames);
     }
-    
-    
+
+    public static void SetUpgradeCoffee(){
+        if(_upgradeCoffee){
+            _upgradeCoffee = false;
+        }
+        else{
+            _upgradeCoffee = true;
+        }
+    }
+
+    public static bool GetUpgradeCoffee(){
+        return _upgradeCoffee;
+    }
 
 
 }
