@@ -27,6 +27,7 @@ public static class PlayerData
     private static PlayerScript _playerScript;
     private static GameObject _player;
     private static HealthBar _playerHealthBar;
+    private static EntitySound _entitySound;
     
     private static float _bulletForce;
 
@@ -258,9 +259,10 @@ public static class PlayerData
     public static void SetKeys(){
         _keys++;
     }
-    
-    
-    
+
+    public static void SetSilentShoes(double newRadius, int numFrames){
+        _entitySound.SetSoundEvent(newRadius, numFrames);
+    }
     
     
 

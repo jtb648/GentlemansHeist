@@ -37,11 +37,13 @@ public class InteractablePickup : MonoBehaviour
         else if(name.StartsWith("Diamond")){
             AudioSource.PlayClipAtPoint(diamondSound.clip,position, .5f);
             PlayerData.AddScore(500);
+            PlayerData.AddMoney(500);
             PlayerData.SetDiamonds();
         }
         else if(name.StartsWith("Coin")){
             AudioSource.PlayClipAtPoint(coinSound.clip,position, .5f);
             PlayerData.AddScore(1);
+            PlayerData.AddMoney(1);
         }
         else if(name.StartsWith("Donut")){
             AudioSource.PlayClipAtPoint(foodSound.clip,position, .4f);

@@ -63,12 +63,13 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buySilentShoes(){
-        // [Add SilentShoes to inventory here(?)]
         purchaseItem(silentShoesPrice);
+        PlayerData.SetSilentShoes(0.2, 600);
     }
 
     public void buyLockpick(){
-        // [Add Lockpick to inventory here(?)]
+        // For now, buying a lockpick just adds another key to PlayerData
+        PlayerData.SetKeys();
         purchaseItem(lockPickPrice);
     }
 
@@ -79,6 +80,7 @@ public class UpgradeMenuScript : MonoBehaviour
 
     public void buyCoffee(){
         // [Add Coffee to inventory here(?)]
+        PlayerData.AddSpeed(10.0f);
         purchaseItem(coffeePrice);
     }
 
@@ -88,8 +90,9 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buyFood(){
-        // [Add Food to inventory here(?)]
+        // Probably have to change this -- since health resets each level
         purchaseItem(foodPrice);
+        PlayerData.HealAmount(50);
     }
 
     private void purchaseItem(int Price){
