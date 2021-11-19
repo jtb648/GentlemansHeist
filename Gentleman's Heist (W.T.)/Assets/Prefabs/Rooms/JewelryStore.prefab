@@ -1058,6 +1058,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardAI
       objectReference: {fileID: 0}
+    - target: {fileID: 3477559011041414237, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
+      propertyPath: Waypoint1
+      value: 
+      objectReference: {fileID: 91073269480808745}
+    - target: {fileID: 3477559011041414237, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
+      propertyPath: Waypoint2
+      value: 
+      objectReference: {fileID: 4280380724230754535}
     - target: {fileID: 3477559011041414239, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_RootOrder
       value: 41
