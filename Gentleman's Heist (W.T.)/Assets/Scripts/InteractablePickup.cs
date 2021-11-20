@@ -33,30 +33,40 @@ public class InteractablePickup : MonoBehaviour
         if (name.StartsWith("Key")){
             AudioSource.PlayClipAtPoint(keySound.clip,position, .5f);
             PlayerData.SetKeys();
+            Destroy(gameObject);
         }
         else if(name.StartsWith("Diamond")){
             AudioSource.PlayClipAtPoint(diamondSound.clip,position, .5f);
             PlayerData.AddScore(100);
             PlayerData.AddMoney(100);
             PlayerData.SetDiamonds();
+            Destroy(gameObject);
         }
         else if(name.StartsWith("Coin")){
             AudioSource.PlayClipAtPoint(coinSound.clip,position, .5f);
             PlayerData.AddScore(20);
             PlayerData.AddMoney(20);
+            Destroy(gameObject);
         }
         else if(name.StartsWith("Donut")){
             AudioSource.PlayClipAtPoint(foodSound.clip,position, .4f);
             PlayerData.HealAmount(50);
+            Destroy(gameObject);
         }
         else if(name.StartsWith("Apple")){
             AudioSource.PlayClipAtPoint(foodSound.clip,position, .4f);
             PlayerData.HealAmount(10);
+            Destroy(gameObject);
         }
         else if(name.StartsWith("Coffee")){
             AudioSource.PlayClipAtPoint(drinkSound.clip,position, .4f);
             PlayerData.AddSpeed(5.0f); // Temp since who knows if this is speedy
-        }
+            gameObject.transform.localScale = new Vector3(0,0,0); // this works but is jank
+            Invoke(nameof(resetSpeed),5.0f);
+        }  
+    }
+    private void resetSpeed(){
+        PlayerData.SubSpeed(5.0f);
         Destroy(gameObject);
     }
 }
