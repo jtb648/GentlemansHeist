@@ -41,7 +41,9 @@ public class EnemyAI : MonoBehaviour
 
     public HealthBar healthBar;
     public int health;
-    
+
+    public AudioSource musicToStop;
+    public AudioSource musicToPlay;
 
 
     // Start is called before the first frame update
@@ -53,6 +55,12 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
+        musicToStop = GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[0];
+        musicToPlay = GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[1];
+
+        musicToPlay.Play();
+        musicToPlay.Pause();
+
         InvokeRepeating("Shoot", 0f, 0.5f);
         InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
         
@@ -63,7 +71,7 @@ public class EnemyAI : MonoBehaviour
     private void UpdatePathWaypoint1()
     {
         float distToW1 = Vector2.Distance(transform.position, Waypoint1.transform.position);
-        if (detected==false)
+        if (PlayerScript.detected == false)
         {
             if (distToW1 < 1)
             {
@@ -84,7 +92,7 @@ public class EnemyAI : MonoBehaviour
     private void UpdatePathWaypoint2()
     {
         float distToW2 = Vector2.Distance(transform.position, Waypoint2.transform.position);
-        if (detected == false)
+        if (PlayerScript.detected == false)
         {
             if (distToW2 < 1)
             {
@@ -102,7 +110,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void UpdatePath()
     {
-        if (detected == true)
+        if (PlayerScript.detected == true)
         {
             if (seeker.IsDone())
                 seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
@@ -141,13 +149,15 @@ public class EnemyAI : MonoBehaviour
     {
         if (sound.GetComponentInChildren<CircleCollider2D>().IsTouching(this.gameObject.GetComponentInChildren<CircleCollider2D>()))
         {
-            detected = true;
+            PlayerScript.detected = true;
+            musicToStop.Pause();
+            musicToPlay.UnPause();
         }
     }
 
     void facePlayer()
     {
-        if (detected == true)
+        if (PlayerScript.detected == true)
         {
             var offset = 90f;
             Vector2 direction = target.transform.position - transform.position;
@@ -165,7 +175,7 @@ public class EnemyAI : MonoBehaviour
 
     void Shoot()
     {
-        if (detected == true)
+        if (PlayerScript.detected == true)
         {
             if (CanSeePlayer(30) == true)
             {
@@ -196,7 +206,9 @@ public class EnemyAI : MonoBehaviour
         CanHearPlayer();
         if (CanSeePlayer(9) == true)
         {
-            detected = true;
+            PlayerScript.detected = true;
+            musicToStop.Pause();
+            musicToPlay.UnPause();
         }
         if (true)
         {

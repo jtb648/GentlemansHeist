@@ -9,8 +9,11 @@ public class Bullet : MonoBehaviour
     public GameObject hitEffect;
     GameObject player;
 
+    public AudioSource gunShot;
+
     private void Start()
     {
+        //gunShot = gameObject.GetComponent<AudioSource>();
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>() );
     }

@@ -8,6 +8,8 @@ public class BulletGuard : MonoBehaviour
     public int rangeFrames = 360;
     GameObject[] guard;
 
+    public AudioSource gunShot;
+
     // Reference to hit effect game object
     public GameObject hitEffect;
     // Reference to Guard damage value
@@ -15,6 +17,7 @@ public class BulletGuard : MonoBehaviour
 
     private void Start()
     {
+        //gunShot = gameObject.GetComponent<AudioSource>();
         guard = GameObject.FindGameObjectsWithTag("Guard");
         foreach (GameObject x in guard)
         {

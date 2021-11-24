@@ -75,6 +75,8 @@ public class PlayerScript : MonoBehaviour
 
     public AudioSource walkingSound;
 
+    public static bool detected = false;
+
     // Start is called before the first frame update
     void Start()
     { 

@@ -16,7 +16,7 @@ public class Game : MonoBehaviour
 
     private void FindPaths()
     {
-        AstarPath.active.Scan();//GET THIS WORKING
+        AstarPath.active.Scan();
     }
 
     private void Awake()
@@ -39,12 +39,16 @@ public class Game : MonoBehaviour
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
         Invoke("FindPaths", .1f);
+<<<<<<< Updated upstream
         if (!SaveMaster.needsLoad)
         {
             SaveMaster.needsSave = true;
         }
 
 
+=======
+        PlayerScript.detected = false;
+>>>>>>> Stashed changes
     }
 
     public void NextFloor() {
@@ -55,6 +59,7 @@ public class Game : MonoBehaviour
         player.transform.position = spawnPos3;
         PlayerData.NextLevel();
         Invoke("FindPaths", .1f);
+        PlayerScript.detected = false;
     }
 
         public void ResetDungeon() {
@@ -65,6 +70,7 @@ public class Game : MonoBehaviour
         // player.transform.position = spawnPos3;
         PlayerData.SetLevel(1);
         PlayerData.FullHeal();
+        PlayerScript.detected = false;
         Invoke("FindPaths", .1f);
         SceneManager.LoadScene("PrisonMenu");
     }
