@@ -243,9 +243,10 @@ public class PlayerScript : MonoBehaviour
 
     // Bullet init and shooting
     void Shoot(){
-       GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
        Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
        bullBody.AddForce(firePoint.up * PlayerData.GetBulletForce(), ForceMode2D.Impulse);
+       PlayerData.GetSoundCircle().GetComponent<EntitySound>().SetSoundEvent(450, 30);
     }
     
 }
