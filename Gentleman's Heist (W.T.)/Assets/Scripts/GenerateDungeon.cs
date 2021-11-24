@@ -26,7 +26,7 @@ public class GenerateDungeon : MonoBehaviour
     private Vector2 spawnPos;
     
     // Gabe's saving stuff
-    public int seed = 5;
+    private int seed;
 
     public int[,] rooms;
     public List<Tuple<Vector2, Vector2>> roomPositions;
@@ -42,19 +42,13 @@ public class GenerateDungeon : MonoBehaviour
     
     private void Awake()
     {
-        Debug.Log("Ran");
-        Instance = this;
-        objects = new List<GameObject>();
+        // ugly time seeding
         Unity.Mathematics.Random rando = new Unity.Mathematics.Random();
         // Debug.Log((DateTime.Now.Ticks / DateTime.Now.Millisecond / DateTime.Now.Second*5 / DateTime.Now.Minute)/10000000);
         long timeSeed = ((DateTime.Now.Ticks + 1 ) / (DateTime.Now.Millisecond + 1) / (DateTime.Now.Second*5 + 1) / (DateTime.Now.Minute + 1))/10000000;
         rando.InitState(Convert.ToUInt32(timeSeed));
         seed = rando.NextInt(1, 999999);
-    }
-
-    public void AwakeWithSeed(int newSeed)
-    {
-        seed = newSeed;
+        Random.InitState(seed);
         Instance = this;
         objects = new List<GameObject>();
     }
@@ -70,43 +64,39 @@ public class GenerateDungeon : MonoBehaviour
 
     public void GenerateNewDungeon()
     {
-        Random.InitState(seed);
-        if (!SaveMaster.needsLoad)
+        roomPositions = new List<Tuple<Vector2, Vector2>>();
+        rooms = new int[n, n];
+
+        directionsList = new List<Vector2>();
+        directionsList.Add(new Vector2(0, 1));
+        directionsList.Add(new Vector2(0, -1));
+        directionsList.Add(new Vector2(1, 0));
+        directionsList.Add(new Vector2(-1, 0));
+
+        Vector2 pos = new Vector2(14, 14);
+        Vector2 size = new Vector2(Random.Range(1, 2), Random.Range(1, 2));
+        Tuple<Vector2, Vector2> firstRoom = new Tuple<Vector2, Vector2>(pos, size);
+        roomPositions.Add(firstRoom);
+        Instantiate(floorNr, pos * scale, Quaternion.identity);
+        markRoom(firstRoom, 3);
+
+        for (int i = 0; i < nRooms; i++)
         {
-            roomPositions = new List<Tuple<Vector2, Vector2>>();
-            rooms = new int[n, n];
-
-            directionsList = new List<Vector2>();
-            directionsList.Add(new Vector2(0, 1));
-            directionsList.Add(new Vector2(0, -1));
-            directionsList.Add(new Vector2(1, 0));
-            directionsList.Add(new Vector2(-1, 0));
-
-            Vector2 pos = new Vector2(14, 14);
-            Vector2 size = new Vector2(Random.Range(1, 2), Random.Range(1, 2));
-            Tuple<Vector2, Vector2> firstRoom = new Tuple<Vector2, Vector2>(pos, size);
-            roomPositions.Add(firstRoom);
-            Instantiate(floorNr, pos * scale, Quaternion.identity);
-            markRoom(firstRoom, 3);
-
-            for (int i = 0; i < nRooms; i++)
-            {
-                int c = 0;
+            int c = 0;
         
-                while (!GenerateNewRoom())
-                {
-                    c++;
-                    if (c > 100) break;
-                }
+            while (!GenerateNewRoom())
+            {
+                c++;
+                if (c > 100) break;
             }
-            availableRooms = new List<Tuple<Vector2, Vector2>>(roomPositions);
-
-            Vector2 finalRoom = availableRooms[availableRooms.Count - 1].Item1;
-            rooms[(int)finalRoom.x, (int)finalRoom.y] = 3;
-            FindSpawns();
-            //FindChests();
-            ShowRooms();
         }
+        availableRooms = new List<Tuple<Vector2, Vector2>>(roomPositions);
+
+        Vector2 finalRoom = availableRooms[availableRooms.Count - 1].Item1;
+        rooms[(int)finalRoom.x, (int)finalRoom.y] = 3;
+        FindSpawns();
+        //FindChests();
+        ShowRooms();
     }
 
     private void ShowAvailable()
@@ -136,8 +126,6 @@ public class GenerateDungeon : MonoBehaviour
 
     private bool GenerateNewRoom()
     {
-        // Debug.Log($"Ran with seed: {seed}");
-        // Random.InitState(seed);
         int roomNumber = Random.Range(0, roomPositions.Count);
         Vector2 npos = roomPositions[roomNumber].Item1;
         Vector2 nsize = roomPositions[roomNumber].Item2;

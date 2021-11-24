@@ -18,7 +18,6 @@ public class MoveFloor : MonoBehaviour
                 PlayerData.NextLevel();
                 game.NextFloor();
                 SceneManager.LoadScene("UpgradeMenu");
-                SaveMaster.ClearTracking();
             }
             else {
                 Debug.Log("No keys collected");

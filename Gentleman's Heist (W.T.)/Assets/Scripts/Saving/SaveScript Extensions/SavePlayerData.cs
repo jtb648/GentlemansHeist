@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SavePlayerData : SaveScript
 {
-    // void Start()
-    // {
-    //     SaveMaster.KeepTrackOf(this);
-    // }
+    void Start()
+    {
+        SaveMaster.KeepTrackOf(this);
+    }
     public override void SaveMe()
     {
         int money = PlayerData.GetMoney();

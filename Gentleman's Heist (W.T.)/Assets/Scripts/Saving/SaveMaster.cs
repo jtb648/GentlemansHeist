@@ -46,10 +46,6 @@ public static class SaveMaster
     public static bool needsLoad = false;
     public static bool needsSave = false;
 
-    public static void ClearTracking()
-    {
-        _toTrack.Clear();
-    }
     public static void FlipNeedsLoad()
     {
         needsLoad = !needsLoad;
@@ -261,7 +257,6 @@ public static class SaveMaster
         foreach (SaveScript script in _toTrack)
         {
             script.SaveMe();
-            Debug.Log(script.name);
         }
 
         SaveData save = new SaveData(_lookUpTable, _intList, _boolList, _floatList, _stringList);
