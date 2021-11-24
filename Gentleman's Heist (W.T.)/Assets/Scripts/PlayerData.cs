@@ -40,6 +40,7 @@ public static class PlayerData
 
     private static bool _upgradeCoffee;
     private static bool _upgradeFood;
+    private static bool _upgradeSilentWeapon;
     
     /*
      * Following clear Methods need to stay updated if you want everything to work
@@ -376,6 +377,19 @@ public static class PlayerData
     
     public static bool GetUpgradeFood(){
         return _upgradeFood;
+    }
+
+    public static void SetUpgradeSilentWeapon(){
+        if(_upgradeSilentWeapon){
+            _upgradeSilentWeapon = false;
+        }
+        else{
+            _upgradeSilentWeapon = true;
+        }
+    }
+
+    public static bool getUpgradeSilentWeapon(){
+        return _upgradeSilentWeapon;
     }
 
     public static void UpdateSoundCircle()

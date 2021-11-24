@@ -77,6 +77,9 @@ public class PlayerScript : MonoBehaviour
 
     public static bool detected = false;
 
+    // Determines if Silent Weapon purchased for that round
+    public bool noNoise = false;
+
     // Start is called before the first frame update
     void Start()
     { 
@@ -112,6 +115,11 @@ public class PlayerScript : MonoBehaviour
         PlayerData.SetBulletForce(20.0f);
         PlayerData.SetPlayer(gameObject);
         PlayerData.SetPlayerScript(this);
+        // if Player purchases silentWeapon
+        if(PlayerData.getUpgradeSilentWeapon()){
+            noNoise = true;
+            PlayerData.SetUpgradeSilentWeapon();
+        }
     }
 
 
@@ -248,7 +256,9 @@ public class PlayerScript : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
        Rigidbody2D bullBody = bullet.GetComponent<Rigidbody2D>();
        bullBody.AddForce(firePoint.up * PlayerData.GetBulletForce(), ForceMode2D.Impulse);
-       PlayerData.GetSoundCircle().GetComponent<EntitySound>().SetSoundEvent(450, 30);
+       if(!noNoise){
+            PlayerData.GetSoundCircle().GetComponent<EntitySound>().SetSoundEvent(450, 30);
+       }
     }
     
 }

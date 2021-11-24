@@ -81,7 +81,9 @@ public class UpgradeMenuScript : MonoBehaviour
 
     public void buySilentWeapon(){
         // [Add SilentWeapon to inventory here(?)]
-        purchaseItem(silentWeaponPrice);
+        if (purchaseItem(silentWeaponPrice)){
+            PlayerData.SetUpgradeSilentWeapon();
+        }
     }
 
     public void buyCoffee(){
