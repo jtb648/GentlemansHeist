@@ -9,8 +9,6 @@ public class UIUpdater : MonoBehaviour
 {
     [SerializeField]
     private Text keys_text;
-    [SerializeField]
-    private Text diamonds_text;
 
     [SerializeField]
     private Text score_text;
@@ -22,16 +20,11 @@ public class UIUpdater : MonoBehaviour
     void Update()
     {
         UpdateUIKeys(PlayerData.GetKeys());
-        UpdateUIDiamonds(PlayerData.GetDiamonds());
         UpdateUIScore(PlayerData.GetScore());
     }
     //Updates the keys text to be the new amount of keys
     public void UpdateUIKeys(int num_keys){
         keys_text.text = "" + num_keys;
-    }
-    //Updates the diamonds text to be the new amount of diamonds
-    public void UpdateUIDiamonds(int num_diamonds){
-        diamonds_text.text = "" + num_diamonds;
     }
      //Updates score text to be coins picked up plus diamonds * whatever we want diamonds to be worth
     public void UpdateUIScore(int new_score){
