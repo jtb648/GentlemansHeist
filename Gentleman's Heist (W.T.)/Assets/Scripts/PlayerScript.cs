@@ -168,6 +168,12 @@ public class PlayerScript : MonoBehaviour
         {
             changeAnimation();
             animator.SetBool("walking", true); // set walking to true
+            if (_sneak == 2){
+                walkingSound.volume = .1f;
+            }
+            else{
+                walkingSound.volume = .7f;
+            }
             walkingSound.UnPause();
             
         }
