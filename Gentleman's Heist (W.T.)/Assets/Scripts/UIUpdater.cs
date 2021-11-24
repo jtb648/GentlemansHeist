@@ -12,15 +12,33 @@ public class UIUpdater : MonoBehaviour
 
     [SerializeField]
     private Text score_text;
+
+     [SerializeField]
+    private Text keysCheck_text;
+    [SerializeField]
+    private Image key;
+
+    [SerializeField]
+    private Text stairsTip_text;
+    [SerializeField]
+    private Image stairs;
     // Start is called before the first frame update
     void Start()
     {
+        stairsTip_text.enabled = false;
+        stairs.enabled = false;
     }
     // Update is called once per frame
     void Update()
     {
         UpdateUIKeys(PlayerData.GetKeys());
         UpdateUIScore(PlayerData.GetScore());
+        if (PlayerData.GetKeys() > 0){ // Probably change to keys needed when implemented
+            keysCheck_text.enabled = false;
+            key.enabled = false; 
+            stairsTip_text.enabled = true;
+            stairs.enabled = true;
+        }
     }
     //Updates the keys text to be the new amount of keys
     public void UpdateUIKeys(int num_keys){
