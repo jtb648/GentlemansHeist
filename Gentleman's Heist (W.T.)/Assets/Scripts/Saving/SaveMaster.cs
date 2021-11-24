@@ -42,8 +42,17 @@ public static class SaveMaster
     private static List<bool> _boolList = new List<bool>();
     private static List<float> _floatList = new List<float>();
     private static List<string> _stringList = new List<string>();
-    
-    
+    private static string PATH = Application.persistentDataPath + "/";
+    public static bool needsLoad = false;
+
+    public static void FlipNeedsLoad()
+    {
+        needsLoad = !needsLoad;
+    }
+    public static bool SaveExists(string saveName)
+    {
+        return File.Exists($"{PATH}{saveName}.smbf");
+    }
     /*
      * Function that adds given variables to the LSS
      * Normally called as a part of SaveAll(), theoretically can be called for use as a global variable space

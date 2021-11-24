@@ -1,0 +1,76 @@
+using UnityEngine;
+
+public class SavePlayerData : SaveScript
+{
+    public override void SaveMe()
+    {
+        int money = PlayerData.GetMoney();
+        int score = PlayerData.GetScore();
+        int maxHealth = PlayerData.GetMaxHealth();
+        int health = PlayerData.GetCurrentHealth();
+        int level = PlayerData.GetLevel();
+        int diamonds = PlayerData.GetDiamonds();
+        int keys = PlayerData.GetKeys();
+        
+        float speed = PlayerData.GetSpeed();
+        float dSpeed = PlayerData.GetDefaultSpeed();
+        float soundRatio = PlayerData.GetSoundRatio();
+        float bulletForce = PlayerData.GetBulletForce();
+        
+        bool upCoffee = PlayerData.GetUpgradeCoffee();
+        bool upFood = PlayerData.GetUpgradeFood();
+        
+        string playerName = PlayerData.GetName();
+        
+        SaveMaster.SaveVariables(
+            uid:this.uid,
+            ints:new int[]{money, score, maxHealth, health, level, diamonds, keys},
+            floats:new float[]{speed, dSpeed, soundRatio, bulletForce},
+            bools:new bool[]{upCoffee, upFood},
+            strings:new string[]{playerName}
+            );
+    }
+
+    public override void LoadMe()
+    {
+        var load = SaveMaster.LoadVariables(gameObject, uid);
+        bool loadedProperly = load.Item1;
+        var data = load.Item2;
+        if (loadedProperly)
+        {
+            int[] ints = data.Item1;
+            bool[] bools = data.Item2;
+            float[] floats = data.Item3;
+            string[] strings = data.Item4;
+
+            
+            // bad idea, not sure if player will exist when invoked... Too bad!
+            PlayerScript ps = FindObjectOfType<PlayerScript>();
+            ps.SyncPlayerData();
+
+            PlayerData.SetMoney(ints[0]);
+            PlayerData.SetScore(ints[1]);
+            PlayerData.SetMaxHealth(ints[2]);
+            PlayerData.SetCurrentHealth(ints[3]);
+            PlayerData.SetLevel(ints[4]);
+            PlayerData.ActuallySetDiamonds(ints[5]);
+            PlayerData.ActuallySetKeys(ints[6]);
+            
+            PlayerData.SetSpeed(floats[0]);
+            PlayerData.SetDefaultSpeed(floats[1]);
+            PlayerData.SetSilentShoes(floats[2]); // SetSoundRatio
+            PlayerData.SetBulletForce(floats[3]);
+            
+            PlayerData.SetCoffee(bools[0]);
+            PlayerData.SetFood(bools[1]);
+            
+            PlayerData.SetName(strings[0]);
+        }
+        else
+        {
+            Debug.LogError("Failed to load state of PlayerData. Does the save exist?");
+        }
+        
+    }
+}
+

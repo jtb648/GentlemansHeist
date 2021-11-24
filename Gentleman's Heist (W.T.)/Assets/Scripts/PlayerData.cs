@@ -4,6 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using UnityEngine;
 
+/*
+ * WARNING: PlayerData is now saved. Any new attributes may not be remembered unless you add them to the save OR make Gabe do it
+ */
 public static class PlayerData
 {
     
@@ -289,12 +292,24 @@ public static class PlayerData
         _diamonds++;
     }
 
+    // only slight shade joel ;)
+    public static void ActuallySetDiamonds(int toSet)
+    {
+        _diamonds = toSet;
+    }
+
      public static int GetKeys(){
         return _keys;
     }
 
     public static void SetKeys(){
         _keys++;
+    }
+
+    // only slight shade joel ;)
+    public static void ActuallySetKeys(int toSet)
+    {
+        _keys = toSet;
     }
 
     public static void ChangeKeys(int toSet) {
@@ -315,6 +330,11 @@ public static class PlayerData
     {
         _playerSoundRatio = newRatio;
         // _entitySound.transitionDivs = newRatio;
+    }
+
+    public static float GetSoundRatio()
+    {
+        return _playerSoundRatio;
     }
     
     // public static void SetEntitySound(EntitySound toSet)
@@ -342,6 +362,16 @@ public static class PlayerData
         else{
             _upgradeFood = true;
         }
+    }
+
+    public static void SetFood(bool toSet)
+    {
+        _upgradeFood = toSet;
+    }
+
+    public static void SetCoffee(bool toSet)
+    {
+        _upgradeCoffee = toSet;
     }
     
     public static bool GetUpgradeFood(){
