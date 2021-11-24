@@ -83,7 +83,7 @@ public class PlayerScript : MonoBehaviour
     }
     
     // Adds data on startup to PlayerData
-    void SyncPlayerData()
+    public void SyncPlayerData()
     {
         PlayerData.SetSoundCircle(gameObject.GetComponentInChildren<EntitySound>().gameObject);
         PlayerData.UpdateSoundCircle();
