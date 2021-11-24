@@ -46,6 +46,19 @@ public class Game : MonoBehaviour
         PlayerScript.detected = false;
     }
 
+    public void LoadDungeon(int seed)
+    {
+        GenerateDungeon.Instance.DeleteDungeon();
+        GenerateDungeon.Instance.seed = seed;
+        GenerateDungeon.Instance.AwakeWithSeed(seed);
+        GenerateDungeon.Instance.GenerateNewDungeon();
+        Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
+        Vector3 spawnPos3 = spawnPos;
+        player.transform.position = spawnPos3;
+        PlayerData.NextLevel();
+        Invoke("FindPaths", .1f);
+    }
+
     public void NextFloor() {
         GenerateDungeon.Instance.DeleteDungeon();
         GenerateDungeon.Instance.GenerateNewDungeon();

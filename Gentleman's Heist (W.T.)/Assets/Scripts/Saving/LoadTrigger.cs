@@ -23,7 +23,7 @@ public class LoadTrigger : MonoBehaviour
             {
                 SaveMaster.LoadAll("Paul_Blart");
                 Debug.Log("A state was loaded!");
-                SaveMaster.FlipNeedsLoad();
+                SaveMaster.needsLoad = false;
             }
 
             if (SaveMaster.needsSave)
