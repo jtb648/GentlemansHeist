@@ -722,6 +722,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4445961646239364480, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
+      propertyPath: transitionDivs
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445961646239364480, guid: 9da8477a8c1098f43b5b41cc144c3dc6, type: 3}
       propertyPath: speedToRadiusRatio
       value: 8
       objectReference: {fileID: 0}

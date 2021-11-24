@@ -18,10 +18,5 @@ public class LoadButtonBehaviour : MonoBehaviour
             _button.interactable = false;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

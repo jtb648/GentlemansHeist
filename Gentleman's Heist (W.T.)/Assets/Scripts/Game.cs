@@ -39,6 +39,8 @@ public class Game : MonoBehaviour
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;
         Invoke("FindPaths", .1f);
+        SaveMaster.SaveAll("Paul_Blart");
+        Debug.Log("Save ran");
     }
 
     public void NextFloor() {
