@@ -90,11 +90,17 @@ public class PlayerScript : MonoBehaviour
         PlayerData.SetAnimator(animator);
         PlayerData.SetCamera(cam);
         PlayerData.SetEntitySound(gameObject.GetComponentInChildren<EntitySound>());
-        
         PlayerData.SetMaxHealth(100);
         PlayerData.SetCurrentHealth(100);
+        // If Player purchases food, change Player's max health for the round
+        if(PlayerData.GetUpgradeFood()){
+            PlayerData.SetMaxHealth(150);
+            PlayerData.SetCurrentHealth(150);
+            PlayerData.SetUpgradeFood();
+        }
         PlayerData.SetDefaultSpeed(speed);
         PlayerData.SetToDefaultSpeed();
+        // If Player purchases a coffee, change Player's speed
         if(PlayerData.GetUpgradeCoffee()){
             PlayerData.AddSpeed(5.0f);
             PlayerData.SetUpgradeCoffee();

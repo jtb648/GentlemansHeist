@@ -83,7 +83,6 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buyCoffee(){
-        // [Add Coffee to inventory here(?)]
         if(purchaseItem(coffeePrice))
         {
             PlayerData.SetUpgradeCoffee();
@@ -91,15 +90,13 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buyAlarmDisabler(){
-        // [Add AlarmDisabler to inventory here(?)]
         purchaseItem(alarmDisablerPrice);
     }
 
     public void buyFood(){
-        // Probably have to change this -- since health resets each level
         if(purchaseItem(foodPrice))
         {
-            PlayerData.HealAmount(50);
+            PlayerData.SetUpgradeFood();
         }
     }
 

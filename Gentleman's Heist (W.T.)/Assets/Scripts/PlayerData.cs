@@ -33,6 +33,7 @@ public static class PlayerData
     private static float _bulletForce;
 
     private static bool _upgradeCoffee;
+    private static bool _upgradeFood;
 
     public static int GetMoney()
     {
@@ -289,6 +290,18 @@ public static class PlayerData
     public static bool GetUpgradeCoffee(){
         return _upgradeCoffee;
     }
+
+    public static void SetUpgradeFood(){
+        if(_upgradeFood){
+            _upgradeFood = false;
+        }
+        else{
+            _upgradeFood = true;
+        }
+    }
     
+    public static bool GetUpgradeFood(){
+        return _upgradeFood;
+    }
 
 }
