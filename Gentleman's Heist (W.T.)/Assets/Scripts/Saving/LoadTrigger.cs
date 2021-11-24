@@ -1,15 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadTrigger : MonoBehaviour
 {
+    private int _waitTimer;
     void Start()
     {
-        if (SaveMaster.needsLoad)
+        _waitTimer = 30;
+    }
+
+    private void FixedUpdate()
+    {
+        if (_waitTimer > 0)
         {
-            SaveMaster.LoadAll("Paul_Blart");
+            _waitTimer -= 1;
+        }
+        else
+        {
+            if (SaveMaster.needsLoad)
+            {
+                SaveMaster.LoadAll("Paul_Blart");
+                Debug.Log("A state was loaded!");
+                SaveMaster.FlipNeedsLoad();
+            }
+
+            if (SaveMaster.needsSave)
+            {
+                SaveMaster.SaveAll("Paul_Blart");
+                Debug.Log("A state was saved!");
+                SaveMaster.FlipNeedsSave();
+            }
         }
     }
-    
 }

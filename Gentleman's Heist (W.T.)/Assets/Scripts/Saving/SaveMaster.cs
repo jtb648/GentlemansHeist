@@ -44,10 +44,16 @@ public static class SaveMaster
     private static List<string> _stringList = new List<string>();
     private static string PATH = Application.persistentDataPath + "/";
     public static bool needsLoad = false;
+    public static bool needsSave = false;
 
     public static void FlipNeedsLoad()
     {
         needsLoad = !needsLoad;
+    }
+
+    public static void FlipNeedsSave()
+    {
+        needsSave = !needsSave;
     }
     public static bool SaveExists(string saveName)
     {
@@ -246,7 +252,8 @@ public static class SaveMaster
         _boolList.Clear();
         _floatList.Clear();
         _stringList.Clear();
-        
+
+        Debug.Log($"Saver looking for people to save, found {_toTrack.Count}");
         foreach (SaveScript script in _toTrack)
         {
             script.SaveMe();

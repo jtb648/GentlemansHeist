@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class SavePlayerData : SaveScript
 {
+    void Start()
+    {
+        SaveMaster.KeepTrackOf(this);
+    }
     public override void SaveMe()
     {
         int money = PlayerData.GetMoney();
@@ -29,6 +33,7 @@ public class SavePlayerData : SaveScript
             bools:new bool[]{upCoffee, upFood},
             strings:new string[]{playerName}
             );
+        Debug.Log($"PlayerData was saved. For reference, score was {score}");
     }
 
     public override void LoadMe()
@@ -65,6 +70,8 @@ public class SavePlayerData : SaveScript
             PlayerData.SetFood(bools[1]);
             
             PlayerData.SetName(strings[0]);
+            
+            Debug.Log($"PlayerData was loaded. For reference, score was {ints[1]}. Was it registered? {ints[1]==PlayerData.GetScore()}");
         }
         else
         {

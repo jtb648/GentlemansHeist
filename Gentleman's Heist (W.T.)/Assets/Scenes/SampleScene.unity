@@ -2328,7 +2328,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1856827636}
   - component: {fileID: 1856827635}
-  - component: {fileID: 1856827634}
   - component: {fileID: 1856827633}
   m_Layer: 0
   m_Name: SaveLoadHandler
@@ -2349,18 +2348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d93858b67dade747903d200f62915a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1856827634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856827632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b73ada353465404bab83a5a05f764b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1856827635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2373,7 +2360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f40d24e30e27a42b0c920ca589441f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uid: 
+  uid: 89652986
 --- !u!4 &1856827636
 Transform:
   m_ObjectHideFlags: 0
