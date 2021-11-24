@@ -73,7 +73,7 @@ public class EnemyAI : MonoBehaviour
         float distToW1 = Vector2.Distance(transform.position, Waypoint1.transform.position);
         if (PlayerScript.detected == false)
         {
-            if (distToW1 < 1)
+            if (distToW1 < 2)
             {
                 InvokeRepeating("UpdatePathWaypoint2", 0f, .5f);
                 CancelInvoke("UpdatePathWaypoint1");
@@ -94,7 +94,7 @@ public class EnemyAI : MonoBehaviour
         float distToW2 = Vector2.Distance(transform.position, Waypoint2.transform.position);
         if (PlayerScript.detected == false)
         {
-            if (distToW2 < 1)
+            if (distToW2 < 2)
             {
                 InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
                 CancelInvoke("UpdatePathWaypoint2");

@@ -443,6 +443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
 --- !u!4 &1013762713761692832 stripped
@@ -512,6 +516,10 @@ PrefabInstance:
     - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
       propertyPath: m_Name
       value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
@@ -583,6 +591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
 --- !u!4 &3948043161641083777 stripped
@@ -652,6 +664,10 @@ PrefabInstance:
     - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
       propertyPath: m_Name
       value: Plant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
@@ -723,6 +739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
 --- !u!4 &2761826358793476828 stripped
@@ -792,6 +812,10 @@ PrefabInstance:
     - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
       propertyPath: m_Name
       value: Plant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796026844792770942, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21305ffd1ba9574894231094ca15adb, type: 3}
