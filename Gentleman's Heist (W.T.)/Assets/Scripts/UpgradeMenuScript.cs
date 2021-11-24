@@ -61,11 +61,13 @@ public class UpgradeMenuScript : MonoBehaviour
     public void ContinueNextLevel(){
         SceneManager.LoadScene("SampleScene");
     }
+    
+    
 
     public void buySilentShoes(){
         if(purchaseItem(silentShoesPrice))
         {
-            PlayerData.SetSilentShoes(7);
+            PlayerData.SetSilentShoes(4);
         }
     }
 

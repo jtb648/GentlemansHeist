@@ -14,7 +14,8 @@ public static class PlayerData
     private static float _playerDefaultSpeed;
     private static int _playerMaxHealth;
     private static int _playerCurrentHealth;
-    private static int _playerSoundCircle;
+    //turns out the player is destroyed in the upgrade screen so changes can't be nicely affected
+    private static GameObject _playerSoundCircle;
 
     private static int _level = 0;
 
@@ -28,7 +29,7 @@ public static class PlayerData
     private static PlayerScript _playerScript;
     private static GameObject _player;
     private static HealthBar _playerHealthBar;
-    private static EntitySound _entitySound;
+    private static float _playerSoundRatio = 8;
     
     private static float _bulletForce;
 
@@ -268,15 +269,26 @@ public static class PlayerData
         _keys = toSet;
     }
 
-    public static void SetSilentShoes(int newRatio)
+    public static void SetSoundCircle(GameObject toSet)
     {
-        _entitySound.transitionDivs = newRatio;
+        _playerSoundCircle = toSet;
     }
 
-    public static void SetEntitySound(EntitySound toSet)
+    public static GameObject GetSoundCircle()
     {
-        _entitySound = toSet;
-    } 
+        return _playerSoundCircle;
+    }
+
+    public static void SetSilentShoes(float newRatio)
+    {
+        _playerSoundRatio = newRatio;
+        // _entitySound.transitionDivs = newRatio;
+    }
+    
+    // public static void SetEntitySound(EntitySound toSet)
+    // {
+    //     _entitySound = toSet;
+    // } 
 
     public static void SetUpgradeCoffee(){
         if(_upgradeCoffee){
@@ -302,6 +314,11 @@ public static class PlayerData
     
     public static bool GetUpgradeFood(){
         return _upgradeFood;
+    }
+
+    public static void UpdateSoundCircle()
+    {
+        _playerSoundCircle.GetComponentInChildren<EntitySound>().speedToRadiusRatio = _playerSoundRatio;
     }
 
 }

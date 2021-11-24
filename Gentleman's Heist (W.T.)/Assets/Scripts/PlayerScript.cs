@@ -85,11 +85,13 @@ public class PlayerScript : MonoBehaviour
     // Adds data on startup to PlayerData
     void SyncPlayerData()
     {
+        PlayerData.SetSoundCircle(gameObject.GetComponentInChildren<EntitySound>().gameObject);
+        PlayerData.UpdateSoundCircle();
         PlayerData.SetBody(myBody);
         PlayerData.SetHealthBar(healthBar);
         PlayerData.SetAnimator(animator);
         PlayerData.SetCamera(cam);
-        PlayerData.SetEntitySound(gameObject.GetComponentInChildren<EntitySound>());
+        // PlayerData.SetEntitySound(gameObject.GetComponentInChildren<EntitySound>());
         PlayerData.SetMaxHealth(100);
         PlayerData.SetCurrentHealth(100);
         // If Player purchases food, change Player's max health for the round
