@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public static class PlayerData
@@ -14,7 +16,7 @@ public static class PlayerData
     private static float _playerDefaultSpeed;
     private static int _playerMaxHealth;
     private static int _playerCurrentHealth;
-    //turns out the player is destroyed in the upgrade screen so changes can't be nicely affected
+    //turns out the player is destroyed in the upgrade screen so changes can't be nicely affected (at that time)
     private static GameObject _playerSoundCircle;
 
     private static int _level = 0;
@@ -35,6 +37,36 @@ public static class PlayerData
 
     private static bool _upgradeCoffee;
     private static bool _upgradeFood;
+    
+    /*
+     * Following clear Methods need to stay updated if you want everything to work
+     * Please add any additions you make to PlayerData to them as well (unless you dont want them cleared (ie: persistent upgrades)
+     */
+    public static void ClearAll()
+    {
+        Debug.Log("PlayerData Cleared");
+        _playerMoney = 0;
+        _playerScore = 0;
+        _playerName = "";
+        _playerSpeed = 0;
+        _playerDefaultSpeed = 0;
+        _playerMaxHealth = 0;
+        _playerCurrentHealth = 0;
+        _playerSoundCircle = null;
+        _level = 0;
+        _diamonds = 0;
+        _keys = 0;
+        _playerAnimator = null;
+        _playerBody = null;
+        _playerCamera = null;
+        _playerScript = null;
+        _player = null;
+        _playerHealthBar = null;
+        _playerSoundRatio = 8; //as it currently stands, this will always be the default
+        _bulletForce = 0;
+        _upgradeCoffee = false;
+        _upgradeFood = false;
+    }
 
     public static int GetMoney()
     {
