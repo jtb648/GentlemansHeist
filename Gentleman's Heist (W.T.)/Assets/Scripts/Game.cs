@@ -11,6 +11,8 @@ public class Game : MonoBehaviour
 {
     public PlayerScript player;
 
+    public DifficultyAdjustment DA;
+
     public bool playing;
     public static Game Instance { get; set; }
 
@@ -60,8 +62,10 @@ public class Game : MonoBehaviour
     }
 
     public void NextFloor() {
+        DA.changeDifficulty();
         GenerateDungeon.Instance.DeleteDungeon();
         GenerateDungeon.Instance.GenerateNewDungeon();
+        PlayerData.ChangeKeys(0);
         Vector2 spawnPos = GenerateDungeon.Instance.GetSpawnPos();
         Vector3 spawnPos3 = spawnPos;
         player.transform.position = spawnPos3;

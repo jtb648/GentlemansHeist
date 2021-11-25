@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     public Transform Waypoint2;
 
 
-    public float speed = 200f;
+    //public float speed = 200f;
     public float nextWaypointDistance = 3f;
     bool reachedEndOfPath = false;
 
@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour
 
 
     public HealthBar healthBar;
-    public int health;
+    private int health = GuardData.getGuardHealth();
 
     public AudioSource musicToStop;
     public AudioSource musicToPlay;
@@ -49,7 +49,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthBar.setHealth(health);
+        healthBar.setMaxHealth(health);
         target = GameObject.FindGameObjectsWithTag("Player")[0];
         sound = GameObject.FindGameObjectsWithTag("Sound")[0];
         seeker = GetComponent<Seeker>();
@@ -190,6 +190,7 @@ public class EnemyAI : MonoBehaviour
     public void gotShot()
     {
         health -= 5;
+        //GuardData.setGuardHealth(GuardData.getGuardHealth() - 5);
         healthBar.setHealth(health);
     }
 
@@ -230,7 +231,7 @@ public class EnemyAI : MonoBehaviour
             }
             facePlayer();
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-            Vector2 force = direction * speed * Time.deltaTime;
+            Vector2 force = direction * GuardData.getGuardSpeed() * Time.deltaTime;
 
             rb.AddForce(force);
 
