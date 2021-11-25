@@ -421,13 +421,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waypoint1: {fileID: 0}
   Waypoint2: {fileID: 0}
-  speed: 200
   nextWaypointDistance: 3
   bulletPrefab: {fileID: 2131081582833999925, guid: 86f7e9c3f6ba4564f8524b9829201c02, type: 3}
   firePoint: {fileID: 3336790288990420888}
   bulletForce: 20
   healthBar: {fileID: 5944077175918002636}
-  health: 100
   musicToStop: {fileID: 0}
   musicToPlay: {fileID: 0}
 --- !u!50 &3477559011041414234
@@ -634,7 +632,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &2210000092489575913
 MonoBehaviour:
