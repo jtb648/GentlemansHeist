@@ -46,6 +46,10 @@ public static class SaveMaster
     public static bool needsLoad = false;
     public static bool needsSave = false;
 
+    public static void DeleteSave(string saveName)
+    {
+        File.Delete($"{PATH}{saveName}.smbf");
+    }
     public static void ClearTracking()
     {
         _toTrack.Clear();
