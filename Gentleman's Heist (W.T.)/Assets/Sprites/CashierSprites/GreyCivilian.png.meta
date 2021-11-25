@@ -1,43 +1,37 @@
 fileFormatVersion: 2
-guid: 4a6d02875df44ca47beafdfa88a6d0af
+guid: 3864ed5be91063a40a8e7a2a6e93c146
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7804132202216838951
-    second: Cashiers_0
+      213: 6535727374476536692
+    second: GreyCivilian_0
   - first:
-      213: -8213984108962748839
-    second: Cashiers_1
+      213: -4485510640922334844
+    second: GreyCivilian_1
   - first:
-      213: 1096278823451743016
-    second: Cashiers_2
+      213: 250802944244096372
+    second: GreyCivilian_2
   - first:
-      213: -5665293379802177046
-    second: Cashiers_3
+      213: -8798016383086640433
+    second: GreyCivilian_3
   - first:
-      213: 6125921437863852359
-    second: Cashiers_4
+      213: -8584343827845478414
+    second: GreyCivilian_4
   - first:
-      213: -1586127199562163274
-    second: Cashiers_5
+      213: -1770162835022383569
+    second: GreyCivilian_5
   - first:
-      213: -7704201772767322241
-    second: Cashiers_6
+      213: -6781231787897268708
+    second: GreyCivilian_6
   - first:
-      213: 508316165066276216
-    second: Cashiers_7
+      213: -6937950094603313055
+    second: GreyCivilian_7
   - first:
-      213: -2388712886784189657
-    second: Cashiers_8
+      213: 6274278600511473133
+    second: GreyCivilian_8
   - first:
-      213: 1771485563052109325
-    second: Cashiers_9
-  - first:
-      213: -3097921114367315747
-    second: Cashiers_10
-  - first:
-      213: -1703354406163666032
-    second: Cashiers_11
+      213: -1971861882999280757
+    second: GreyCivilian_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,13 +133,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cashiers_0
+      name: GreyCivilian_0
       rect:
         serializedVersion: 2
-        x: 255
-        y: 73
+        x: 252
+        y: 76
+        width: 414
+        height: 809
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b68785b6193ba50800000000000000
+      internalID: 6535727374476536692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreyCivilian_1
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 95
+        width: 414
+        height: 790
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489e69b56d340c1c0800000000000000
+      internalID: -4485510640922334844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreyCivilian_2
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 76
+        width: 412
+        height: 809
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d9a40f2f70b7300800000000000000
+      internalID: 250802944244096372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreyCivilian_3
+      rect:
+        serializedVersion: 2
+        x: 3235
+        y: 95
         width: 410
-        height: 813
+        height: 790
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 727525dc3e8dd4c60800000000000000
-      internalID: 7804132202216838951
+      spriteID: fc2cd06a6ba27e580800000000000000
+      internalID: -8798016383086640433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cashiers_1
+      name: GreyCivilian_4
       rect:
         serializedVersion: 2
-        x: 1233
-        y: 73
-        width: 416
-        height: 813
+        x: 4275
+        y: 95
+        width: 351
+        height: 790
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9566292f8f0120e80800000000000000
-      internalID: -8213984108962748839
+      spriteID: 2f7047735c84ed880800000000000000
+      internalID: -8584343827845478414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cashiers_2
+      name: GreyCivilian_5
       rect:
         serializedVersion: 2
-        x: 2271
-        y: 73
-        width: 357
-        height: 813
+        x: 5276
+        y: 76
+        width: 351
+        height: 809
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,83 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 823df9618c3c63f00800000000000000
-      internalID: 1096278823451743016
+      spriteID: f2674efb74e1f67e0800000000000000
+      internalID: -1770162835022383569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cashiers_3
-      rect:
-        serializedVersion: 2
-        x: 3272
-        y: 73
-        width: 358
-        height: 813
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae1e484efa5d061b0800000000000000
-      internalID: -5665293379802177046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cashiers_4
-      rect:
-        serializedVersion: 2
-        x: 4251
-        y: 73
-        width: 416
-        height: 813
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74933d95715a30550800000000000000
-      internalID: 6125921437863852359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cashiers_5
-      rect:
-        serializedVersion: 2
-        x: 5230
-        y: 73
-        width: 415
-        height: 813
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bb138537b1fcf9e0800000000000000
-      internalID: -1586127199562163274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cashiers_6
+      name: GreyCivilian_6
       rect:
         serializedVersion: 2
         x: 6272
-        y: 73
-        width: 358
-        height: 813
+        y: 95
+        width: 356
+        height: 790
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +273,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7fd4486e4d251590800000000000000
-      internalID: -7704201772767322241
+      spriteID: c16dbce0e9934e1a0800000000000000
+      internalID: -6781231787897268708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cashiers_7
+      name: GreyCivilian_7
       rect:
         serializedVersion: 2
-        x: 7274
-        y: 73
+        x: 7273
+        y: 95
         width: 352
-        height: 813
+        height: 790
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +294,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87d3d54ebd6ed0700800000000000000
-      internalID: 508316165066276216
+      spriteID: 16028c5d52377bf90800000000000000
+      internalID: -6937950094603313055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cashiers_8
+      name: GreyCivilian_8
       rect:
         serializedVersion: 2
-        x: 8253
-        y: 73
-        width: 416
-        height: 813
+        x: 8274
+        y: 76
+        width: 351
+        height: 809
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +315,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72b94d0194699ded0800000000000000
-      internalID: -2388712886784189657
+      spriteID: de542550527b21750800000000000000
+      internalID: 6274278600511473133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cashiers_9
+      name: GreyCivilian_9
       rect:
         serializedVersion: 2
-        x: 9232
-        y: 73
-        width: 415
-        height: 813
+        x: 9275
+        y: 95
+        width: 351
+        height: 790
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,50 +336,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0e247edbb4959810800000000000000
-      internalID: 1771485563052109325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cashiers_10
-      rect:
-        serializedVersion: 2
-        x: 10274
-        y: 73
-        width: 352
-        height: 813
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd034f3f829f105d0800000000000000
-      internalID: -3097921114367315747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cashiers_11
-      rect:
-        serializedVersion: 2
-        x: 11271
-        y: 73
-        width: 357
-        height: 813
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09ba40e31387c58e0800000000000000
-      internalID: -1703354406163666032
+      spriteID: b8be1b5901a82a4e0800000000000000
+      internalID: -1971861882999280757
       vertices: []
       indices: 
       edges: []
