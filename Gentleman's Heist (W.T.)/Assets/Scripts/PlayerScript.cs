@@ -189,10 +189,9 @@ public class PlayerScript : MonoBehaviour
     }
     void Update(){
         //Interacting with a pickup
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractableObject){
+        if (currentInteractableObject){
             currentInteractableObject.SendMessage("DoInteraction",currentInteractableObject.name);
         }
-        
         // Shooting animation logic
         if(Input.GetKeyDown(KeyCode.Space)){
             animator.SetBool("shooting", true); // set shooting to true
