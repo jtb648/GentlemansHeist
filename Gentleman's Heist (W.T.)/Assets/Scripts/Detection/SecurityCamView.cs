@@ -8,6 +8,7 @@ public class SecurityCamView : MonoBehaviour
     public LineRenderer tracer;
     public int framesUntilCaught;
     private bool _counting;
+    // private PlayerScript _ps;
     private int _intensity = 0;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class SecurityCamView : MonoBehaviour
             if (_intensity > framesUntilCaught)
             {
                 _intensity = framesUntilCaught;
-                Alarm.On();
+                PlayerScript.detected = true;
             }
         }
         else
