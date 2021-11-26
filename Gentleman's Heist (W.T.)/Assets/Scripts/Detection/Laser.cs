@@ -34,7 +34,7 @@ public class Laser : MonoBehaviour
 
             if (set.collider.gameObject.CompareTag("Player"))
             {
-                Alarm.On();
+                PlayerScript.detected = true;
             }
             
             Vector3[] points = new Vector3[2];
