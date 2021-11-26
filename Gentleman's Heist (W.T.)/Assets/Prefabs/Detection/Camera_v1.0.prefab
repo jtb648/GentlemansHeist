@@ -257,7 +257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracer: {fileID: 169566941}
-  framesUntilCaught: 100
+  framesUntilCaught: 30
+  musicToStop: {fileID: 0}
+  musicToPlay: {fileID: 0}
 --- !u!1 &1832739025
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +483,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracer: {fileID: 3316695797769210569}
-  framesUntilCaught: 420
+  framesUntilCaught: 30
+  musicToStop: {fileID: 0}
+  musicToPlay: {fileID: 0}
 --- !u!1 &3293280694204202461
 GameObject:
   m_ObjectHideFlags: 0
