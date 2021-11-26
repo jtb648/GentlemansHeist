@@ -7,6 +7,8 @@ public class SecurityCamView : MonoBehaviour
 {
     public LineRenderer tracer;
     public int framesUntilCaught;
+    public AudioSource musicToStop;
+    public AudioSource musicToPlay;
     private bool _counting;
     // private PlayerScript _ps;
     private int _intensity = 0;
@@ -15,6 +17,8 @@ public class SecurityCamView : MonoBehaviour
     {
         tracer.useWorldSpace = true;
         _counting = false;
+        musicToStop = GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[0];
+        musicToPlay = GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[1];
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class SecurityCamView : MonoBehaviour
             {
                 _intensity = framesUntilCaught;
                 PlayerScript.detected = true;
+                musicToStop.Pause();
+                musicToPlay.UnPause();
             }
         }
         else

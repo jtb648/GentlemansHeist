@@ -137,6 +137,15 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _sneak = 2;
+            if (Input.GetKeyDown(KeyCode.End))
+            {
+                // Dev speedrun for testing
+                PlayerData.SetSpeed(30.0f);
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[0].pitch = 1.5f;
+                gameObject.GetComponentInChildren<EntitySound>().gameObject.SetActive(false);
+                // Destroy(gameObject.GetComponent<CircleCollider2D>());
+
+            }
         }
         else
         {

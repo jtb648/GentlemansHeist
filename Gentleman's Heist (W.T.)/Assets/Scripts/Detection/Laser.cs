@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    public AudioSource musicToStop;
+    public AudioSource musicToPlay;
     // Start is called before the first frame update
     private bool _active = true;
 
@@ -17,6 +19,8 @@ public class Laser : MonoBehaviour
         __laserLR = gameObject.GetComponentInChildren<Grabber>().gameObject.GetComponent<LineRenderer>();
         __diodeTransform = gameObject.GetComponentInChildren<Grabber2>().transform;
         __laserLR.useWorldSpace = true;
+        musicToStop = GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[0];
+        musicToPlay = GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[1];
     }
 
     // Update is called once per fram
@@ -35,6 +39,8 @@ public class Laser : MonoBehaviour
             if (set.collider.gameObject.CompareTag("Player"))
             {
                 PlayerScript.detected = true;
+                musicToStop.Pause();
+                musicToPlay.UnPause();
             }
             
             Vector3[] points = new Vector3[2];
