@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 /*
 
@@ -72,7 +72,7 @@ public class PlayerScript : MonoBehaviour
 
     // Interactable Object within the Player's collision radius
     public GameObject currentInteractableObject = null;
-
+    // Audio for walking sound
     public AudioSource walkingSound;
 
     public static bool detected = false;
@@ -80,11 +80,15 @@ public class PlayerScript : MonoBehaviour
     // Determines if Silent Weapon purchased for that round
     public bool noNoise = false;
 
+    //Can't eat text notification
+    [SerializeField] private Text noEat_text;
+
     // Start is called before the first frame update
     void Start()
     { 
         SyncPlayerData();
         walkingSound = gameObject.GetComponent<AudioSource>();
+        noEat_text.enabled = false;
     }
     
     // Adds data on startup to PlayerData
@@ -225,7 +229,10 @@ public class PlayerScript : MonoBehaviour
         if (collision.CompareTag("InteractableObject")){
             Debug.Log(collision.name);
             currentInteractableObject = collision.gameObject;
-
+            //Message for when player tries to pickup health on full health
+            if (currentInteractableObject.name.StartsWith("Donut") || currentInteractableObject.name.StartsWith("Apple") && PlayerData.GetCurrentHealth() == PlayerData.GetMaxHealth()){
+                noEat_text.enabled = true;
+            }
         }
     }
     private void OnTriggerStay2D(Collider2D collision) {
@@ -252,6 +259,7 @@ public class PlayerScript : MonoBehaviour
    private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
             currentInteractableObject = null;
+            noEat_text.enabled = false;
             Debug.Log(collision.name);
         }
     }
