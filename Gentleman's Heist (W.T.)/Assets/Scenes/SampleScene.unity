@@ -1132,6 +1132,7 @@ MonoBehaviour:
   - {fileID: 3289743316288249637, guid: 071c3a84905d5b34b96e710320458f3e, type: 3}
   - {fileID: 6267869352217856532, guid: 6d8e9f71e0dc7004fb22937c73c531d6, type: 3}
   - {fileID: 8270834249829880715, guid: ab0c84ebf01d09d4392c2f012d11a930, type: 3}
+  - {fileID: 7797721933455229416, guid: fef7285ea78ad214da89ef5a523dddac, type: 3}
   bigRoom:
   - {fileID: 5923218037391624481, guid: 1e35dae437985a74fb4e17fd678a150a, type: 3}
   - {fileID: 7084887457678235884, guid: ad6608dd4d16d674397791fca8941402, type: 3}
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   - {fileID: 6267869352217856532, guid: 6d8e9f71e0dc7004fb22937c73c531d6, type: 3}
   - {fileID: 3289743316288249637, guid: c628fb2401fd6cc40b58bc640b8d041b, type: 3}
   - {fileID: 8270834249829880715, guid: ab0c84ebf01d09d4392c2f012d11a930, type: 3}
+  - {fileID: 2963033658285102892, guid: d9f3256a5f8d64849a5ba55005468e78, type: 3}
   seed: 5
   objects: []
 --- !u!4 &681761178

@@ -1175,6 +1175,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5990243043633703373}
     m_Modifications:
+    - target: {fileID: 3477559010650776272, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3477559011041414235, guid: 4070a18a6f2f1684abcae2408e7e3d05, type: 3}
       propertyPath: m_Name
       value: GuardAI
@@ -2619,11 +2623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159823153812175091, guid: 484638685ddbef7478b38e86695efa09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0385
+      value: 0.0376
       objectReference: {fileID: 0}
     - target: {fileID: 1159823153812175091, guid: 484638685ddbef7478b38e86695efa09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0105
+      value: 0.0174
       objectReference: {fileID: 0}
     - target: {fileID: 1159823153812175091, guid: 484638685ddbef7478b38e86695efa09, type: 3}
       propertyPath: m_LocalPosition.z
