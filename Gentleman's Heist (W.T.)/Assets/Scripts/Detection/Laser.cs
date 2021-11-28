@@ -11,10 +11,17 @@ public class Laser : MonoBehaviour
     // Start is called before the first frame update
     private bool _active = true;
 
+    private bool _disabled = false;
+
     protected Transform __diodeTransform;
     protected LineRenderer __laserLR; 
     void Start()
     {
+        // If they bought alarm disabler...
+        if(PlayerData.getUpgradeAlarmD()){
+            _disabled = true;
+        }
+
         Physics2D.queriesHitTriggers = false;
         __laserLR = gameObject.GetComponentInChildren<Grabber>().gameObject.GetComponent<LineRenderer>();
         __diodeTransform = gameObject.GetComponentInChildren<Grabber2>().transform;
@@ -27,6 +34,7 @@ public class Laser : MonoBehaviour
 
     private void Update()
     {
+        if(!_disabled){
         if (!__laserLR.gameObject.activeSelf && _active)
         {
             __laserLR.gameObject.SetActive(true);
@@ -54,6 +62,7 @@ public class Laser : MonoBehaviour
             {
                 __laserLR.gameObject.SetActive(false);
             }
+        }
         }
     }
 

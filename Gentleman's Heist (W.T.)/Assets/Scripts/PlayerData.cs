@@ -41,6 +41,8 @@ public static class PlayerData
     private static bool _upgradeCoffee;
     private static bool _upgradeFood;
     private static bool _upgradeSilentWeapon;
+
+    private static bool _upgradeAlarmD = false;
     
     /*
      * Following clear Methods need to stay updated if you want everything to work
@@ -70,6 +72,8 @@ public static class PlayerData
         _bulletForce = 0;
         _upgradeCoffee = false;
         _upgradeFood = false;
+        _upgradeAlarmD = false;
+        _upgradeSilentWeapon = false;
     }
 
     public static int GetMoney()
@@ -390,6 +394,14 @@ public static class PlayerData
 
     public static bool getUpgradeSilentWeapon(){
         return _upgradeSilentWeapon;
+    }
+
+    public static void SetUpgradeAlarmD(bool result){
+        _upgradeAlarmD = result;
+    }
+
+    public static bool getUpgradeAlarmD(){
+        return _upgradeAlarmD;
     }
 
     public static void UpdateSoundCircle()

@@ -6,6 +6,8 @@ using UnityEngine;
 public class SecurityCamView : MonoBehaviour
 {
     public LineRenderer tracer;
+
+    public GameObject camera;
     public int framesUntilCaught;
     public AudioSource musicToStop;
     public AudioSource musicToPlay;
@@ -15,6 +17,12 @@ public class SecurityCamView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        // If they bought alarm disabler...
+        if(PlayerData.getUpgradeAlarmD()){
+            camera.SetActive(false);
+        }
+
         tracer.useWorldSpace = true;
         _counting = false;
         musicToStop = GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>()[0];

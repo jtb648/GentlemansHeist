@@ -56,6 +56,9 @@ public class UpgradeMenuScript : MonoBehaviour
         alarmDisablerPriceText.text = "" + alarmDisablerPrice;
         foodPrice = 100;
         foodPriceText.text = "" + foodPrice;
+
+        // Can't put this line in SecurityCamView, otherwise it'll only turn off one camera :(
+        PlayerData.SetUpgradeAlarmD(false);
     }
 
     public void ContinueNextLevel(){
@@ -72,7 +75,6 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buyLockpick(){
-        // For now, buying a lockpick just adds another key to PlayerData
         if(purchaseItem(lockPickPrice))
         {
             PlayerData.SetKeys();
@@ -80,7 +82,6 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buySilentWeapon(){
-        // [Add SilentWeapon to inventory here(?)]
         if (purchaseItem(silentWeaponPrice)){
             PlayerData.SetUpgradeSilentWeapon();
         }
@@ -94,7 +95,10 @@ public class UpgradeMenuScript : MonoBehaviour
     }
 
     public void buyAlarmDisabler(){
-        purchaseItem(alarmDisablerPrice);
+        if(purchaseItem(alarmDisablerPrice))
+        {
+            PlayerData.SetUpgradeAlarmD(true);
+        }
     }
 
     public void buyFood(){

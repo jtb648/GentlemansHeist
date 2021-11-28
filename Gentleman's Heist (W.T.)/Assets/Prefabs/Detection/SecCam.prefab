@@ -39,6 +39,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1287679347354054110}
     m_Modifications:
     - target: {fileID: 1737361451, guid: a7005159c497ac646990dfdd74852aca, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 4745314556311043658}
+    - target: {fileID: 1737361451, guid: a7005159c497ac646990dfdd74852aca, type: 3}
       propertyPath: framesUntilCaught
       value: 30
       objectReference: {fileID: 0}
@@ -50,6 +54,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2702471377155259395, guid: a7005159c497ac646990dfdd74852aca, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 4745314556311043658}
     - target: {fileID: 2702471377155259395, guid: a7005159c497ac646990dfdd74852aca, type: 3}
       propertyPath: framesUntilCaught
       value: 30
