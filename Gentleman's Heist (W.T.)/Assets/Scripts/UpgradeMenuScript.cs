@@ -39,6 +39,19 @@ public class UpgradeMenuScript : MonoBehaviour
 
     [SerializeField] 
     private GameObject noMoneyPanel;
+
+    [SerializeField] 
+    private GameObject BlockShoesText;
+    [SerializeField] 
+    private GameObject BlockLockpickText;
+    [SerializeField] 
+    private GameObject BlockSilentText;
+    [SerializeField] 
+    private GameObject BlockCoffeeText;
+    [SerializeField] 
+    private GameObject BlockAlarmText;
+    [SerializeField] 
+    private GameObject BlockFoodText;
     
     void Start(){
         currentScore.text = "Current Score: " + PlayerData.GetScore();
@@ -71,6 +84,7 @@ public class UpgradeMenuScript : MonoBehaviour
         if(purchaseItem(silentShoesPrice))
         {
             PlayerData.SetSilentShoes(4);
+            BlockShoesText.SetActive(true);
         }
     }
 
@@ -78,12 +92,14 @@ public class UpgradeMenuScript : MonoBehaviour
         if(purchaseItem(lockPickPrice))
         {
             PlayerData.SetKeys();
+            BlockLockpickText.SetActive(true);
         }
     }
 
     public void buySilentWeapon(){
         if (purchaseItem(silentWeaponPrice)){
             PlayerData.SetUpgradeSilentWeapon();
+            BlockSilentText.SetActive(true);
         }
     }
 
@@ -91,6 +107,7 @@ public class UpgradeMenuScript : MonoBehaviour
         if(purchaseItem(coffeePrice))
         {
             PlayerData.SetUpgradeCoffee();
+            BlockCoffeeText.SetActive(true);
         }
     }
 
@@ -98,6 +115,7 @@ public class UpgradeMenuScript : MonoBehaviour
         if(purchaseItem(alarmDisablerPrice))
         {
             PlayerData.SetUpgradeAlarmD(true);
+            BlockAlarmText.SetActive(true);
         }
     }
 
@@ -105,6 +123,7 @@ public class UpgradeMenuScript : MonoBehaviour
         if(purchaseItem(foodPrice))
         {
             PlayerData.SetUpgradeFood();
+            BlockFoodText.SetActive(true);
         }
     }
 
