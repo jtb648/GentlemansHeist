@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3890991569685157264}
   - component: {fileID: 8086756601022187617}
   - component: {fileID: 3850144361459140045}
+  - component: {fileID: 2276298942550493596}
+  - component: {fileID: -1575628069481583963}
   m_Layer: 0
   m_Name: GreyCivilian
   m_TagString: Untagged
@@ -102,3 +104,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2276298942550493596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972118795597407386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd39a1eac5ccb43249c0a7275ba6ecfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoint1: {fileID: 0}
+  Waypoint2: {fileID: 0}
+  Waypoint3: {fileID: 0}
+  speed: 200
+  nextWaypointDistance: 3
+--- !u!114 &-1575628069481583963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972118795597407386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd39a1eac5ccb43249c0a7275ba6ecfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoint1: {fileID: 0}
+  Waypoint2: {fileID: 0}
+  Waypoint3: {fileID: 0}
+  speed: 200
+  nextWaypointDistance: 3

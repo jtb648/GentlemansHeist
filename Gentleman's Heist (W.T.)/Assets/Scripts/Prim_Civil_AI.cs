@@ -15,6 +15,8 @@ public class Prim_Civil_AI : MonoBehaviour
     
     public Transform Waypoint2;
 
+    public Transform Waypoint3;
+
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     bool reachedEndOfPath = false;
@@ -76,6 +78,25 @@ public class Prim_Civil_AI : MonoBehaviour
         }
     }
 
+    private void UpdatePathWaypoint3()
+    {
+        float distToW2 = Vector2.Distance(transform.position, Waypoint3.transform.position);
+        if (detected == false)
+        {
+            if (distToW2 < 1)
+            {
+                InvokeRepeating("UpdatePathWaypoint2", 0f, .5f);
+                CancelInvoke("UpdatePathWaypoint3");
+            }
+            if (seeker.IsDone())
+                seeker.StartPath(rb.position, Waypoint3.transform.position, OnPathComplete);
+
+        }
+        else
+        {
+            InvokeRepeating("UpdatePath", 0f, .5f);
+        }
+    }
 
     private void UpdatePath()
     {
@@ -100,6 +121,12 @@ public class Prim_Civil_AI : MonoBehaviour
         if (sound.GetComponentInChildren<CircleCollider2D>().IsTouching(this.gameObject.GetComponentInChildren<CircleCollider2D>()))
         {
             detected = true;
+        }
+    }
+
+    void PlayerFound(){
+        if(PlayerScript.detected == true){
+            UpdatePathWaypoint3();
         }
     }
 

@@ -1666,6 +1666,8 @@ MonoBehaviour:
   myBody: {fileID: 1239142873}
   currentInteractableObject: {fileID: 0}
   walkingSound: {fileID: 0}
+  noNoise: 0
+  noEat_text: {fileID: 0}
 --- !u!95 &1239142872
 Animator:
   serializedVersion: 3
@@ -2022,6 +2024,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239142870}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1320436189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320436190}
+  m_Layer: 0
+  m_Name: Waypoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320436190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320436189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.41, y: 9.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1355854648
 GameObject:
@@ -2926,7 +2958,7 @@ PrefabInstance:
     - target: {fileID: 5445520476186238313, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
       propertyPath: Waypoint3
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1320436190}
     - target: {fileID: 5445520476186238313, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
       propertyPath: Waypoint4
       value: 
@@ -3186,8 +3218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys_text: {fileID: 2122173962}
-  diamonds_text: {fileID: 1609388124}
   score_text: {fileID: 726618501}
+  keysCheck_text: {fileID: 0}
+  key: {fileID: 0}
+  stairsTip_text: {fileID: 0}
+  stairs: {fileID: 0}
 --- !u!1 &2116756577
 GameObject:
   m_ObjectHideFlags: 0
