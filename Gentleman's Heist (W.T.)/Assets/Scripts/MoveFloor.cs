@@ -27,6 +27,7 @@ public class MoveFloor : MonoBehaviour
             if (canUseStairs) {
                 PlayerData.ChangeKeys(PlayerData.GetKeys()-1);
                 PlayerData.NextLevel();
+                PlayerData.RemoveSilentShoes();
                 game.NextFloor();
                 SceneManager.LoadScene("UpgradeMenu");
                 SaveMaster.ClearTracking();

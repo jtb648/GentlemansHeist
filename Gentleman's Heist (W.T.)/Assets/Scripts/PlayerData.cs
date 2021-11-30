@@ -44,6 +44,9 @@ public static class PlayerData
 
     private static bool _upgradeAlarmD = false;
     
+    // unsaved as of now
+    private static float _playerDefaultSoundRatio = 0;
+    
     /*
      * Following clear Methods need to stay updated if you want everything to work
      * Please add any additions you make to PlayerData to them as well (unless you dont want them cleared (ie: persistent upgrades)
@@ -330,11 +333,26 @@ public static class PlayerData
     {
         return _playerSoundCircle;
     }
+    
+    
 
     public static void SetSilentShoes(float newRatio)
     {
+        // ugly but easy way to assign the default without making setters getter etc for default
+        if (_playerDefaultSoundRatio == 0)
+        {
+            _playerDefaultSoundRatio = _playerSoundRatio;
+        }
         _playerSoundRatio = newRatio;
         // _entitySound.transitionDivs = newRatio;
+    }
+
+    public static void RemoveSilentShoes()
+    {
+        if (_playerDefaultSoundRatio != 0)
+        {
+            _playerSoundRatio = _playerDefaultSoundRatio;
+        }
     }
 
     public static float GetSoundRatio()
