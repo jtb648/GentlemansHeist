@@ -47,6 +47,8 @@ public class PlayerScript : MonoBehaviour
     public float lookAngle;
     public Vector2 lookDirection;
 
+    public ParticleSystem ps;
+
 
 
     // The speed the player moves
@@ -236,6 +238,7 @@ public class PlayerScript : MonoBehaviour
     // Marks an interactable object as the current interactable object when entering their collision area
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
+            ps.Play();
             Debug.Log(collision.name);
             currentInteractableObject = collision.gameObject;
             //Message for when player tries to pickup health on full health
