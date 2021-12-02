@@ -18,6 +18,10 @@ public class PauseMenuScript : MonoBehaviour
                 PauseGame();
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.M)){
+            SceneManager.LoadScene("MainMenu");
+        }
     }
     public void ResumeGame(){
         // switches back to players last scene
