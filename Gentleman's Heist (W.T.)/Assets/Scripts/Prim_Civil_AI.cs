@@ -20,6 +20,13 @@ public class Prim_Civil_AI : MonoBehaviour
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     bool reachedEndOfPath = false;
+
+    private float prevX;
+    private float prevY;
+
+    public Animator animator;
+    private float xMove;
+    private float yMove;
     
     GameObject sound;
     
@@ -36,8 +43,10 @@ public class Prim_Civil_AI : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         InvokeRepeating("UpdatePathWaypoint1", 0f, .5f);
 
-    }
+        prevX = 0;
+        prevY = 0;
 
+    }
     private void UpdatePathWaypoint1()
     {
         float distToW1 = Vector2.Distance(transform.position, Waypoint1.transform.position);
@@ -175,6 +184,10 @@ public class Prim_Civil_AI : MonoBehaviour
         {
             return;
         }
+
+        findDirection();
+        prevY = transform.position.y;
+        prevX = transform.position.x;
     }
 
     bool CanSeePlayer(float distance)
@@ -196,5 +209,37 @@ public class Prim_Civil_AI : MonoBehaviour
         return false;
     }
     
+    void findDirection(){
+     // doesn't work perfectly just yet, but it's a step in the right direction (pun intended)
+     if(prevY - transform.position.y < 0){
+        // moving down
+        xMove = 0;
+        yMove = -1;
+     }
+     if(prevY - transform.position.y > 0){
+        // moving up
+        xMove = 0;
+        yMove = 1;
+     }
+     if(prevX - transform.position.x > 0){
+         // moving right
+        xMove = 1;
+        yMove = 0;
+     }
+     if(prevX - transform.position.x > 0){
+         // moving left
+        xMove = -1;
+        yMove = 0;
+     }
+     changeAnimation();
+
+    }
+
+    void changeAnimation()
+    {
+        animator.SetBool("walking", true);
+        animator.SetFloat("xChange", xMove);
+        animator.SetFloat("yChange", yMove);
+    }
    
 }

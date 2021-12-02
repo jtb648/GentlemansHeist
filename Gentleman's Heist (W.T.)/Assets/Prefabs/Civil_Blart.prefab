@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5445520476186238313}
   - component: {fileID: 568827154749788090}
   - component: {fileID: 5314185823824122514}
+  - component: {fileID: -7630157784642029802}
   m_Layer: 0
   m_Name: Civil_Blart
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5283f64869fe1044aedd016daa972a3, type: 3}
+  m_Sprite: {fileID: 2744139283275404282, guid: ff52d35fcf3e0b641b49d739dc85fb3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,12 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd39a1eac5ccb43249c0a7275ba6ecfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 0}
-  roamPos: {x: 0, y: 0}
   Waypoint1: {fileID: 0}
   Waypoint2: {fileID: 0}
+  Waypoint3: {fileID: 0}
   speed: 200
   nextWaypointDistance: 3
+  animator: {fileID: 0}
 --- !u!50 &568827154749788090
 Rigidbody2D:
   serializedVersion: 4
@@ -140,3 +141,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3.43
+--- !u!95 &-7630157784642029802
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929674007973292560}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 221732c8d0276b74fa726ab96e143b16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

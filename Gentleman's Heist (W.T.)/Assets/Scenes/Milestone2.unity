@@ -189,6 +189,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8929674007973292560, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
   m_PrefabInstance: {fileID: 1955633057}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &124133132 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -7630157784642029802, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
+  m_PrefabInstance: {fileID: 1955633057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &124133137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,6 +1666,7 @@ MonoBehaviour:
   firePoint: {fileID: 1299069047}
   lookAngle: 0
   lookDirection: {x: 0, y: 0}
+  ps: {fileID: 0}
   speed: 4
   animator: {fileID: 1239142872}
   myBody: {fileID: 1239142873}
@@ -2948,6 +2954,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5445520476186238313, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 124133132}
+    - target: {fileID: 5445520476186238313, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
       propertyPath: Waypoint1
       value: 
       objectReference: {fileID: 563340624}
@@ -2971,6 +2981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Civil_Blart
       objectReference: {fileID: 0}
+    - target: {fileID: 9097040190136439271, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1770162835022383569, guid: 3864ed5be91063a40a8e7a2a6e93c146, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 805e9e8889b4141db9191f8cc492190f, type: 3}
 --- !u!1001 &2002679532
