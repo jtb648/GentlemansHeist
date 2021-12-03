@@ -19,8 +19,14 @@ public class PauseMenuScript : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.M)){
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            // SceneManager.UnloadSceneAsync("SampleScene");
             SceneManager.LoadScene("MainMenu");
+            SaveMaster.ClearTracking();
+            Time.timeScale = 1f;
+            //temp for testing
+
         }
     }
     public void ResumeGame(){
@@ -38,6 +44,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void BackToMenu(){
         SceneManager.LoadScene("MainMenu");
+
     }
 
 }
