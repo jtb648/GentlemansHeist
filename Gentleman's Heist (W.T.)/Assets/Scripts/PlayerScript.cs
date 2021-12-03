@@ -257,7 +257,6 @@ public class PlayerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
             ps.Play();
-            Debug.Log(collision.name);
             currentInteractableObject = collision.gameObject;
             //Message for when player tries to pickup health on full health
             if (currentInteractableObject.name.StartsWith("Donut") || currentInteractableObject.name.StartsWith("Apple") && PlayerData.GetCurrentHealth() == PlayerData.GetMaxHealth()){
@@ -265,9 +264,9 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+    // Stay so the collider doesn't keep trying to find something while in a radius
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
-            Debug.Log(collision.name);
             currentInteractableObject = collision.gameObject;
         }
     }
@@ -280,17 +279,13 @@ public class PlayerScript : MonoBehaviour
             lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
             firePoint.transform.rotation = Quaternion.Euler(0f, 0f, lookAngle - 90f);
             Shoot();
-
-
         }
-
     }
     // Unmarks an interactable object as the current interactable object when exiting their collision area
    private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("InteractableObject")){
             currentInteractableObject = null;
             noEat_text.enabled = false;
-            Debug.Log(collision.name);
         }
     }
 

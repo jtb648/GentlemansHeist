@@ -9,8 +9,6 @@ public class PermanentUpgradeMenu : MonoBehaviour
     private GameObject BlockSilentText;
     [SerializeField] 
     private GameObject BlockCoffeeText;
-     [SerializeField] 
-    private GameObject BlockFoodText;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +40,7 @@ public class PermanentUpgradeMenu : MonoBehaviour
     public void buyCoffee(){
         //Temp since don't want to speedy but who knows how speedy we want
         if (PlayerData.GetDefaultSpeed() <= 10){
-            PlayerData.PermanentIncreaseSpeed(0.5f);
+            PlayerData.PermanentIncreaseSpeed(0.1f);
         }
         ContinueNextLevel();
     }

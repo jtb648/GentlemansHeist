@@ -1335,9 +1335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf67d639ef829a4f88d9c8c07397977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlockSilentText: {fileID: 0}
-  BlockCoffeeText: {fileID: 0}
-  BlockFoodText: {fileID: 0}
+  BlockSilentText: {fileID: 1634893495}
+  BlockCoffeeText: {fileID: 853312261}
 --- !u!1 &627918729
 GameObject:
   m_ObjectHideFlags: 0
