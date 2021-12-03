@@ -23,7 +23,7 @@ public class DynamicPP : MonoBehaviour
     {
         if (last != PlayerData.GetCurrentHealth())
         {
-            Debug.Log("DynPP noticed change");
+            // Debug.Log("DynPP noticed change");
             if ((float) PlayerData.GetCurrentHealth() / PlayerData.GetMaxHealth() < 0.1)
             {
                 ppv.profile.GetSetting<ColorGrading>().saturation.Override(-100);

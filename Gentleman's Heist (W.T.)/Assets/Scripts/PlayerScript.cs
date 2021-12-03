@@ -89,6 +89,9 @@ public class PlayerScript : MonoBehaviour
     void Start()
     { 
         SyncPlayerData();
+        Debug.Log(gameObject.GetComponentInChildren<EntitySound>().speedToRadiusRatio + " sound ratio");
+        Debug.Log(PlayerData.GetSpeed()+ " speed");
+        Debug.Log(PlayerData.GetMaxHealth()+ " max health ");
         walkingSound = gameObject.GetComponent<AudioSource>();
         noEat_text.enabled = false;
     }
@@ -103,16 +106,31 @@ public class PlayerScript : MonoBehaviour
         PlayerData.SetAnimator(animator);
         PlayerData.SetCamera(cam);
         // PlayerData.SetEntitySound(gameObject.GetComponentInChildren<EntitySound>());
-        PlayerData.SetMaxHealth(100);
-        PlayerData.SetCurrentHealth(100);
+        if (PlayerData.GetDefaultMaxHealth() != 0)
+        {
+            PlayerData.SetMaxHealth(PlayerData.GetDefaultMaxHealth());
+            PlayerData.FullHeal();
+        }
+        else
+        {
+            PlayerData.SetMaxHealth(100);
+            PlayerData.SetCurrentHealth(100);
+        }
+
         // If Player purchases food, change Player's max health for the round
         if(PlayerData.GetUpgradeFood()){
-            PlayerData.SetMaxHealth(150);
-            PlayerData.SetCurrentHealth(150);
+            PlayerData.AddMaxHealth(150);
+            PlayerData.FullHeal();
             PlayerData.SetUpgradeFood();
         }
-        PlayerData.SetDefaultSpeed(speed);
+
+        if (PlayerData.GetDefaultSpeed() == 0)
+        {
+            PlayerData.SetDefaultSpeed(speed);
+
+        }
         PlayerData.SetToDefaultSpeed();
+        
         // If Player purchases a coffee, change Player's speed
         if(PlayerData.GetUpgradeCoffee()){
             PlayerData.AddSpeed(5.0f);

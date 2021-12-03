@@ -14,10 +14,12 @@ public static class PlayerData
     private static int _playerScore;
     
     private static string _playerName;
+    private static float _soundBonus = 0f;
     
     private static float _playerSpeed;
     private static float _playerDefaultSpeed;
     private static int _playerMaxHealth;
+    private static int _defaultMaxHealth;
     private static int _playerCurrentHealth;
     //turns out the player is destroyed in the upgrade screen so changes can't be nicely affected (at that time)
     private static GameObject _playerSoundCircle;
@@ -45,7 +47,7 @@ public static class PlayerData
     private static bool _upgradeAlarmD = false;
     
     // unsaved as of now
-    private static float _playerDefaultSoundRatio = 0;
+    private static float _playerDefaultSoundRatio = 8;
     
     /*
      * Following clear Methods need to stay updated if you want everything to work
@@ -142,9 +144,13 @@ public static class PlayerData
     {
         _playerDefaultSpeed = toSet;
     }
+    public static void PermanentIncreaseSpeed(float amountIncrease)
+    {
+        _playerDefaultSpeed += amountIncrease;
+    }
     public static void SetToDefaultSpeed()
     {
-        _playerSpeed = _playerDefaultSpeed;
+        _playerSpeed = _playerDefaultSpeed ;
     }
 
     public static int GetMaxHealth()
@@ -163,8 +169,22 @@ public static class PlayerData
     }
     public static void SetMaxHealth(int toSet)
     {
+        if (_defaultMaxHealth == 0)
+        {
+            _defaultMaxHealth = toSet;
+        }
         _playerMaxHealth = toSet;
         UpdateHealthBar();
+    }
+
+    public static void PermanentIncreaseMaxHealth(int amountIncrease)
+    {
+        _defaultMaxHealth += amountIncrease;
+    }
+
+    public static int GetDefaultMaxHealth()
+    {
+        return _defaultMaxHealth;
     }
 
     public static int GetCurrentHealth()
@@ -333,8 +353,11 @@ public static class PlayerData
     {
         return _playerSoundCircle;
     }
-    
-    
+
+    // public static void PermanentLowerSilentShoes(float amountLower)
+    // {
+    //     _playerDefaultSoundRatio -= amountLower;
+    // }
 
     public static void SetSilentShoes(float newRatio)
     {
@@ -343,14 +366,18 @@ public static class PlayerData
         {
             _playerDefaultSoundRatio = _playerSoundRatio;
         }
-        _playerSoundRatio += newRatio;
+        _playerSoundRatio = newRatio;
         // _entitySound.transitionDivs = newRatio;
     }
-    public static void AddSilentShoes(float newRatio){
-        if (_playerSoundRatio <= 1){
-            _playerSoundRatio = newRatio;
-        }
-    }
+    // public static void AddSilentShoes(float newRatio){
+    //     if (_playerSoundRatio <= 1){
+    //         if (_playerDefaultSoundRatio == 0)
+    //         {
+    //             _playerDefaultSoundRatio = _playerSoundRatio;
+    //         }
+    //         _playerSoundRatio = newRatio;
+    //     }
+    // }
 
     public static void RemoveSilentShoes()
     {
@@ -360,6 +387,10 @@ public static class PlayerData
         }
     }
 
+    public static float GetDefaultSoundRatio()
+    {
+        return _playerDefaultSoundRatio;
+    }
     public static float GetSoundRatio()
     {
         return _playerSoundRatio;
@@ -429,7 +460,17 @@ public static class PlayerData
 
     public static void UpdateSoundCircle()
     {
-        _playerSoundCircle.GetComponentInChildren<EntitySound>().speedToRadiusRatio = _playerSoundRatio;
+        _playerSoundCircle.GetComponentInChildren<EntitySound>().speedToRadiusRatio = _playerSoundRatio - _soundBonus;
+    }
+
+    public static void AddSoundBonus(float toAdd)
+    {
+        _soundBonus += toAdd;
+    }
+
+    public static float GetSoundBonus()
+    {
+        return _soundBonus;
     }
 
 }

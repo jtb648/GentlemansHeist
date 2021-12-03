@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,27 +23,32 @@ public class PermanentUpgradeMenu : MonoBehaviour
         //I think this deletes everything here but game breaks if I don't have it in
         SaveMaster.DeleteSave("Paul_Blart");
     }
+    
     public void ContinueNextLevel(){
         SceneManager.LoadScene("SampleScene");
         SaveMaster.ClearTracking();
     }
     public void buySilentShoes(){
         //Probably temp value so sound circle doesn't disappear once upgrading all the time
-        if (PlayerData.GetSoundRatio() >= 1){
-            PlayerData.AddSilentShoes(0.2f);
+        // if (PlayerData.GetSoundRatio() >= 1){
+        //     PlayerData.AddSilentShoes(0.2f);
+        // }
+        if (PlayerData.GetSoundRatio() >= 1)
+        {
+            PlayerData.AddSoundBonus(0.2f);
         }
         ContinueNextLevel();
     }
     public void buyCoffee(){
         //Temp since don't want to speedy but who knows how speedy we want
         if (PlayerData.GetDefaultSpeed() <= 10){
-            PlayerData.SetDefaultSpeed(0.5f);
+            PlayerData.PermanentIncreaseSpeed(0.5f);
         }
         ContinueNextLevel();
     }
     public void buyFood(){
         //Max health could probably just keep going up to who cares how much
-        PlayerData.AddMaxHealth(5);
+        PlayerData.PermanentIncreaseMaxHealth(5);
         ContinueNextLevel();
     }
 

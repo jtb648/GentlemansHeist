@@ -43,6 +43,10 @@ public class EntitySound : MonoBehaviour
         }
         else
         {
+            if (speedToRadiusRatio < 0)
+            {
+                speedToRadiusRatio = 0.0001f;
+            }
             // most of this is for making the transition between states look nice
             _oldRadius = _curRadius;
             _newRadius = (rb.velocity.magnitude) * speedToRadiusRatio;
