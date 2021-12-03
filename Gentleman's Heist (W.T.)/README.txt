@@ -1,19 +1,31 @@
 -------LICENSES
-furniture and collectibles assets - kenney.nl License: (CC0 1.0 Universal)
+Furniture pngs
+Links: https://www.kenney.nl/assets/roguelike-rpg-pack
+https://www.kenney.nl/assets/roguelike-indoors
+https://www.kenney.nl/assets/roguelike-modern-city
+License: (CC0 1.0 Universal)
 
-apple png - https://henrysoftware.itch.io/pixel-food
+Apple png
+Link: https://henrysoftware.itch.io/pixel-food
 
-open safe png- http://pixelartmaker.com/art/2272ae3c7fcf121
+Open safe png
+Link: http://pixelartmaker.com/art/2272ae3c7fcf121
 
-closed safe png - http://pixelartmaker.com/art/5945867578f2204
+Closed safe png
+Link: http://pixelartmaker.com/art/5945867578f2204
 
-footsteps audio -https://freesound.org/people/Yuval/sounds/205747/
+Footsteps audio 
+Link: https://freesound.org/people/Yuval/sounds/205747/
 
-eating and drinking audio - https://freesound.org
+Eating and drinking audio
+Link: https://freesound.org
 
-key pickup - kenney.nl License: (CC0 1.0 Universal)
+Key, coin and diamond pngs
+Link: https://www.kenney.nl/assets/game-icons-expansion
+License: (CC0 1.0 Universal)
 
-diamond and coin pickup audio - https://sfxr.me/
+Diamond and coin pickup audio - 
+Link: https://sfxr.me/
 
 Acid Trumpet by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/3340-acid-trumpet
@@ -46,6 +58,6 @@ Heart(Health Bar) sprite
 Link: https://github.com/Brackeys/Health-Bar
 License: Free(https://brackeys.com)
 
-Bullet and Cros Hair sprites:
+Bullet and Cross Hair sprites:
 Link: https://www.kenney.nl/assets/topdown-tanks
 License: CC0 1.0 Universal
