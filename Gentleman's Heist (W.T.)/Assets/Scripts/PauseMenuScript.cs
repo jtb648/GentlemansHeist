@@ -20,6 +20,7 @@ public class PauseMenuScript : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.M)){
+            SaveMaster.ClearTracking();
             SceneManager.LoadScene("MainMenu");
         }
     }
