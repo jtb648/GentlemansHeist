@@ -15,7 +15,7 @@ public class PermanentUpgradeMenu : MonoBehaviour
         if (PlayerData.GetSoundRatio() < 1){
             BlockSilentText.SetActive(true);
         }
-        if (PlayerData.GetDefaultSpeed() > 10){
+        if (PlayerData.GetDefaultSpeed() > 15){
             BlockCoffeeText.SetActive(true);
         }
         //I think this deletes everything here but game breaks if I don't have it in
@@ -31,7 +31,7 @@ public class PermanentUpgradeMenu : MonoBehaviour
         // if (PlayerData.GetSoundRatio() >= 1){
         //     PlayerData.AddSilentShoes(0.2f);
         // }
-        if (PlayerData.GetSoundRatio() >= 1)
+        if (PlayerData.GetSoundRatio() > 1)
         {
             PlayerData.AddSoundBonus(0.2f);
         }
@@ -39,7 +39,7 @@ public class PermanentUpgradeMenu : MonoBehaviour
     }
     public void buyCoffee(){
         //Temp since don't want to speedy but who knows how speedy we want
-        if (PlayerData.GetDefaultSpeed() <= 10){
+        if (PlayerData.GetDefaultSpeed() < 15){
             PlayerData.PermanentIncreaseSpeed(0.1f);
         }
         ContinueNextLevel();
