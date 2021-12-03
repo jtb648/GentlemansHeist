@@ -343,8 +343,13 @@ public static class PlayerData
         {
             _playerDefaultSoundRatio = _playerSoundRatio;
         }
-        _playerSoundRatio = newRatio;
+        _playerSoundRatio += newRatio;
         // _entitySound.transitionDivs = newRatio;
+    }
+    public static void AddSilentShoes(float newRatio){
+        if (_playerSoundRatio <= 1){
+            _playerSoundRatio = newRatio;
+        }
     }
 
     public static void RemoveSilentShoes()
