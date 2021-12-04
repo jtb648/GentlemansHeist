@@ -25,6 +25,7 @@ public class PermanentUpgradeMenu : MonoBehaviour
     public void ContinueNextLevel(){
         SceneManager.LoadScene("SampleScene");
         SaveMaster.ClearTracking();
+        PlayerData.ClearAllButPermanents();
     }
     public void buySilentShoes(){
         //Probably temp value so sound circle doesn't disappear once upgrading all the time

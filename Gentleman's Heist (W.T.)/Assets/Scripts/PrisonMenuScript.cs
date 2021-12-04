@@ -22,6 +22,7 @@ public class PrisonMenuScript : MonoBehaviour
         // Stops the Game -> only works once it's built
         SceneManager.LoadScene("MainMenu");
         SaveMaster.ClearTracking();
+        PlayerData.ClearAll();
     }
 
 }

@@ -60,21 +60,59 @@ public static class PlayerData
         _playerScore = 0;
         _playerName = "";
         _playerSpeed = 0;
-        _playerDefaultSpeed = 0;
+        _playerDefaultSpeed = 0; // keep for permanent 
         _playerMaxHealth = 0;
         _playerCurrentHealth = 0;
-        _playerSoundCircle = null;
         _level = 0;
         _diamonds = 0;
         _keys = 0;
+        _soundBonus = 0; // keep for permanent
+        _defaultMaxHealth = 0; // keep for permanent
+
+        _playerSoundCircle = null;
         _playerAnimator = null;
         _playerBody = null;
         _playerCamera = null;
         _playerScript = null;
         _player = null;
         _playerHealthBar = null;
+        
         _playerSoundRatio = 8; //as it currently stands, this will always be the default
         _bulletForce = 0;
+        
+        _upgradeCoffee = false;
+        _upgradeFood = false;
+        _upgradeAlarmD = false;
+        _upgradeSilentWeapon = false;
+    }
+
+    public static void ClearAllButPermanents()
+    {
+        Debug.Log("PlayerData Cleared except for permanent");
+        _playerMoney = 0;
+        _playerScore = 0;
+        _playerName = "";
+        _playerSpeed = 0;
+        // _playerDefaultSpeed = 0; // keep for permanent 
+        _playerMaxHealth = 0;
+        _playerCurrentHealth = 0;
+        _level = 0;
+        _diamonds = 0;
+        _keys = 0;
+        // _soundBonus = 0; // keep for permanent
+        // _defaultMaxHealth = 0; // keep for permanent
+
+        _playerSoundCircle = null;
+        _playerAnimator = null;
+        _playerBody = null;
+        _playerCamera = null;
+        _playerScript = null;
+        _player = null;
+        _playerHealthBar = null;
+        
+        // _playerSoundRatio = 8; //as it currently stands, this will always be the default
+        _bulletForce = 0;
+        
         _upgradeCoffee = false;
         _upgradeFood = false;
         _upgradeAlarmD = false;
