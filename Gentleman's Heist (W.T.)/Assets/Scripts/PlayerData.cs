@@ -225,6 +225,11 @@ public static class PlayerData
         return _defaultMaxHealth;
     }
 
+    public static void SetDefaultMaxHealth(int toSet)
+    {
+        _defaultMaxHealth = toSet;
+    }
+
     public static int GetCurrentHealth()
     {
         return _playerCurrentHealth;
@@ -484,6 +489,11 @@ public static class PlayerData
         }
     }
 
+    public static void SetSilWeapon(bool toSet)
+    {
+        _upgradeSilentWeapon = toSet;
+    }
+
     public static bool getUpgradeSilentWeapon(){
         return _upgradeSilentWeapon;
     }
@@ -509,6 +519,11 @@ public static class PlayerData
     public static float GetSoundBonus()
     {
         return _soundBonus;
+    }
+
+    public static void SetSoundBonus(float toSet)
+    {
+        _soundBonus = toSet;
     }
 
 }
