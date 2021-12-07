@@ -50,6 +50,9 @@ License: https://filmmusic.io/standard-license
 A* Pathfinding Project
 https://arongranberg.com/astar/docs/index.html
 
+Dungeon Generation Code
+https://github.com/DaniDevy/LudumDare45/blob/82a07eafdd1661bfbd6af5a858eaed5adf4c7f53/LD45/Board/GenerateDungeon.cs
+
 Explosion sprite
 Link: https://assetstore.unity.com/packages/2d/characters/warped-caves-103250?aid=1101lPGj&utm_campaign=unity_affiliate&utm_medium=affiliate&utm_source=partnerize-linkmaker
 License: Standart Asset Store EULA
