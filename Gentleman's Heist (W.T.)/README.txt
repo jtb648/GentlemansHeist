@@ -64,3 +64,9 @@ License: Free(https://brackeys.com)
 Bullet and Cross Hair sprites:
 Link: https://www.kenney.nl/assets/topdown-tanks
 License: CC0 1.0 Universal
+
+Brick Image for Menus:
+https://pixabay.com/photos/wall-bricks-brick-wall-red-bricks-21534/
+
+Detective Image for Menus:
+https://pixabay.com/vectors/agent-dangerous-detective-gangster-1294795/
