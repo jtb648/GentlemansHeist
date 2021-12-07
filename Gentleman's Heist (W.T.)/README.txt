@@ -1,3 +1,8 @@
+-------Difficulty Adjustment
+Difficulty will change depending on the number of keys the player has gotten per level.
+The guards will get less health and less speed if only one key is collected and will
+get some extra health and speed for 2 keys and a greater boost to health and speed if more than 2 keys are collected.
+
 -------LICENSES
 Furniture pngs
 Links: https://www.kenney.nl/assets/roguelike-rpg-pack
