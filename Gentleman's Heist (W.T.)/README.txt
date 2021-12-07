@@ -1,3 +1,7 @@
+-------Tips
+The more keys a player has, the quicker the staircase unlocks
+
+
 -------Difficulty Adjustment
 Difficulty will change depending on the number of keys the player has gotten per level.
 The guards will get less health and less speed if only one key is collected and will
