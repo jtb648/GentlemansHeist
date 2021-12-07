@@ -35,7 +35,7 @@ public class MoveFloor : MonoBehaviour
 
         if (IsUnlocking)
         {
-            GuardData.setGuardSpeed(GuardData.getGuardSpeed() + 0.5f);
+            GuardData.setGuardSpeed(GuardData.getGuardSpeed() + 0.25f);
         }
         else
         {
